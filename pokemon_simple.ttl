@@ -1,0 +1,6152 @@
+@prefix : <http://example.org/pokemon#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:bulbasaur a :Pokemon ;
+    :id 1 ;
+    :name "bulbasaur" ;
+    :height 7 ;
+    :weight 69 .
+
+:ivysaur a :Pokemon ;
+    :id 2 ;
+    :name "ivysaur" ;
+    :height 10 ;
+    :weight 130 .
+
+:venusaur a :Pokemon ;
+    :id 3 ;
+    :name "venusaur" ;
+    :height 20 ;
+    :weight 1000 .
+
+:charmander a :Pokemon ;
+    :id 4 ;
+    :name "charmander" ;
+    :height 6 ;
+    :weight 85 .
+
+:charmeleon a :Pokemon ;
+    :id 5 ;
+    :name "charmeleon" ;
+    :height 11 ;
+    :weight 190 .
+
+:charizard a :Pokemon ;
+    :id 6 ;
+    :name "charizard" ;
+    :height 17 ;
+    :weight 905 .
+
+:squirtle a :Pokemon ;
+    :id 7 ;
+    :name "squirtle" ;
+    :height 5 ;
+    :weight 90 .
+
+:wartortle a :Pokemon ;
+    :id 8 ;
+    :name "wartortle" ;
+    :height 10 ;
+    :weight 225 .
+
+:blastoise a :Pokemon ;
+    :id 9 ;
+    :name "blastoise" ;
+    :height 16 ;
+    :weight 855 .
+
+:caterpie a :Pokemon ;
+    :id 10 ;
+    :name "caterpie" ;
+    :height 3 ;
+    :weight 29 .
+
+:metapod a :Pokemon ;
+    :id 11 ;
+    :name "metapod" ;
+    :height 7 ;
+    :weight 99 .
+
+:butterfree a :Pokemon ;
+    :id 12 ;
+    :name "butterfree" ;
+    :height 11 ;
+    :weight 320 .
+
+:weedle a :Pokemon ;
+    :id 13 ;
+    :name "weedle" ;
+    :height 3 ;
+    :weight 32 .
+
+:kakuna a :Pokemon ;
+    :id 14 ;
+    :name "kakuna" ;
+    :height 6 ;
+    :weight 100 .
+
+:beedrill a :Pokemon ;
+    :id 15 ;
+    :name "beedrill" ;
+    :height 10 ;
+    :weight 295 .
+
+:pidgey a :Pokemon ;
+    :id 16 ;
+    :name "pidgey" ;
+    :height 3 ;
+    :weight 18 .
+
+:pidgeotto a :Pokemon ;
+    :id 17 ;
+    :name "pidgeotto" ;
+    :height 11 ;
+    :weight 300 .
+
+:pidgeot a :Pokemon ;
+    :id 18 ;
+    :name "pidgeot" ;
+    :height 15 ;
+    :weight 395 .
+
+:rattata a :Pokemon ;
+    :id 19 ;
+    :name "rattata" ;
+    :height 3 ;
+    :weight 35 .
+
+:raticate a :Pokemon ;
+    :id 20 ;
+    :name "raticate" ;
+    :height 7 ;
+    :weight 185 .
+
+:spearow a :Pokemon ;
+    :id 21 ;
+    :name "spearow" ;
+    :height 3 ;
+    :weight 20 .
+
+:fearow a :Pokemon ;
+    :id 22 ;
+    :name "fearow" ;
+    :height 12 ;
+    :weight 380 .
+
+:ekans a :Pokemon ;
+    :id 23 ;
+    :name "ekans" ;
+    :height 20 ;
+    :weight 69 .
+
+:arbok a :Pokemon ;
+    :id 24 ;
+    :name "arbok" ;
+    :height 35 ;
+    :weight 650 .
+
+:pikachu a :Pokemon ;
+    :id 25 ;
+    :name "pikachu" ;
+    :height 4 ;
+    :weight 60 .
+
+:raichu a :Pokemon ;
+    :id 26 ;
+    :name "raichu" ;
+    :height 8 ;
+    :weight 300 .
+
+:sandshrew a :Pokemon ;
+    :id 27 ;
+    :name "sandshrew" ;
+    :height 6 ;
+    :weight 120 .
+
+:sandslash a :Pokemon ;
+    :id 28 ;
+    :name "sandslash" ;
+    :height 10 ;
+    :weight 295 .
+
+:nidoran-f a :Pokemon ;
+    :id 29 ;
+    :name "nidoran-f" ;
+    :height 4 ;
+    :weight 70 .
+
+:nidorina a :Pokemon ;
+    :id 30 ;
+    :name "nidorina" ;
+    :height 8 ;
+    :weight 200 .
+
+:nidoqueen a :Pokemon ;
+    :id 31 ;
+    :name "nidoqueen" ;
+    :height 13 ;
+    :weight 600 .
+
+:nidoran-m a :Pokemon ;
+    :id 32 ;
+    :name "nidoran-m" ;
+    :height 5 ;
+    :weight 90 .
+
+:nidorino a :Pokemon ;
+    :id 33 ;
+    :name "nidorino" ;
+    :height 9 ;
+    :weight 195 .
+
+:nidoking a :Pokemon ;
+    :id 34 ;
+    :name "nidoking" ;
+    :height 14 ;
+    :weight 620 .
+
+:clefairy a :Pokemon ;
+    :id 35 ;
+    :name "clefairy" ;
+    :height 6 ;
+    :weight 75 .
+
+:clefable a :Pokemon ;
+    :id 36 ;
+    :name "clefable" ;
+    :height 13 ;
+    :weight 400 .
+
+:vulpix a :Pokemon ;
+    :id 37 ;
+    :name "vulpix" ;
+    :height 6 ;
+    :weight 99 .
+
+:ninetales a :Pokemon ;
+    :id 38 ;
+    :name "ninetales" ;
+    :height 11 ;
+    :weight 199 .
+
+:jigglypuff a :Pokemon ;
+    :id 39 ;
+    :name "jigglypuff" ;
+    :height 5 ;
+    :weight 55 .
+
+:wigglytuff a :Pokemon ;
+    :id 40 ;
+    :name "wigglytuff" ;
+    :height 10 ;
+    :weight 120 .
+
+:zubat a :Pokemon ;
+    :id 41 ;
+    :name "zubat" ;
+    :height 8 ;
+    :weight 75 .
+
+:golbat a :Pokemon ;
+    :id 42 ;
+    :name "golbat" ;
+    :height 16 ;
+    :weight 550 .
+
+:oddish a :Pokemon ;
+    :id 43 ;
+    :name "oddish" ;
+    :height 5 ;
+    :weight 54 .
+
+:gloom a :Pokemon ;
+    :id 44 ;
+    :name "gloom" ;
+    :height 8 ;
+    :weight 86 .
+
+:vileplume a :Pokemon ;
+    :id 45 ;
+    :name "vileplume" ;
+    :height 12 ;
+    :weight 186 .
+
+:paras a :Pokemon ;
+    :id 46 ;
+    :name "paras" ;
+    :height 3 ;
+    :weight 54 .
+
+:parasect a :Pokemon ;
+    :id 47 ;
+    :name "parasect" ;
+    :height 10 ;
+    :weight 295 .
+
+:venonat a :Pokemon ;
+    :id 48 ;
+    :name "venonat" ;
+    :height 10 ;
+    :weight 300 .
+
+:venomoth a :Pokemon ;
+    :id 49 ;
+    :name "venomoth" ;
+    :height 15 ;
+    :weight 125 .
+
+:diglett a :Pokemon ;
+    :id 50 ;
+    :name "diglett" ;
+    :height 2 ;
+    :weight 8 .
+
+:dugtrio a :Pokemon ;
+    :id 51 ;
+    :name "dugtrio" ;
+    :height 7 ;
+    :weight 333 .
+
+:meowth a :Pokemon ;
+    :id 52 ;
+    :name "meowth" ;
+    :height 4 ;
+    :weight 42 .
+
+:persian a :Pokemon ;
+    :id 53 ;
+    :name "persian" ;
+    :height 10 ;
+    :weight 320 .
+
+:psyduck a :Pokemon ;
+    :id 54 ;
+    :name "psyduck" ;
+    :height 8 ;
+    :weight 196 .
+
+:golduck a :Pokemon ;
+    :id 55 ;
+    :name "golduck" ;
+    :height 17 ;
+    :weight 766 .
+
+:mankey a :Pokemon ;
+    :id 56 ;
+    :name "mankey" ;
+    :height 5 ;
+    :weight 280 .
+
+:primeape a :Pokemon ;
+    :id 57 ;
+    :name "primeape" ;
+    :height 10 ;
+    :weight 320 .
+
+:growlithe a :Pokemon ;
+    :id 58 ;
+    :name "growlithe" ;
+    :height 7 ;
+    :weight 190 .
+
+:arcanine a :Pokemon ;
+    :id 59 ;
+    :name "arcanine" ;
+    :height 19 ;
+    :weight 1550 .
+
+:poliwag a :Pokemon ;
+    :id 60 ;
+    :name "poliwag" ;
+    :height 6 ;
+    :weight 124 .
+
+:poliwhirl a :Pokemon ;
+    :id 61 ;
+    :name "poliwhirl" ;
+    :height 10 ;
+    :weight 200 .
+
+:poliwrath a :Pokemon ;
+    :id 62 ;
+    :name "poliwrath" ;
+    :height 13 ;
+    :weight 540 .
+
+:abra a :Pokemon ;
+    :id 63 ;
+    :name "abra" ;
+    :height 9 ;
+    :weight 195 .
+
+:kadabra a :Pokemon ;
+    :id 64 ;
+    :name "kadabra" ;
+    :height 13 ;
+    :weight 565 .
+
+:alakazam a :Pokemon ;
+    :id 65 ;
+    :name "alakazam" ;
+    :height 15 ;
+    :weight 480 .
+
+:machop a :Pokemon ;
+    :id 66 ;
+    :name "machop" ;
+    :height 8 ;
+    :weight 195 .
+
+:machoke a :Pokemon ;
+    :id 67 ;
+    :name "machoke" ;
+    :height 15 ;
+    :weight 705 .
+
+:machamp a :Pokemon ;
+    :id 68 ;
+    :name "machamp" ;
+    :height 16 ;
+    :weight 1300 .
+
+:bellsprout a :Pokemon ;
+    :id 69 ;
+    :name "bellsprout" ;
+    :height 7 ;
+    :weight 40 .
+
+:weepinbell a :Pokemon ;
+    :id 70 ;
+    :name "weepinbell" ;
+    :height 10 ;
+    :weight 64 .
+
+:victreebel a :Pokemon ;
+    :id 71 ;
+    :name "victreebel" ;
+    :height 17 ;
+    :weight 155 .
+
+:tentacool a :Pokemon ;
+    :id 72 ;
+    :name "tentacool" ;
+    :height 9 ;
+    :weight 455 .
+
+:tentacruel a :Pokemon ;
+    :id 73 ;
+    :name "tentacruel" ;
+    :height 16 ;
+    :weight 550 .
+
+:geodude a :Pokemon ;
+    :id 74 ;
+    :name "geodude" ;
+    :height 4 ;
+    :weight 200 .
+
+:graveler a :Pokemon ;
+    :id 75 ;
+    :name "graveler" ;
+    :height 10 ;
+    :weight 1050 .
+
+:golem a :Pokemon ;
+    :id 76 ;
+    :name "golem" ;
+    :height 14 ;
+    :weight 3000 .
+
+:ponyta a :Pokemon ;
+    :id 77 ;
+    :name "ponyta" ;
+    :height 10 ;
+    :weight 300 .
+
+:rapidash a :Pokemon ;
+    :id 78 ;
+    :name "rapidash" ;
+    :height 17 ;
+    :weight 950 .
+
+:slowpoke a :Pokemon ;
+    :id 79 ;
+    :name "slowpoke" ;
+    :height 12 ;
+    :weight 360 .
+
+:slowbro a :Pokemon ;
+    :id 80 ;
+    :name "slowbro" ;
+    :height 16 ;
+    :weight 785 .
+
+:magnemite a :Pokemon ;
+    :id 81 ;
+    :name "magnemite" ;
+    :height 3 ;
+    :weight 60 .
+
+:magneton a :Pokemon ;
+    :id 82 ;
+    :name "magneton" ;
+    :height 10 ;
+    :weight 600 .
+
+:farfetchd a :Pokemon ;
+    :id 83 ;
+    :name "farfetchd" ;
+    :height 8 ;
+    :weight 150 .
+
+:doduo a :Pokemon ;
+    :id 84 ;
+    :name "doduo" ;
+    :height 14 ;
+    :weight 392 .
+
+:dodrio a :Pokemon ;
+    :id 85 ;
+    :name "dodrio" ;
+    :height 18 ;
+    :weight 852 .
+
+:seel a :Pokemon ;
+    :id 86 ;
+    :name "seel" ;
+    :height 11 ;
+    :weight 900 .
+
+:dewgong a :Pokemon ;
+    :id 87 ;
+    :name "dewgong" ;
+    :height 17 ;
+    :weight 1200 .
+
+:grimer a :Pokemon ;
+    :id 88 ;
+    :name "grimer" ;
+    :height 9 ;
+    :weight 300 .
+
+:muk a :Pokemon ;
+    :id 89 ;
+    :name "muk" ;
+    :height 12 ;
+    :weight 300 .
+
+:shellder a :Pokemon ;
+    :id 90 ;
+    :name "shellder" ;
+    :height 3 ;
+    :weight 40 .
+
+:cloyster a :Pokemon ;
+    :id 91 ;
+    :name "cloyster" ;
+    :height 15 ;
+    :weight 1325 .
+
+:gastly a :Pokemon ;
+    :id 92 ;
+    :name "gastly" ;
+    :height 13 ;
+    :weight 1 .
+
+:haunter a :Pokemon ;
+    :id 93 ;
+    :name "haunter" ;
+    :height 16 ;
+    :weight 1 .
+
+:gengar a :Pokemon ;
+    :id 94 ;
+    :name "gengar" ;
+    :height 15 ;
+    :weight 405 .
+
+:onix a :Pokemon ;
+    :id 95 ;
+    :name "onix" ;
+    :height 88 ;
+    :weight 2100 .
+
+:drowzee a :Pokemon ;
+    :id 96 ;
+    :name "drowzee" ;
+    :height 10 ;
+    :weight 324 .
+
+:hypno a :Pokemon ;
+    :id 97 ;
+    :name "hypno" ;
+    :height 16 ;
+    :weight 756 .
+
+:krabby a :Pokemon ;
+    :id 98 ;
+    :name "krabby" ;
+    :height 4 ;
+    :weight 65 .
+
+:kingler a :Pokemon ;
+    :id 99 ;
+    :name "kingler" ;
+    :height 13 ;
+    :weight 600 .
+
+:voltorb a :Pokemon ;
+    :id 100 ;
+    :name "voltorb" ;
+    :height 5 ;
+    :weight 104 .
+
+:electrode a :Pokemon ;
+    :id 101 ;
+    :name "electrode" ;
+    :height 12 ;
+    :weight 666 .
+
+:exeggcute a :Pokemon ;
+    :id 102 ;
+    :name "exeggcute" ;
+    :height 4 ;
+    :weight 25 .
+
+:exeggutor a :Pokemon ;
+    :id 103 ;
+    :name "exeggutor" ;
+    :height 20 ;
+    :weight 1200 .
+
+:cubone a :Pokemon ;
+    :id 104 ;
+    :name "cubone" ;
+    :height 4 ;
+    :weight 65 .
+
+:marowak a :Pokemon ;
+    :id 105 ;
+    :name "marowak" ;
+    :height 10 ;
+    :weight 450 .
+
+:hitmonlee a :Pokemon ;
+    :id 106 ;
+    :name "hitmonlee" ;
+    :height 15 ;
+    :weight 498 .
+
+:hitmonchan a :Pokemon ;
+    :id 107 ;
+    :name "hitmonchan" ;
+    :height 14 ;
+    :weight 502 .
+
+:lickitung a :Pokemon ;
+    :id 108 ;
+    :name "lickitung" ;
+    :height 12 ;
+    :weight 655 .
+
+:koffing a :Pokemon ;
+    :id 109 ;
+    :name "koffing" ;
+    :height 6 ;
+    :weight 10 .
+
+:weezing a :Pokemon ;
+    :id 110 ;
+    :name "weezing" ;
+    :height 12 ;
+    :weight 95 .
+
+:rhyhorn a :Pokemon ;
+    :id 111 ;
+    :name "rhyhorn" ;
+    :height 10 ;
+    :weight 1150 .
+
+:rhydon a :Pokemon ;
+    :id 112 ;
+    :name "rhydon" ;
+    :height 19 ;
+    :weight 1200 .
+
+:chansey a :Pokemon ;
+    :id 113 ;
+    :name "chansey" ;
+    :height 11 ;
+    :weight 346 .
+
+:tangela a :Pokemon ;
+    :id 114 ;
+    :name "tangela" ;
+    :height 10 ;
+    :weight 350 .
+
+:kangaskhan a :Pokemon ;
+    :id 115 ;
+    :name "kangaskhan" ;
+    :height 22 ;
+    :weight 800 .
+
+:horsea a :Pokemon ;
+    :id 116 ;
+    :name "horsea" ;
+    :height 4 ;
+    :weight 80 .
+
+:seadra a :Pokemon ;
+    :id 117 ;
+    :name "seadra" ;
+    :height 12 ;
+    :weight 250 .
+
+:goldeen a :Pokemon ;
+    :id 118 ;
+    :name "goldeen" ;
+    :height 6 ;
+    :weight 150 .
+
+:seaking a :Pokemon ;
+    :id 119 ;
+    :name "seaking" ;
+    :height 13 ;
+    :weight 390 .
+
+:staryu a :Pokemon ;
+    :id 120 ;
+    :name "staryu" ;
+    :height 8 ;
+    :weight 345 .
+
+:starmie a :Pokemon ;
+    :id 121 ;
+    :name "starmie" ;
+    :height 11 ;
+    :weight 800 .
+
+:mr-mime a :Pokemon ;
+    :id 122 ;
+    :name "mr-mime" ;
+    :height 13 ;
+    :weight 545 .
+
+:scyther a :Pokemon ;
+    :id 123 ;
+    :name "scyther" ;
+    :height 15 ;
+    :weight 560 .
+
+:jynx a :Pokemon ;
+    :id 124 ;
+    :name "jynx" ;
+    :height 14 ;
+    :weight 406 .
+
+:electabuzz a :Pokemon ;
+    :id 125 ;
+    :name "electabuzz" ;
+    :height 11 ;
+    :weight 300 .
+
+:magmar a :Pokemon ;
+    :id 126 ;
+    :name "magmar" ;
+    :height 13 ;
+    :weight 445 .
+
+:pinsir a :Pokemon ;
+    :id 127 ;
+    :name "pinsir" ;
+    :height 15 ;
+    :weight 550 .
+
+:tauros a :Pokemon ;
+    :id 128 ;
+    :name "tauros" ;
+    :height 14 ;
+    :weight 884 .
+
+:magikarp a :Pokemon ;
+    :id 129 ;
+    :name "magikarp" ;
+    :height 9 ;
+    :weight 100 .
+
+:gyarados a :Pokemon ;
+    :id 130 ;
+    :name "gyarados" ;
+    :height 65 ;
+    :weight 2350 .
+
+:lapras a :Pokemon ;
+    :id 131 ;
+    :name "lapras" ;
+    :height 25 ;
+    :weight 2200 .
+
+:ditto a :Pokemon ;
+    :id 132 ;
+    :name "ditto" ;
+    :height 3 ;
+    :weight 40 .
+
+:eevee a :Pokemon ;
+    :id 133 ;
+    :name "eevee" ;
+    :height 3 ;
+    :weight 65 .
+
+:vaporeon a :Pokemon ;
+    :id 134 ;
+    :name "vaporeon" ;
+    :height 10 ;
+    :weight 290 .
+
+:jolteon a :Pokemon ;
+    :id 135 ;
+    :name "jolteon" ;
+    :height 8 ;
+    :weight 245 .
+
+:flareon a :Pokemon ;
+    :id 136 ;
+    :name "flareon" ;
+    :height 9 ;
+    :weight 250 .
+
+:porygon a :Pokemon ;
+    :id 137 ;
+    :name "porygon" ;
+    :height 8 ;
+    :weight 365 .
+
+:omanyte a :Pokemon ;
+    :id 138 ;
+    :name "omanyte" ;
+    :height 4 ;
+    :weight 75 .
+
+:omastar a :Pokemon ;
+    :id 139 ;
+    :name "omastar" ;
+    :height 10 ;
+    :weight 350 .
+
+:kabuto a :Pokemon ;
+    :id 140 ;
+    :name "kabuto" ;
+    :height 5 ;
+    :weight 115 .
+
+:kabutops a :Pokemon ;
+    :id 141 ;
+    :name "kabutops" ;
+    :height 13 ;
+    :weight 405 .
+
+:aerodactyl a :Pokemon ;
+    :id 142 ;
+    :name "aerodactyl" ;
+    :height 18 ;
+    :weight 590 .
+
+:snorlax a :Pokemon ;
+    :id 143 ;
+    :name "snorlax" ;
+    :height 21 ;
+    :weight 4600 .
+
+:articuno a :Pokemon ;
+    :id 144 ;
+    :name "articuno" ;
+    :height 17 ;
+    :weight 554 .
+
+:zapdos a :Pokemon ;
+    :id 145 ;
+    :name "zapdos" ;
+    :height 16 ;
+    :weight 526 .
+
+:moltres a :Pokemon ;
+    :id 146 ;
+    :name "moltres" ;
+    :height 20 ;
+    :weight 600 .
+
+:dratini a :Pokemon ;
+    :id 147 ;
+    :name "dratini" ;
+    :height 18 ;
+    :weight 33 .
+
+:dragonair a :Pokemon ;
+    :id 148 ;
+    :name "dragonair" ;
+    :height 40 ;
+    :weight 165 .
+
+:dragonite a :Pokemon ;
+    :id 149 ;
+    :name "dragonite" ;
+    :height 22 ;
+    :weight 2100 .
+
+:mewtwo a :Pokemon ;
+    :id 150 ;
+    :name "mewtwo" ;
+    :height 20 ;
+    :weight 1220 .
+
+:mew a :Pokemon ;
+    :id 151 ;
+    :name "mew" ;
+    :height 4 ;
+    :weight 40 .
+
+:chikorita a :Pokemon ;
+    :id 152 ;
+    :name "chikorita" ;
+    :height 9 ;
+    :weight 64 .
+
+:bayleef a :Pokemon ;
+    :id 153 ;
+    :name "bayleef" ;
+    :height 12 ;
+    :weight 158 .
+
+:meganium a :Pokemon ;
+    :id 154 ;
+    :name "meganium" ;
+    :height 18 ;
+    :weight 1005 .
+
+:cyndaquil a :Pokemon ;
+    :id 155 ;
+    :name "cyndaquil" ;
+    :height 5 ;
+    :weight 79 .
+
+:quilava a :Pokemon ;
+    :id 156 ;
+    :name "quilava" ;
+    :height 9 ;
+    :weight 190 .
+
+:typhlosion a :Pokemon ;
+    :id 157 ;
+    :name "typhlosion" ;
+    :height 17 ;
+    :weight 795 .
+
+:totodile a :Pokemon ;
+    :id 158 ;
+    :name "totodile" ;
+    :height 6 ;
+    :weight 95 .
+
+:croconaw a :Pokemon ;
+    :id 159 ;
+    :name "croconaw" ;
+    :height 11 ;
+    :weight 250 .
+
+:feraligatr a :Pokemon ;
+    :id 160 ;
+    :name "feraligatr" ;
+    :height 23 ;
+    :weight 888 .
+
+:sentret a :Pokemon ;
+    :id 161 ;
+    :name "sentret" ;
+    :height 8 ;
+    :weight 60 .
+
+:furret a :Pokemon ;
+    :id 162 ;
+    :name "furret" ;
+    :height 18 ;
+    :weight 325 .
+
+:hoothoot a :Pokemon ;
+    :id 163 ;
+    :name "hoothoot" ;
+    :height 7 ;
+    :weight 212 .
+
+:noctowl a :Pokemon ;
+    :id 164 ;
+    :name "noctowl" ;
+    :height 16 ;
+    :weight 408 .
+
+:ledyba a :Pokemon ;
+    :id 165 ;
+    :name "ledyba" ;
+    :height 10 ;
+    :weight 108 .
+
+:ledian a :Pokemon ;
+    :id 166 ;
+    :name "ledian" ;
+    :height 14 ;
+    :weight 356 .
+
+:spinarak a :Pokemon ;
+    :id 167 ;
+    :name "spinarak" ;
+    :height 5 ;
+    :weight 85 .
+
+:ariados a :Pokemon ;
+    :id 168 ;
+    :name "ariados" ;
+    :height 11 ;
+    :weight 335 .
+
+:crobat a :Pokemon ;
+    :id 169 ;
+    :name "crobat" ;
+    :height 18 ;
+    :weight 750 .
+
+:chinchou a :Pokemon ;
+    :id 170 ;
+    :name "chinchou" ;
+    :height 5 ;
+    :weight 120 .
+
+:lanturn a :Pokemon ;
+    :id 171 ;
+    :name "lanturn" ;
+    :height 12 ;
+    :weight 225 .
+
+:pichu a :Pokemon ;
+    :id 172 ;
+    :name "pichu" ;
+    :height 3 ;
+    :weight 20 .
+
+:cleffa a :Pokemon ;
+    :id 173 ;
+    :name "cleffa" ;
+    :height 3 ;
+    :weight 30 .
+
+:igglybuff a :Pokemon ;
+    :id 174 ;
+    :name "igglybuff" ;
+    :height 3 ;
+    :weight 10 .
+
+:togepi a :Pokemon ;
+    :id 175 ;
+    :name "togepi" ;
+    :height 3 ;
+    :weight 15 .
+
+:togetic a :Pokemon ;
+    :id 176 ;
+    :name "togetic" ;
+    :height 6 ;
+    :weight 32 .
+
+:natu a :Pokemon ;
+    :id 177 ;
+    :name "natu" ;
+    :height 2 ;
+    :weight 20 .
+
+:xatu a :Pokemon ;
+    :id 178 ;
+    :name "xatu" ;
+    :height 15 ;
+    :weight 150 .
+
+:mareep a :Pokemon ;
+    :id 179 ;
+    :name "mareep" ;
+    :height 6 ;
+    :weight 78 .
+
+:flaaffy a :Pokemon ;
+    :id 180 ;
+    :name "flaaffy" ;
+    :height 8 ;
+    :weight 133 .
+
+:ampharos a :Pokemon ;
+    :id 181 ;
+    :name "ampharos" ;
+    :height 14 ;
+    :weight 615 .
+
+:bellossom a :Pokemon ;
+    :id 182 ;
+    :name "bellossom" ;
+    :height 4 ;
+    :weight 58 .
+
+:marill a :Pokemon ;
+    :id 183 ;
+    :name "marill" ;
+    :height 4 ;
+    :weight 85 .
+
+:azumarill a :Pokemon ;
+    :id 184 ;
+    :name "azumarill" ;
+    :height 8 ;
+    :weight 285 .
+
+:sudowoodo a :Pokemon ;
+    :id 185 ;
+    :name "sudowoodo" ;
+    :height 12 ;
+    :weight 380 .
+
+:politoed a :Pokemon ;
+    :id 186 ;
+    :name "politoed" ;
+    :height 11 ;
+    :weight 339 .
+
+:hoppip a :Pokemon ;
+    :id 187 ;
+    :name "hoppip" ;
+    :height 4 ;
+    :weight 5 .
+
+:skiploom a :Pokemon ;
+    :id 188 ;
+    :name "skiploom" ;
+    :height 6 ;
+    :weight 10 .
+
+:jumpluff a :Pokemon ;
+    :id 189 ;
+    :name "jumpluff" ;
+    :height 8 ;
+    :weight 30 .
+
+:aipom a :Pokemon ;
+    :id 190 ;
+    :name "aipom" ;
+    :height 8 ;
+    :weight 115 .
+
+:sunkern a :Pokemon ;
+    :id 191 ;
+    :name "sunkern" ;
+    :height 3 ;
+    :weight 18 .
+
+:sunflora a :Pokemon ;
+    :id 192 ;
+    :name "sunflora" ;
+    :height 8 ;
+    :weight 85 .
+
+:yanma a :Pokemon ;
+    :id 193 ;
+    :name "yanma" ;
+    :height 12 ;
+    :weight 380 .
+
+:wooper a :Pokemon ;
+    :id 194 ;
+    :name "wooper" ;
+    :height 4 ;
+    :weight 85 .
+
+:quagsire a :Pokemon ;
+    :id 195 ;
+    :name "quagsire" ;
+    :height 14 ;
+    :weight 750 .
+
+:espeon a :Pokemon ;
+    :id 196 ;
+    :name "espeon" ;
+    :height 9 ;
+    :weight 265 .
+
+:umbreon a :Pokemon ;
+    :id 197 ;
+    :name "umbreon" ;
+    :height 10 ;
+    :weight 270 .
+
+:murkrow a :Pokemon ;
+    :id 198 ;
+    :name "murkrow" ;
+    :height 5 ;
+    :weight 21 .
+
+:slowking a :Pokemon ;
+    :id 199 ;
+    :name "slowking" ;
+    :height 20 ;
+    :weight 795 .
+
+:misdreavus a :Pokemon ;
+    :id 200 ;
+    :name "misdreavus" ;
+    :height 7 ;
+    :weight 10 .
+
+:unown a :Pokemon ;
+    :id 201 ;
+    :name "unown" ;
+    :height 5 ;
+    :weight 50 .
+
+:wobbuffet a :Pokemon ;
+    :id 202 ;
+    :name "wobbuffet" ;
+    :height 13 ;
+    :weight 285 .
+
+:girafarig a :Pokemon ;
+    :id 203 ;
+    :name "girafarig" ;
+    :height 15 ;
+    :weight 415 .
+
+:pineco a :Pokemon ;
+    :id 204 ;
+    :name "pineco" ;
+    :height 6 ;
+    :weight 72 .
+
+:forretress a :Pokemon ;
+    :id 205 ;
+    :name "forretress" ;
+    :height 12 ;
+    :weight 1258 .
+
+:dunsparce a :Pokemon ;
+    :id 206 ;
+    :name "dunsparce" ;
+    :height 15 ;
+    :weight 140 .
+
+:gligar a :Pokemon ;
+    :id 207 ;
+    :name "gligar" ;
+    :height 11 ;
+    :weight 648 .
+
+:steelix a :Pokemon ;
+    :id 208 ;
+    :name "steelix" ;
+    :height 92 ;
+    :weight 4000 .
+
+:snubbull a :Pokemon ;
+    :id 209 ;
+    :name "snubbull" ;
+    :height 6 ;
+    :weight 78 .
+
+:granbull a :Pokemon ;
+    :id 210 ;
+    :name "granbull" ;
+    :height 14 ;
+    :weight 487 .
+
+:qwilfish a :Pokemon ;
+    :id 211 ;
+    :name "qwilfish" ;
+    :height 5 ;
+    :weight 39 .
+
+:scizor a :Pokemon ;
+    :id 212 ;
+    :name "scizor" ;
+    :height 18 ;
+    :weight 1180 .
+
+:shuckle a :Pokemon ;
+    :id 213 ;
+    :name "shuckle" ;
+    :height 6 ;
+    :weight 205 .
+
+:heracross a :Pokemon ;
+    :id 214 ;
+    :name "heracross" ;
+    :height 15 ;
+    :weight 540 .
+
+:sneasel a :Pokemon ;
+    :id 215 ;
+    :name "sneasel" ;
+    :height 9 ;
+    :weight 280 .
+
+:teddiursa a :Pokemon ;
+    :id 216 ;
+    :name "teddiursa" ;
+    :height 6 ;
+    :weight 88 .
+
+:ursaring a :Pokemon ;
+    :id 217 ;
+    :name "ursaring" ;
+    :height 18 ;
+    :weight 1258 .
+
+:slugma a :Pokemon ;
+    :id 218 ;
+    :name "slugma" ;
+    :height 7 ;
+    :weight 350 .
+
+:magcargo a :Pokemon ;
+    :id 219 ;
+    :name "magcargo" ;
+    :height 8 ;
+    :weight 550 .
+
+:swinub a :Pokemon ;
+    :id 220 ;
+    :name "swinub" ;
+    :height 4 ;
+    :weight 65 .
+
+:piloswine a :Pokemon ;
+    :id 221 ;
+    :name "piloswine" ;
+    :height 11 ;
+    :weight 558 .
+
+:corsola a :Pokemon ;
+    :id 222 ;
+    :name "corsola" ;
+    :height 6 ;
+    :weight 50 .
+
+:remoraid a :Pokemon ;
+    :id 223 ;
+    :name "remoraid" ;
+    :height 6 ;
+    :weight 120 .
+
+:octillery a :Pokemon ;
+    :id 224 ;
+    :name "octillery" ;
+    :height 9 ;
+    :weight 285 .
+
+:delibird a :Pokemon ;
+    :id 225 ;
+    :name "delibird" ;
+    :height 9 ;
+    :weight 160 .
+
+:mantine a :Pokemon ;
+    :id 226 ;
+    :name "mantine" ;
+    :height 21 ;
+    :weight 2200 .
+
+:skarmory a :Pokemon ;
+    :id 227 ;
+    :name "skarmory" ;
+    :height 17 ;
+    :weight 505 .
+
+:houndour a :Pokemon ;
+    :id 228 ;
+    :name "houndour" ;
+    :height 6 ;
+    :weight 108 .
+
+:houndoom a :Pokemon ;
+    :id 229 ;
+    :name "houndoom" ;
+    :height 14 ;
+    :weight 350 .
+
+:kingdra a :Pokemon ;
+    :id 230 ;
+    :name "kingdra" ;
+    :height 18 ;
+    :weight 1520 .
+
+:phanpy a :Pokemon ;
+    :id 231 ;
+    :name "phanpy" ;
+    :height 5 ;
+    :weight 335 .
+
+:donphan a :Pokemon ;
+    :id 232 ;
+    :name "donphan" ;
+    :height 11 ;
+    :weight 1200 .
+
+:porygon2 a :Pokemon ;
+    :id 233 ;
+    :name "porygon2" ;
+    :height 6 ;
+    :weight 325 .
+
+:stantler a :Pokemon ;
+    :id 234 ;
+    :name "stantler" ;
+    :height 14 ;
+    :weight 712 .
+
+:smeargle a :Pokemon ;
+    :id 235 ;
+    :name "smeargle" ;
+    :height 12 ;
+    :weight 580 .
+
+:tyrogue a :Pokemon ;
+    :id 236 ;
+    :name "tyrogue" ;
+    :height 7 ;
+    :weight 210 .
+
+:hitmontop a :Pokemon ;
+    :id 237 ;
+    :name "hitmontop" ;
+    :height 14 ;
+    :weight 480 .
+
+:smoochum a :Pokemon ;
+    :id 238 ;
+    :name "smoochum" ;
+    :height 4 ;
+    :weight 60 .
+
+:elekid a :Pokemon ;
+    :id 239 ;
+    :name "elekid" ;
+    :height 6 ;
+    :weight 235 .
+
+:magby a :Pokemon ;
+    :id 240 ;
+    :name "magby" ;
+    :height 7 ;
+    :weight 214 .
+
+:miltank a :Pokemon ;
+    :id 241 ;
+    :name "miltank" ;
+    :height 12 ;
+    :weight 755 .
+
+:blissey a :Pokemon ;
+    :id 242 ;
+    :name "blissey" ;
+    :height 15 ;
+    :weight 468 .
+
+:raikou a :Pokemon ;
+    :id 243 ;
+    :name "raikou" ;
+    :height 19 ;
+    :weight 1780 .
+
+:entei a :Pokemon ;
+    :id 244 ;
+    :name "entei" ;
+    :height 21 ;
+    :weight 1980 .
+
+:suicune a :Pokemon ;
+    :id 245 ;
+    :name "suicune" ;
+    :height 20 ;
+    :weight 1870 .
+
+:larvitar a :Pokemon ;
+    :id 246 ;
+    :name "larvitar" ;
+    :height 6 ;
+    :weight 720 .
+
+:pupitar a :Pokemon ;
+    :id 247 ;
+    :name "pupitar" ;
+    :height 12 ;
+    :weight 1520 .
+
+:tyranitar a :Pokemon ;
+    :id 248 ;
+    :name "tyranitar" ;
+    :height 20 ;
+    :weight 2020 .
+
+:lugia a :Pokemon ;
+    :id 249 ;
+    :name "lugia" ;
+    :height 52 ;
+    :weight 2160 .
+
+:ho-oh a :Pokemon ;
+    :id 250 ;
+    :name "ho-oh" ;
+    :height 38 ;
+    :weight 1990 .
+
+:celebi a :Pokemon ;
+    :id 251 ;
+    :name "celebi" ;
+    :height 6 ;
+    :weight 50 .
+
+:treecko a :Pokemon ;
+    :id 252 ;
+    :name "treecko" ;
+    :height 5 ;
+    :weight 50 .
+
+:grovyle a :Pokemon ;
+    :id 253 ;
+    :name "grovyle" ;
+    :height 9 ;
+    :weight 216 .
+
+:sceptile a :Pokemon ;
+    :id 254 ;
+    :name "sceptile" ;
+    :height 17 ;
+    :weight 522 .
+
+:torchic a :Pokemon ;
+    :id 255 ;
+    :name "torchic" ;
+    :height 4 ;
+    :weight 25 .
+
+:combusken a :Pokemon ;
+    :id 256 ;
+    :name "combusken" ;
+    :height 9 ;
+    :weight 195 .
+
+:blaziken a :Pokemon ;
+    :id 257 ;
+    :name "blaziken" ;
+    :height 19 ;
+    :weight 520 .
+
+:mudkip a :Pokemon ;
+    :id 258 ;
+    :name "mudkip" ;
+    :height 4 ;
+    :weight 76 .
+
+:marshtomp a :Pokemon ;
+    :id 259 ;
+    :name "marshtomp" ;
+    :height 7 ;
+    :weight 280 .
+
+:swampert a :Pokemon ;
+    :id 260 ;
+    :name "swampert" ;
+    :height 15 ;
+    :weight 819 .
+
+:poochyena a :Pokemon ;
+    :id 261 ;
+    :name "poochyena" ;
+    :height 5 ;
+    :weight 136 .
+
+:mightyena a :Pokemon ;
+    :id 262 ;
+    :name "mightyena" ;
+    :height 10 ;
+    :weight 370 .
+
+:zigzagoon a :Pokemon ;
+    :id 263 ;
+    :name "zigzagoon" ;
+    :height 4 ;
+    :weight 175 .
+
+:linoone a :Pokemon ;
+    :id 264 ;
+    :name "linoone" ;
+    :height 5 ;
+    :weight 325 .
+
+:wurmple a :Pokemon ;
+    :id 265 ;
+    :name "wurmple" ;
+    :height 3 ;
+    :weight 36 .
+
+:silcoon a :Pokemon ;
+    :id 266 ;
+    :name "silcoon" ;
+    :height 6 ;
+    :weight 100 .
+
+:beautifly a :Pokemon ;
+    :id 267 ;
+    :name "beautifly" ;
+    :height 10 ;
+    :weight 284 .
+
+:cascoon a :Pokemon ;
+    :id 268 ;
+    :name "cascoon" ;
+    :height 7 ;
+    :weight 115 .
+
+:dustox a :Pokemon ;
+    :id 269 ;
+    :name "dustox" ;
+    :height 12 ;
+    :weight 316 .
+
+:lotad a :Pokemon ;
+    :id 270 ;
+    :name "lotad" ;
+    :height 5 ;
+    :weight 26 .
+
+:lombre a :Pokemon ;
+    :id 271 ;
+    :name "lombre" ;
+    :height 12 ;
+    :weight 325 .
+
+:ludicolo a :Pokemon ;
+    :id 272 ;
+    :name "ludicolo" ;
+    :height 15 ;
+    :weight 550 .
+
+:seedot a :Pokemon ;
+    :id 273 ;
+    :name "seedot" ;
+    :height 5 ;
+    :weight 40 .
+
+:nuzleaf a :Pokemon ;
+    :id 274 ;
+    :name "nuzleaf" ;
+    :height 10 ;
+    :weight 280 .
+
+:shiftry a :Pokemon ;
+    :id 275 ;
+    :name "shiftry" ;
+    :height 13 ;
+    :weight 596 .
+
+:taillow a :Pokemon ;
+    :id 276 ;
+    :name "taillow" ;
+    :height 3 ;
+    :weight 23 .
+
+:swellow a :Pokemon ;
+    :id 277 ;
+    :name "swellow" ;
+    :height 7 ;
+    :weight 198 .
+
+:wingull a :Pokemon ;
+    :id 278 ;
+    :name "wingull" ;
+    :height 6 ;
+    :weight 95 .
+
+:pelipper a :Pokemon ;
+    :id 279 ;
+    :name "pelipper" ;
+    :height 12 ;
+    :weight 280 .
+
+:ralts a :Pokemon ;
+    :id 280 ;
+    :name "ralts" ;
+    :height 4 ;
+    :weight 66 .
+
+:kirlia a :Pokemon ;
+    :id 281 ;
+    :name "kirlia" ;
+    :height 8 ;
+    :weight 202 .
+
+:gardevoir a :Pokemon ;
+    :id 282 ;
+    :name "gardevoir" ;
+    :height 16 ;
+    :weight 484 .
+
+:surskit a :Pokemon ;
+    :id 283 ;
+    :name "surskit" ;
+    :height 5 ;
+    :weight 17 .
+
+:masquerain a :Pokemon ;
+    :id 284 ;
+    :name "masquerain" ;
+    :height 8 ;
+    :weight 36 .
+
+:shroomish a :Pokemon ;
+    :id 285 ;
+    :name "shroomish" ;
+    :height 4 ;
+    :weight 45 .
+
+:breloom a :Pokemon ;
+    :id 286 ;
+    :name "breloom" ;
+    :height 12 ;
+    :weight 392 .
+
+:slakoth a :Pokemon ;
+    :id 287 ;
+    :name "slakoth" ;
+    :height 8 ;
+    :weight 240 .
+
+:vigoroth a :Pokemon ;
+    :id 288 ;
+    :name "vigoroth" ;
+    :height 14 ;
+    :weight 465 .
+
+:slaking a :Pokemon ;
+    :id 289 ;
+    :name "slaking" ;
+    :height 20 ;
+    :weight 1305 .
+
+:nincada a :Pokemon ;
+    :id 290 ;
+    :name "nincada" ;
+    :height 5 ;
+    :weight 55 .
+
+:ninjask a :Pokemon ;
+    :id 291 ;
+    :name "ninjask" ;
+    :height 8 ;
+    :weight 120 .
+
+:shedinja a :Pokemon ;
+    :id 292 ;
+    :name "shedinja" ;
+    :height 8 ;
+    :weight 12 .
+
+:whismur a :Pokemon ;
+    :id 293 ;
+    :name "whismur" ;
+    :height 6 ;
+    :weight 163 .
+
+:loudred a :Pokemon ;
+    :id 294 ;
+    :name "loudred" ;
+    :height 10 ;
+    :weight 405 .
+
+:exploud a :Pokemon ;
+    :id 295 ;
+    :name "exploud" ;
+    :height 15 ;
+    :weight 840 .
+
+:makuhita a :Pokemon ;
+    :id 296 ;
+    :name "makuhita" ;
+    :height 10 ;
+    :weight 864 .
+
+:hariyama a :Pokemon ;
+    :id 297 ;
+    :name "hariyama" ;
+    :height 23 ;
+    :weight 2538 .
+
+:azurill a :Pokemon ;
+    :id 298 ;
+    :name "azurill" ;
+    :height 2 ;
+    :weight 20 .
+
+:nosepass a :Pokemon ;
+    :id 299 ;
+    :name "nosepass" ;
+    :height 10 ;
+    :weight 970 .
+
+:skitty a :Pokemon ;
+    :id 300 ;
+    :name "skitty" ;
+    :height 6 ;
+    :weight 110 .
+
+:delcatty a :Pokemon ;
+    :id 301 ;
+    :name "delcatty" ;
+    :height 11 ;
+    :weight 326 .
+
+:sableye a :Pokemon ;
+    :id 302 ;
+    :name "sableye" ;
+    :height 5 ;
+    :weight 110 .
+
+:mawile a :Pokemon ;
+    :id 303 ;
+    :name "mawile" ;
+    :height 6 ;
+    :weight 115 .
+
+:aron a :Pokemon ;
+    :id 304 ;
+    :name "aron" ;
+    :height 4 ;
+    :weight 600 .
+
+:lairon a :Pokemon ;
+    :id 305 ;
+    :name "lairon" ;
+    :height 9 ;
+    :weight 1200 .
+
+:aggron a :Pokemon ;
+    :id 306 ;
+    :name "aggron" ;
+    :height 21 ;
+    :weight 3600 .
+
+:meditite a :Pokemon ;
+    :id 307 ;
+    :name "meditite" ;
+    :height 6 ;
+    :weight 112 .
+
+:medicham a :Pokemon ;
+    :id 308 ;
+    :name "medicham" ;
+    :height 13 ;
+    :weight 315 .
+
+:electrike a :Pokemon ;
+    :id 309 ;
+    :name "electrike" ;
+    :height 6 ;
+    :weight 152 .
+
+:manectric a :Pokemon ;
+    :id 310 ;
+    :name "manectric" ;
+    :height 15 ;
+    :weight 402 .
+
+:plusle a :Pokemon ;
+    :id 311 ;
+    :name "plusle" ;
+    :height 4 ;
+    :weight 42 .
+
+:minun a :Pokemon ;
+    :id 312 ;
+    :name "minun" ;
+    :height 4 ;
+    :weight 42 .
+
+:volbeat a :Pokemon ;
+    :id 313 ;
+    :name "volbeat" ;
+    :height 7 ;
+    :weight 177 .
+
+:illumise a :Pokemon ;
+    :id 314 ;
+    :name "illumise" ;
+    :height 6 ;
+    :weight 177 .
+
+:roselia a :Pokemon ;
+    :id 315 ;
+    :name "roselia" ;
+    :height 3 ;
+    :weight 20 .
+
+:gulpin a :Pokemon ;
+    :id 316 ;
+    :name "gulpin" ;
+    :height 4 ;
+    :weight 103 .
+
+:swalot a :Pokemon ;
+    :id 317 ;
+    :name "swalot" ;
+    :height 17 ;
+    :weight 800 .
+
+:carvanha a :Pokemon ;
+    :id 318 ;
+    :name "carvanha" ;
+    :height 8 ;
+    :weight 208 .
+
+:sharpedo a :Pokemon ;
+    :id 319 ;
+    :name "sharpedo" ;
+    :height 18 ;
+    :weight 888 .
+
+:wailmer a :Pokemon ;
+    :id 320 ;
+    :name "wailmer" ;
+    :height 20 ;
+    :weight 1300 .
+
+:wailord a :Pokemon ;
+    :id 321 ;
+    :name "wailord" ;
+    :height 145 ;
+    :weight 3980 .
+
+:numel a :Pokemon ;
+    :id 322 ;
+    :name "numel" ;
+    :height 7 ;
+    :weight 240 .
+
+:camerupt a :Pokemon ;
+    :id 323 ;
+    :name "camerupt" ;
+    :height 19 ;
+    :weight 2200 .
+
+:torkoal a :Pokemon ;
+    :id 324 ;
+    :name "torkoal" ;
+    :height 5 ;
+    :weight 804 .
+
+:spoink a :Pokemon ;
+    :id 325 ;
+    :name "spoink" ;
+    :height 7 ;
+    :weight 306 .
+
+:grumpig a :Pokemon ;
+    :id 326 ;
+    :name "grumpig" ;
+    :height 9 ;
+    :weight 715 .
+
+:spinda a :Pokemon ;
+    :id 327 ;
+    :name "spinda" ;
+    :height 11 ;
+    :weight 50 .
+
+:trapinch a :Pokemon ;
+    :id 328 ;
+    :name "trapinch" ;
+    :height 7 ;
+    :weight 150 .
+
+:vibrava a :Pokemon ;
+    :id 329 ;
+    :name "vibrava" ;
+    :height 11 ;
+    :weight 153 .
+
+:flygon a :Pokemon ;
+    :id 330 ;
+    :name "flygon" ;
+    :height 20 ;
+    :weight 820 .
+
+:cacnea a :Pokemon ;
+    :id 331 ;
+    :name "cacnea" ;
+    :height 4 ;
+    :weight 513 .
+
+:cacturne a :Pokemon ;
+    :id 332 ;
+    :name "cacturne" ;
+    :height 13 ;
+    :weight 774 .
+
+:swablu a :Pokemon ;
+    :id 333 ;
+    :name "swablu" ;
+    :height 4 ;
+    :weight 12 .
+
+:altaria a :Pokemon ;
+    :id 334 ;
+    :name "altaria" ;
+    :height 11 ;
+    :weight 206 .
+
+:zangoose a :Pokemon ;
+    :id 335 ;
+    :name "zangoose" ;
+    :height 13 ;
+    :weight 403 .
+
+:seviper a :Pokemon ;
+    :id 336 ;
+    :name "seviper" ;
+    :height 27 ;
+    :weight 525 .
+
+:lunatone a :Pokemon ;
+    :id 337 ;
+    :name "lunatone" ;
+    :height 10 ;
+    :weight 1680 .
+
+:solrock a :Pokemon ;
+    :id 338 ;
+    :name "solrock" ;
+    :height 12 ;
+    :weight 1540 .
+
+:barboach a :Pokemon ;
+    :id 339 ;
+    :name "barboach" ;
+    :height 4 ;
+    :weight 19 .
+
+:whiscash a :Pokemon ;
+    :id 340 ;
+    :name "whiscash" ;
+    :height 9 ;
+    :weight 236 .
+
+:corphish a :Pokemon ;
+    :id 341 ;
+    :name "corphish" ;
+    :height 6 ;
+    :weight 115 .
+
+:crawdaunt a :Pokemon ;
+    :id 342 ;
+    :name "crawdaunt" ;
+    :height 11 ;
+    :weight 328 .
+
+:baltoy a :Pokemon ;
+    :id 343 ;
+    :name "baltoy" ;
+    :height 5 ;
+    :weight 215 .
+
+:claydol a :Pokemon ;
+    :id 344 ;
+    :name "claydol" ;
+    :height 15 ;
+    :weight 1080 .
+
+:lileep a :Pokemon ;
+    :id 345 ;
+    :name "lileep" ;
+    :height 10 ;
+    :weight 238 .
+
+:cradily a :Pokemon ;
+    :id 346 ;
+    :name "cradily" ;
+    :height 15 ;
+    :weight 604 .
+
+:anorith a :Pokemon ;
+    :id 347 ;
+    :name "anorith" ;
+    :height 7 ;
+    :weight 125 .
+
+:armaldo a :Pokemon ;
+    :id 348 ;
+    :name "armaldo" ;
+    :height 15 ;
+    :weight 682 .
+
+:feebas a :Pokemon ;
+    :id 349 ;
+    :name "feebas" ;
+    :height 6 ;
+    :weight 74 .
+
+:milotic a :Pokemon ;
+    :id 350 ;
+    :name "milotic" ;
+    :height 62 ;
+    :weight 1620 .
+
+:castform a :Pokemon ;
+    :id 351 ;
+    :name "castform" ;
+    :height 3 ;
+    :weight 8 .
+
+:kecleon a :Pokemon ;
+    :id 352 ;
+    :name "kecleon" ;
+    :height 10 ;
+    :weight 220 .
+
+:shuppet a :Pokemon ;
+    :id 353 ;
+    :name "shuppet" ;
+    :height 6 ;
+    :weight 23 .
+
+:banette a :Pokemon ;
+    :id 354 ;
+    :name "banette" ;
+    :height 11 ;
+    :weight 125 .
+
+:duskull a :Pokemon ;
+    :id 355 ;
+    :name "duskull" ;
+    :height 8 ;
+    :weight 150 .
+
+:dusclops a :Pokemon ;
+    :id 356 ;
+    :name "dusclops" ;
+    :height 16 ;
+    :weight 306 .
+
+:tropius a :Pokemon ;
+    :id 357 ;
+    :name "tropius" ;
+    :height 20 ;
+    :weight 1000 .
+
+:chimecho a :Pokemon ;
+    :id 358 ;
+    :name "chimecho" ;
+    :height 6 ;
+    :weight 10 .
+
+:absol a :Pokemon ;
+    :id 359 ;
+    :name "absol" ;
+    :height 12 ;
+    :weight 470 .
+
+:wynaut a :Pokemon ;
+    :id 360 ;
+    :name "wynaut" ;
+    :height 6 ;
+    :weight 140 .
+
+:snorunt a :Pokemon ;
+    :id 361 ;
+    :name "snorunt" ;
+    :height 7 ;
+    :weight 168 .
+
+:glalie a :Pokemon ;
+    :id 362 ;
+    :name "glalie" ;
+    :height 15 ;
+    :weight 2565 .
+
+:spheal a :Pokemon ;
+    :id 363 ;
+    :name "spheal" ;
+    :height 8 ;
+    :weight 395 .
+
+:sealeo a :Pokemon ;
+    :id 364 ;
+    :name "sealeo" ;
+    :height 11 ;
+    :weight 876 .
+
+:walrein a :Pokemon ;
+    :id 365 ;
+    :name "walrein" ;
+    :height 14 ;
+    :weight 1506 .
+
+:clamperl a :Pokemon ;
+    :id 366 ;
+    :name "clamperl" ;
+    :height 4 ;
+    :weight 525 .
+
+:huntail a :Pokemon ;
+    :id 367 ;
+    :name "huntail" ;
+    :height 17 ;
+    :weight 270 .
+
+:gorebyss a :Pokemon ;
+    :id 368 ;
+    :name "gorebyss" ;
+    :height 18 ;
+    :weight 226 .
+
+:relicanth a :Pokemon ;
+    :id 369 ;
+    :name "relicanth" ;
+    :height 10 ;
+    :weight 234 .
+
+:luvdisc a :Pokemon ;
+    :id 370 ;
+    :name "luvdisc" ;
+    :height 6 ;
+    :weight 87 .
+
+:bagon a :Pokemon ;
+    :id 371 ;
+    :name "bagon" ;
+    :height 6 ;
+    :weight 421 .
+
+:shelgon a :Pokemon ;
+    :id 372 ;
+    :name "shelgon" ;
+    :height 11 ;
+    :weight 1105 .
+
+:salamence a :Pokemon ;
+    :id 373 ;
+    :name "salamence" ;
+    :height 15 ;
+    :weight 1026 .
+
+:beldum a :Pokemon ;
+    :id 374 ;
+    :name "beldum" ;
+    :height 6 ;
+    :weight 952 .
+
+:metang a :Pokemon ;
+    :id 375 ;
+    :name "metang" ;
+    :height 12 ;
+    :weight 2025 .
+
+:metagross a :Pokemon ;
+    :id 376 ;
+    :name "metagross" ;
+    :height 16 ;
+    :weight 5500 .
+
+:regirock a :Pokemon ;
+    :id 377 ;
+    :name "regirock" ;
+    :height 17 ;
+    :weight 2300 .
+
+:regice a :Pokemon ;
+    :id 378 ;
+    :name "regice" ;
+    :height 18 ;
+    :weight 1750 .
+
+:registeel a :Pokemon ;
+    :id 379 ;
+    :name "registeel" ;
+    :height 19 ;
+    :weight 2050 .
+
+:latias a :Pokemon ;
+    :id 380 ;
+    :name "latias" ;
+    :height 14 ;
+    :weight 400 .
+
+:latios a :Pokemon ;
+    :id 381 ;
+    :name "latios" ;
+    :height 20 ;
+    :weight 600 .
+
+:kyogre a :Pokemon ;
+    :id 382 ;
+    :name "kyogre" ;
+    :height 45 ;
+    :weight 3520 .
+
+:groudon a :Pokemon ;
+    :id 383 ;
+    :name "groudon" ;
+    :height 35 ;
+    :weight 9500 .
+
+:rayquaza a :Pokemon ;
+    :id 384 ;
+    :name "rayquaza" ;
+    :height 70 ;
+    :weight 2065 .
+
+:jirachi a :Pokemon ;
+    :id 385 ;
+    :name "jirachi" ;
+    :height 3 ;
+    :weight 11 .
+
+:deoxys-normal a :Pokemon ;
+    :id 386 ;
+    :name "deoxys-normal" ;
+    :height 17 ;
+    :weight 608 .
+
+:turtwig a :Pokemon ;
+    :id 387 ;
+    :name "turtwig" ;
+    :height 4 ;
+    :weight 102 .
+
+:grotle a :Pokemon ;
+    :id 388 ;
+    :name "grotle" ;
+    :height 11 ;
+    :weight 970 .
+
+:torterra a :Pokemon ;
+    :id 389 ;
+    :name "torterra" ;
+    :height 22 ;
+    :weight 3100 .
+
+:chimchar a :Pokemon ;
+    :id 390 ;
+    :name "chimchar" ;
+    :height 5 ;
+    :weight 62 .
+
+:monferno a :Pokemon ;
+    :id 391 ;
+    :name "monferno" ;
+    :height 9 ;
+    :weight 220 .
+
+:infernape a :Pokemon ;
+    :id 392 ;
+    :name "infernape" ;
+    :height 12 ;
+    :weight 550 .
+
+:piplup a :Pokemon ;
+    :id 393 ;
+    :name "piplup" ;
+    :height 4 ;
+    :weight 52 .
+
+:prinplup a :Pokemon ;
+    :id 394 ;
+    :name "prinplup" ;
+    :height 8 ;
+    :weight 230 .
+
+:empoleon a :Pokemon ;
+    :id 395 ;
+    :name "empoleon" ;
+    :height 17 ;
+    :weight 845 .
+
+:starly a :Pokemon ;
+    :id 396 ;
+    :name "starly" ;
+    :height 3 ;
+    :weight 20 .
+
+:staravia a :Pokemon ;
+    :id 397 ;
+    :name "staravia" ;
+    :height 6 ;
+    :weight 155 .
+
+:staraptor a :Pokemon ;
+    :id 398 ;
+    :name "staraptor" ;
+    :height 12 ;
+    :weight 249 .
+
+:bidoof a :Pokemon ;
+    :id 399 ;
+    :name "bidoof" ;
+    :height 5 ;
+    :weight 200 .
+
+:bibarel a :Pokemon ;
+    :id 400 ;
+    :name "bibarel" ;
+    :height 10 ;
+    :weight 315 .
+
+:kricketot a :Pokemon ;
+    :id 401 ;
+    :name "kricketot" ;
+    :height 3 ;
+    :weight 22 .
+
+:kricketune a :Pokemon ;
+    :id 402 ;
+    :name "kricketune" ;
+    :height 10 ;
+    :weight 255 .
+
+:shinx a :Pokemon ;
+    :id 403 ;
+    :name "shinx" ;
+    :height 5 ;
+    :weight 95 .
+
+:luxio a :Pokemon ;
+    :id 404 ;
+    :name "luxio" ;
+    :height 9 ;
+    :weight 305 .
+
+:luxray a :Pokemon ;
+    :id 405 ;
+    :name "luxray" ;
+    :height 14 ;
+    :weight 420 .
+
+:budew a :Pokemon ;
+    :id 406 ;
+    :name "budew" ;
+    :height 2 ;
+    :weight 12 .
+
+:roserade a :Pokemon ;
+    :id 407 ;
+    :name "roserade" ;
+    :height 9 ;
+    :weight 145 .
+
+:cranidos a :Pokemon ;
+    :id 408 ;
+    :name "cranidos" ;
+    :height 9 ;
+    :weight 315 .
+
+:rampardos a :Pokemon ;
+    :id 409 ;
+    :name "rampardos" ;
+    :height 16 ;
+    :weight 1025 .
+
+:shieldon a :Pokemon ;
+    :id 410 ;
+    :name "shieldon" ;
+    :height 5 ;
+    :weight 570 .
+
+:bastiodon a :Pokemon ;
+    :id 411 ;
+    :name "bastiodon" ;
+    :height 13 ;
+    :weight 1495 .
+
+:burmy a :Pokemon ;
+    :id 412 ;
+    :name "burmy" ;
+    :height 2 ;
+    :weight 34 .
+
+:wormadam-plant a :Pokemon ;
+    :id 413 ;
+    :name "wormadam-plant" ;
+    :height 5 ;
+    :weight 65 .
+
+:mothim a :Pokemon ;
+    :id 414 ;
+    :name "mothim" ;
+    :height 9 ;
+    :weight 233 .
+
+:combee a :Pokemon ;
+    :id 415 ;
+    :name "combee" ;
+    :height 3 ;
+    :weight 55 .
+
+:vespiquen a :Pokemon ;
+    :id 416 ;
+    :name "vespiquen" ;
+    :height 12 ;
+    :weight 385 .
+
+:pachirisu a :Pokemon ;
+    :id 417 ;
+    :name "pachirisu" ;
+    :height 4 ;
+    :weight 39 .
+
+:buizel a :Pokemon ;
+    :id 418 ;
+    :name "buizel" ;
+    :height 7 ;
+    :weight 295 .
+
+:floatzel a :Pokemon ;
+    :id 419 ;
+    :name "floatzel" ;
+    :height 11 ;
+    :weight 335 .
+
+:cherubi a :Pokemon ;
+    :id 420 ;
+    :name "cherubi" ;
+    :height 4 ;
+    :weight 33 .
+
+:cherrim a :Pokemon ;
+    :id 421 ;
+    :name "cherrim" ;
+    :height 5 ;
+    :weight 93 .
+
+:shellos a :Pokemon ;
+    :id 422 ;
+    :name "shellos" ;
+    :height 3 ;
+    :weight 63 .
+
+:gastrodon a :Pokemon ;
+    :id 423 ;
+    :name "gastrodon" ;
+    :height 9 ;
+    :weight 299 .
+
+:ambipom a :Pokemon ;
+    :id 424 ;
+    :name "ambipom" ;
+    :height 12 ;
+    :weight 203 .
+
+:drifloon a :Pokemon ;
+    :id 425 ;
+    :name "drifloon" ;
+    :height 4 ;
+    :weight 12 .
+
+:drifblim a :Pokemon ;
+    :id 426 ;
+    :name "drifblim" ;
+    :height 12 ;
+    :weight 150 .
+
+:buneary a :Pokemon ;
+    :id 427 ;
+    :name "buneary" ;
+    :height 4 ;
+    :weight 55 .
+
+:lopunny a :Pokemon ;
+    :id 428 ;
+    :name "lopunny" ;
+    :height 12 ;
+    :weight 333 .
+
+:mismagius a :Pokemon ;
+    :id 429 ;
+    :name "mismagius" ;
+    :height 9 ;
+    :weight 44 .
+
+:honchkrow a :Pokemon ;
+    :id 430 ;
+    :name "honchkrow" ;
+    :height 9 ;
+    :weight 273 .
+
+:glameow a :Pokemon ;
+    :id 431 ;
+    :name "glameow" ;
+    :height 5 ;
+    :weight 39 .
+
+:purugly a :Pokemon ;
+    :id 432 ;
+    :name "purugly" ;
+    :height 10 ;
+    :weight 438 .
+
+:chingling a :Pokemon ;
+    :id 433 ;
+    :name "chingling" ;
+    :height 2 ;
+    :weight 6 .
+
+:stunky a :Pokemon ;
+    :id 434 ;
+    :name "stunky" ;
+    :height 4 ;
+    :weight 192 .
+
+:skuntank a :Pokemon ;
+    :id 435 ;
+    :name "skuntank" ;
+    :height 10 ;
+    :weight 380 .
+
+:bronzor a :Pokemon ;
+    :id 436 ;
+    :name "bronzor" ;
+    :height 5 ;
+    :weight 605 .
+
+:bronzong a :Pokemon ;
+    :id 437 ;
+    :name "bronzong" ;
+    :height 13 ;
+    :weight 1870 .
+
+:bonsly a :Pokemon ;
+    :id 438 ;
+    :name "bonsly" ;
+    :height 5 ;
+    :weight 150 .
+
+:mime-jr a :Pokemon ;
+    :id 439 ;
+    :name "mime-jr" ;
+    :height 6 ;
+    :weight 130 .
+
+:happiny a :Pokemon ;
+    :id 440 ;
+    :name "happiny" ;
+    :height 6 ;
+    :weight 244 .
+
+:chatot a :Pokemon ;
+    :id 441 ;
+    :name "chatot" ;
+    :height 5 ;
+    :weight 19 .
+
+:spiritomb a :Pokemon ;
+    :id 442 ;
+    :name "spiritomb" ;
+    :height 10 ;
+    :weight 1080 .
+
+:gible a :Pokemon ;
+    :id 443 ;
+    :name "gible" ;
+    :height 7 ;
+    :weight 205 .
+
+:gabite a :Pokemon ;
+    :id 444 ;
+    :name "gabite" ;
+    :height 14 ;
+    :weight 560 .
+
+:garchomp a :Pokemon ;
+    :id 445 ;
+    :name "garchomp" ;
+    :height 19 ;
+    :weight 950 .
+
+:munchlax a :Pokemon ;
+    :id 446 ;
+    :name "munchlax" ;
+    :height 6 ;
+    :weight 1050 .
+
+:riolu a :Pokemon ;
+    :id 447 ;
+    :name "riolu" ;
+    :height 7 ;
+    :weight 202 .
+
+:lucario a :Pokemon ;
+    :id 448 ;
+    :name "lucario" ;
+    :height 12 ;
+    :weight 540 .
+
+:hippopotas a :Pokemon ;
+    :id 449 ;
+    :name "hippopotas" ;
+    :height 8 ;
+    :weight 495 .
+
+:hippowdon a :Pokemon ;
+    :id 450 ;
+    :name "hippowdon" ;
+    :height 20 ;
+    :weight 3000 .
+
+:skorupi a :Pokemon ;
+    :id 451 ;
+    :name "skorupi" ;
+    :height 8 ;
+    :weight 120 .
+
+:drapion a :Pokemon ;
+    :id 452 ;
+    :name "drapion" ;
+    :height 13 ;
+    :weight 615 .
+
+:croagunk a :Pokemon ;
+    :id 453 ;
+    :name "croagunk" ;
+    :height 7 ;
+    :weight 230 .
+
+:toxicroak a :Pokemon ;
+    :id 454 ;
+    :name "toxicroak" ;
+    :height 13 ;
+    :weight 444 .
+
+:carnivine a :Pokemon ;
+    :id 455 ;
+    :name "carnivine" ;
+    :height 14 ;
+    :weight 270 .
+
+:finneon a :Pokemon ;
+    :id 456 ;
+    :name "finneon" ;
+    :height 4 ;
+    :weight 70 .
+
+:lumineon a :Pokemon ;
+    :id 457 ;
+    :name "lumineon" ;
+    :height 12 ;
+    :weight 240 .
+
+:mantyke a :Pokemon ;
+    :id 458 ;
+    :name "mantyke" ;
+    :height 10 ;
+    :weight 650 .
+
+:snover a :Pokemon ;
+    :id 459 ;
+    :name "snover" ;
+    :height 10 ;
+    :weight 505 .
+
+:abomasnow a :Pokemon ;
+    :id 460 ;
+    :name "abomasnow" ;
+    :height 22 ;
+    :weight 1355 .
+
+:weavile a :Pokemon ;
+    :id 461 ;
+    :name "weavile" ;
+    :height 11 ;
+    :weight 340 .
+
+:magnezone a :Pokemon ;
+    :id 462 ;
+    :name "magnezone" ;
+    :height 12 ;
+    :weight 1800 .
+
+:lickilicky a :Pokemon ;
+    :id 463 ;
+    :name "lickilicky" ;
+    :height 17 ;
+    :weight 1400 .
+
+:rhyperior a :Pokemon ;
+    :id 464 ;
+    :name "rhyperior" ;
+    :height 24 ;
+    :weight 2828 .
+
+:tangrowth a :Pokemon ;
+    :id 465 ;
+    :name "tangrowth" ;
+    :height 20 ;
+    :weight 1286 .
+
+:electivire a :Pokemon ;
+    :id 466 ;
+    :name "electivire" ;
+    :height 18 ;
+    :weight 1386 .
+
+:magmortar a :Pokemon ;
+    :id 467 ;
+    :name "magmortar" ;
+    :height 16 ;
+    :weight 680 .
+
+:togekiss a :Pokemon ;
+    :id 468 ;
+    :name "togekiss" ;
+    :height 15 ;
+    :weight 380 .
+
+:yanmega a :Pokemon ;
+    :id 469 ;
+    :name "yanmega" ;
+    :height 19 ;
+    :weight 515 .
+
+:leafeon a :Pokemon ;
+    :id 470 ;
+    :name "leafeon" ;
+    :height 10 ;
+    :weight 255 .
+
+:glaceon a :Pokemon ;
+    :id 471 ;
+    :name "glaceon" ;
+    :height 8 ;
+    :weight 259 .
+
+:gliscor a :Pokemon ;
+    :id 472 ;
+    :name "gliscor" ;
+    :height 20 ;
+    :weight 425 .
+
+:mamoswine a :Pokemon ;
+    :id 473 ;
+    :name "mamoswine" ;
+    :height 25 ;
+    :weight 2910 .
+
+:porygon-z a :Pokemon ;
+    :id 474 ;
+    :name "porygon-z" ;
+    :height 9 ;
+    :weight 340 .
+
+:gallade a :Pokemon ;
+    :id 475 ;
+    :name "gallade" ;
+    :height 16 ;
+    :weight 520 .
+
+:probopass a :Pokemon ;
+    :id 476 ;
+    :name "probopass" ;
+    :height 14 ;
+    :weight 3400 .
+
+:dusknoir a :Pokemon ;
+    :id 477 ;
+    :name "dusknoir" ;
+    :height 22 ;
+    :weight 1066 .
+
+:froslass a :Pokemon ;
+    :id 478 ;
+    :name "froslass" ;
+    :height 13 ;
+    :weight 266 .
+
+:rotom a :Pokemon ;
+    :id 479 ;
+    :name "rotom" ;
+    :height 3 ;
+    :weight 3 .
+
+:uxie a :Pokemon ;
+    :id 480 ;
+    :name "uxie" ;
+    :height 3 ;
+    :weight 3 .
+
+:mesprit a :Pokemon ;
+    :id 481 ;
+    :name "mesprit" ;
+    :height 3 ;
+    :weight 3 .
+
+:azelf a :Pokemon ;
+    :id 482 ;
+    :name "azelf" ;
+    :height 3 ;
+    :weight 3 .
+
+:dialga a :Pokemon ;
+    :id 483 ;
+    :name "dialga" ;
+    :height 54 ;
+    :weight 6830 .
+
+:palkia a :Pokemon ;
+    :id 484 ;
+    :name "palkia" ;
+    :height 42 ;
+    :weight 3360 .
+
+:heatran a :Pokemon ;
+    :id 485 ;
+    :name "heatran" ;
+    :height 17 ;
+    :weight 4300 .
+
+:regigigas a :Pokemon ;
+    :id 486 ;
+    :name "regigigas" ;
+    :height 37 ;
+    :weight 4200 .
+
+:giratina-altered a :Pokemon ;
+    :id 487 ;
+    :name "giratina-altered" ;
+    :height 45 ;
+    :weight 7500 .
+
+:cresselia a :Pokemon ;
+    :id 488 ;
+    :name "cresselia" ;
+    :height 15 ;
+    :weight 856 .
+
+:phione a :Pokemon ;
+    :id 489 ;
+    :name "phione" ;
+    :height 4 ;
+    :weight 31 .
+
+:manaphy a :Pokemon ;
+    :id 490 ;
+    :name "manaphy" ;
+    :height 3 ;
+    :weight 14 .
+
+:darkrai a :Pokemon ;
+    :id 491 ;
+    :name "darkrai" ;
+    :height 15 ;
+    :weight 505 .
+
+:shaymin-land a :Pokemon ;
+    :id 492 ;
+    :name "shaymin-land" ;
+    :height 2 ;
+    :weight 21 .
+
+:arceus a :Pokemon ;
+    :id 493 ;
+    :name "arceus" ;
+    :height 32 ;
+    :weight 3200 .
+
+:victini a :Pokemon ;
+    :id 494 ;
+    :name "victini" ;
+    :height 4 ;
+    :weight 40 .
+
+:snivy a :Pokemon ;
+    :id 495 ;
+    :name "snivy" ;
+    :height 6 ;
+    :weight 81 .
+
+:servine a :Pokemon ;
+    :id 496 ;
+    :name "servine" ;
+    :height 8 ;
+    :weight 160 .
+
+:serperior a :Pokemon ;
+    :id 497 ;
+    :name "serperior" ;
+    :height 33 ;
+    :weight 630 .
+
+:tepig a :Pokemon ;
+    :id 498 ;
+    :name "tepig" ;
+    :height 5 ;
+    :weight 99 .
+
+:pignite a :Pokemon ;
+    :id 499 ;
+    :name "pignite" ;
+    :height 10 ;
+    :weight 555 .
+
+:emboar a :Pokemon ;
+    :id 500 ;
+    :name "emboar" ;
+    :height 16 ;
+    :weight 1500 .
+
+:oshawott a :Pokemon ;
+    :id 501 ;
+    :name "oshawott" ;
+    :height 5 ;
+    :weight 59 .
+
+:dewott a :Pokemon ;
+    :id 502 ;
+    :name "dewott" ;
+    :height 8 ;
+    :weight 245 .
+
+:samurott a :Pokemon ;
+    :id 503 ;
+    :name "samurott" ;
+    :height 15 ;
+    :weight 946 .
+
+:patrat a :Pokemon ;
+    :id 504 ;
+    :name "patrat" ;
+    :height 5 ;
+    :weight 116 .
+
+:watchog a :Pokemon ;
+    :id 505 ;
+    :name "watchog" ;
+    :height 11 ;
+    :weight 270 .
+
+:lillipup a :Pokemon ;
+    :id 506 ;
+    :name "lillipup" ;
+    :height 4 ;
+    :weight 41 .
+
+:herdier a :Pokemon ;
+    :id 507 ;
+    :name "herdier" ;
+    :height 9 ;
+    :weight 147 .
+
+:stoutland a :Pokemon ;
+    :id 508 ;
+    :name "stoutland" ;
+    :height 12 ;
+    :weight 610 .
+
+:purrloin a :Pokemon ;
+    :id 509 ;
+    :name "purrloin" ;
+    :height 4 ;
+    :weight 101 .
+
+:liepard a :Pokemon ;
+    :id 510 ;
+    :name "liepard" ;
+    :height 11 ;
+    :weight 375 .
+
+:pansage a :Pokemon ;
+    :id 511 ;
+    :name "pansage" ;
+    :height 6 ;
+    :weight 105 .
+
+:simisage a :Pokemon ;
+    :id 512 ;
+    :name "simisage" ;
+    :height 11 ;
+    :weight 305 .
+
+:pansear a :Pokemon ;
+    :id 513 ;
+    :name "pansear" ;
+    :height 6 ;
+    :weight 110 .
+
+:simisear a :Pokemon ;
+    :id 514 ;
+    :name "simisear" ;
+    :height 10 ;
+    :weight 280 .
+
+:panpour a :Pokemon ;
+    :id 515 ;
+    :name "panpour" ;
+    :height 6 ;
+    :weight 135 .
+
+:simipour a :Pokemon ;
+    :id 516 ;
+    :name "simipour" ;
+    :height 10 ;
+    :weight 290 .
+
+:munna a :Pokemon ;
+    :id 517 ;
+    :name "munna" ;
+    :height 6 ;
+    :weight 233 .
+
+:musharna a :Pokemon ;
+    :id 518 ;
+    :name "musharna" ;
+    :height 11 ;
+    :weight 605 .
+
+:pidove a :Pokemon ;
+    :id 519 ;
+    :name "pidove" ;
+    :height 3 ;
+    :weight 21 .
+
+:tranquill a :Pokemon ;
+    :id 520 ;
+    :name "tranquill" ;
+    :height 6 ;
+    :weight 150 .
+
+:unfezant a :Pokemon ;
+    :id 521 ;
+    :name "unfezant" ;
+    :height 12 ;
+    :weight 290 .
+
+:blitzle a :Pokemon ;
+    :id 522 ;
+    :name "blitzle" ;
+    :height 8 ;
+    :weight 298 .
+
+:zebstrika a :Pokemon ;
+    :id 523 ;
+    :name "zebstrika" ;
+    :height 16 ;
+    :weight 795 .
+
+:roggenrola a :Pokemon ;
+    :id 524 ;
+    :name "roggenrola" ;
+    :height 4 ;
+    :weight 180 .
+
+:boldore a :Pokemon ;
+    :id 525 ;
+    :name "boldore" ;
+    :height 9 ;
+    :weight 1020 .
+
+:gigalith a :Pokemon ;
+    :id 526 ;
+    :name "gigalith" ;
+    :height 17 ;
+    :weight 2600 .
+
+:woobat a :Pokemon ;
+    :id 527 ;
+    :name "woobat" ;
+    :height 4 ;
+    :weight 21 .
+
+:swoobat a :Pokemon ;
+    :id 528 ;
+    :name "swoobat" ;
+    :height 9 ;
+    :weight 105 .
+
+:drilbur a :Pokemon ;
+    :id 529 ;
+    :name "drilbur" ;
+    :height 3 ;
+    :weight 85 .
+
+:excadrill a :Pokemon ;
+    :id 530 ;
+    :name "excadrill" ;
+    :height 7 ;
+    :weight 404 .
+
+:audino a :Pokemon ;
+    :id 531 ;
+    :name "audino" ;
+    :height 11 ;
+    :weight 310 .
+
+:timburr a :Pokemon ;
+    :id 532 ;
+    :name "timburr" ;
+    :height 6 ;
+    :weight 125 .
+
+:gurdurr a :Pokemon ;
+    :id 533 ;
+    :name "gurdurr" ;
+    :height 12 ;
+    :weight 400 .
+
+:conkeldurr a :Pokemon ;
+    :id 534 ;
+    :name "conkeldurr" ;
+    :height 14 ;
+    :weight 870 .
+
+:tympole a :Pokemon ;
+    :id 535 ;
+    :name "tympole" ;
+    :height 5 ;
+    :weight 45 .
+
+:palpitoad a :Pokemon ;
+    :id 536 ;
+    :name "palpitoad" ;
+    :height 8 ;
+    :weight 170 .
+
+:seismitoad a :Pokemon ;
+    :id 537 ;
+    :name "seismitoad" ;
+    :height 15 ;
+    :weight 620 .
+
+:throh a :Pokemon ;
+    :id 538 ;
+    :name "throh" ;
+    :height 13 ;
+    :weight 555 .
+
+:sawk a :Pokemon ;
+    :id 539 ;
+    :name "sawk" ;
+    :height 14 ;
+    :weight 510 .
+
+:sewaddle a :Pokemon ;
+    :id 540 ;
+    :name "sewaddle" ;
+    :height 3 ;
+    :weight 25 .
+
+:swadloon a :Pokemon ;
+    :id 541 ;
+    :name "swadloon" ;
+    :height 5 ;
+    :weight 73 .
+
+:leavanny a :Pokemon ;
+    :id 542 ;
+    :name "leavanny" ;
+    :height 12 ;
+    :weight 205 .
+
+:venipede a :Pokemon ;
+    :id 543 ;
+    :name "venipede" ;
+    :height 4 ;
+    :weight 53 .
+
+:whirlipede a :Pokemon ;
+    :id 544 ;
+    :name "whirlipede" ;
+    :height 12 ;
+    :weight 585 .
+
+:scolipede a :Pokemon ;
+    :id 545 ;
+    :name "scolipede" ;
+    :height 25 ;
+    :weight 2005 .
+
+:cottonee a :Pokemon ;
+    :id 546 ;
+    :name "cottonee" ;
+    :height 3 ;
+    :weight 6 .
+
+:whimsicott a :Pokemon ;
+    :id 547 ;
+    :name "whimsicott" ;
+    :height 7 ;
+    :weight 66 .
+
+:petilil a :Pokemon ;
+    :id 548 ;
+    :name "petilil" ;
+    :height 5 ;
+    :weight 66 .
+
+:lilligant a :Pokemon ;
+    :id 549 ;
+    :name "lilligant" ;
+    :height 11 ;
+    :weight 163 .
+
+:basculin-red-striped a :Pokemon ;
+    :id 550 ;
+    :name "basculin-red-striped" ;
+    :height 10 ;
+    :weight 180 .
+
+:sandile a :Pokemon ;
+    :id 551 ;
+    :name "sandile" ;
+    :height 7 ;
+    :weight 152 .
+
+:krokorok a :Pokemon ;
+    :id 552 ;
+    :name "krokorok" ;
+    :height 10 ;
+    :weight 334 .
+
+:krookodile a :Pokemon ;
+    :id 553 ;
+    :name "krookodile" ;
+    :height 15 ;
+    :weight 963 .
+
+:darumaka a :Pokemon ;
+    :id 554 ;
+    :name "darumaka" ;
+    :height 6 ;
+    :weight 375 .
+
+:darmanitan-standard a :Pokemon ;
+    :id 555 ;
+    :name "darmanitan-standard" ;
+    :height 13 ;
+    :weight 929 .
+
+:maractus a :Pokemon ;
+    :id 556 ;
+    :name "maractus" ;
+    :height 10 ;
+    :weight 280 .
+
+:dwebble a :Pokemon ;
+    :id 557 ;
+    :name "dwebble" ;
+    :height 3 ;
+    :weight 145 .
+
+:crustle a :Pokemon ;
+    :id 558 ;
+    :name "crustle" ;
+    :height 14 ;
+    :weight 2000 .
+
+:scraggy a :Pokemon ;
+    :id 559 ;
+    :name "scraggy" ;
+    :height 6 ;
+    :weight 118 .
+
+:scrafty a :Pokemon ;
+    :id 560 ;
+    :name "scrafty" ;
+    :height 11 ;
+    :weight 300 .
+
+:sigilyph a :Pokemon ;
+    :id 561 ;
+    :name "sigilyph" ;
+    :height 14 ;
+    :weight 140 .
+
+:yamask a :Pokemon ;
+    :id 562 ;
+    :name "yamask" ;
+    :height 5 ;
+    :weight 15 .
+
+:cofagrigus a :Pokemon ;
+    :id 563 ;
+    :name "cofagrigus" ;
+    :height 17 ;
+    :weight 765 .
+
+:tirtouga a :Pokemon ;
+    :id 564 ;
+    :name "tirtouga" ;
+    :height 7 ;
+    :weight 165 .
+
+:carracosta a :Pokemon ;
+    :id 565 ;
+    :name "carracosta" ;
+    :height 12 ;
+    :weight 810 .
+
+:archen a :Pokemon ;
+    :id 566 ;
+    :name "archen" ;
+    :height 5 ;
+    :weight 95 .
+
+:archeops a :Pokemon ;
+    :id 567 ;
+    :name "archeops" ;
+    :height 14 ;
+    :weight 320 .
+
+:trubbish a :Pokemon ;
+    :id 568 ;
+    :name "trubbish" ;
+    :height 6 ;
+    :weight 310 .
+
+:garbodor a :Pokemon ;
+    :id 569 ;
+    :name "garbodor" ;
+    :height 19 ;
+    :weight 1073 .
+
+:zorua a :Pokemon ;
+    :id 570 ;
+    :name "zorua" ;
+    :height 7 ;
+    :weight 125 .
+
+:zoroark a :Pokemon ;
+    :id 571 ;
+    :name "zoroark" ;
+    :height 16 ;
+    :weight 811 .
+
+:minccino a :Pokemon ;
+    :id 572 ;
+    :name "minccino" ;
+    :height 4 ;
+    :weight 58 .
+
+:cinccino a :Pokemon ;
+    :id 573 ;
+    :name "cinccino" ;
+    :height 5 ;
+    :weight 75 .
+
+:gothita a :Pokemon ;
+    :id 574 ;
+    :name "gothita" ;
+    :height 4 ;
+    :weight 58 .
+
+:gothorita a :Pokemon ;
+    :id 575 ;
+    :name "gothorita" ;
+    :height 7 ;
+    :weight 180 .
+
+:gothitelle a :Pokemon ;
+    :id 576 ;
+    :name "gothitelle" ;
+    :height 15 ;
+    :weight 440 .
+
+:solosis a :Pokemon ;
+    :id 577 ;
+    :name "solosis" ;
+    :height 3 ;
+    :weight 10 .
+
+:duosion a :Pokemon ;
+    :id 578 ;
+    :name "duosion" ;
+    :height 6 ;
+    :weight 80 .
+
+:reuniclus a :Pokemon ;
+    :id 579 ;
+    :name "reuniclus" ;
+    :height 10 ;
+    :weight 201 .
+
+:ducklett a :Pokemon ;
+    :id 580 ;
+    :name "ducklett" ;
+    :height 5 ;
+    :weight 55 .
+
+:swanna a :Pokemon ;
+    :id 581 ;
+    :name "swanna" ;
+    :height 13 ;
+    :weight 242 .
+
+:vanillite a :Pokemon ;
+    :id 582 ;
+    :name "vanillite" ;
+    :height 4 ;
+    :weight 57 .
+
+:vanillish a :Pokemon ;
+    :id 583 ;
+    :name "vanillish" ;
+    :height 11 ;
+    :weight 410 .
+
+:vanilluxe a :Pokemon ;
+    :id 584 ;
+    :name "vanilluxe" ;
+    :height 13 ;
+    :weight 575 .
+
+:deerling a :Pokemon ;
+    :id 585 ;
+    :name "deerling" ;
+    :height 6 ;
+    :weight 195 .
+
+:sawsbuck a :Pokemon ;
+    :id 586 ;
+    :name "sawsbuck" ;
+    :height 19 ;
+    :weight 925 .
+
+:emolga a :Pokemon ;
+    :id 587 ;
+    :name "emolga" ;
+    :height 4 ;
+    :weight 50 .
+
+:karrablast a :Pokemon ;
+    :id 588 ;
+    :name "karrablast" ;
+    :height 5 ;
+    :weight 59 .
+
+:escavalier a :Pokemon ;
+    :id 589 ;
+    :name "escavalier" ;
+    :height 10 ;
+    :weight 330 .
+
+:foongus a :Pokemon ;
+    :id 590 ;
+    :name "foongus" ;
+    :height 2 ;
+    :weight 10 .
+
+:amoonguss a :Pokemon ;
+    :id 591 ;
+    :name "amoonguss" ;
+    :height 6 ;
+    :weight 105 .
+
+:frillish-male a :Pokemon ;
+    :id 592 ;
+    :name "frillish-male" ;
+    :height 12 ;
+    :weight 330 .
+
+:jellicent-male a :Pokemon ;
+    :id 593 ;
+    :name "jellicent-male" ;
+    :height 22 ;
+    :weight 1350 .
+
+:alomomola a :Pokemon ;
+    :id 594 ;
+    :name "alomomola" ;
+    :height 12 ;
+    :weight 316 .
+
+:joltik a :Pokemon ;
+    :id 595 ;
+    :name "joltik" ;
+    :height 1 ;
+    :weight 6 .
+
+:galvantula a :Pokemon ;
+    :id 596 ;
+    :name "galvantula" ;
+    :height 8 ;
+    :weight 143 .
+
+:ferroseed a :Pokemon ;
+    :id 597 ;
+    :name "ferroseed" ;
+    :height 6 ;
+    :weight 188 .
+
+:ferrothorn a :Pokemon ;
+    :id 598 ;
+    :name "ferrothorn" ;
+    :height 10 ;
+    :weight 1100 .
+
+:klink a :Pokemon ;
+    :id 599 ;
+    :name "klink" ;
+    :height 3 ;
+    :weight 210 .
+
+:klang a :Pokemon ;
+    :id 600 ;
+    :name "klang" ;
+    :height 6 ;
+    :weight 510 .
+
+:klinklang a :Pokemon ;
+    :id 601 ;
+    :name "klinklang" ;
+    :height 6 ;
+    :weight 810 .
+
+:tynamo a :Pokemon ;
+    :id 602 ;
+    :name "tynamo" ;
+    :height 2 ;
+    :weight 3 .
+
+:eelektrik a :Pokemon ;
+    :id 603 ;
+    :name "eelektrik" ;
+    :height 12 ;
+    :weight 220 .
+
+:eelektross a :Pokemon ;
+    :id 604 ;
+    :name "eelektross" ;
+    :height 21 ;
+    :weight 805 .
+
+:elgyem a :Pokemon ;
+    :id 605 ;
+    :name "elgyem" ;
+    :height 5 ;
+    :weight 90 .
+
+:beheeyem a :Pokemon ;
+    :id 606 ;
+    :name "beheeyem" ;
+    :height 10 ;
+    :weight 345 .
+
+:litwick a :Pokemon ;
+    :id 607 ;
+    :name "litwick" ;
+    :height 3 ;
+    :weight 31 .
+
+:lampent a :Pokemon ;
+    :id 608 ;
+    :name "lampent" ;
+    :height 6 ;
+    :weight 130 .
+
+:chandelure a :Pokemon ;
+    :id 609 ;
+    :name "chandelure" ;
+    :height 10 ;
+    :weight 343 .
+
+:axew a :Pokemon ;
+    :id 610 ;
+    :name "axew" ;
+    :height 6 ;
+    :weight 180 .
+
+:fraxure a :Pokemon ;
+    :id 611 ;
+    :name "fraxure" ;
+    :height 10 ;
+    :weight 360 .
+
+:haxorus a :Pokemon ;
+    :id 612 ;
+    :name "haxorus" ;
+    :height 18 ;
+    :weight 1055 .
+
+:cubchoo a :Pokemon ;
+    :id 613 ;
+    :name "cubchoo" ;
+    :height 5 ;
+    :weight 85 .
+
+:beartic a :Pokemon ;
+    :id 614 ;
+    :name "beartic" ;
+    :height 26 ;
+    :weight 2600 .
+
+:cryogonal a :Pokemon ;
+    :id 615 ;
+    :name "cryogonal" ;
+    :height 11 ;
+    :weight 1480 .
+
+:shelmet a :Pokemon ;
+    :id 616 ;
+    :name "shelmet" ;
+    :height 4 ;
+    :weight 77 .
+
+:accelgor a :Pokemon ;
+    :id 617 ;
+    :name "accelgor" ;
+    :height 8 ;
+    :weight 253 .
+
+:stunfisk a :Pokemon ;
+    :id 618 ;
+    :name "stunfisk" ;
+    :height 7 ;
+    :weight 110 .
+
+:mienfoo a :Pokemon ;
+    :id 619 ;
+    :name "mienfoo" ;
+    :height 9 ;
+    :weight 200 .
+
+:mienshao a :Pokemon ;
+    :id 620 ;
+    :name "mienshao" ;
+    :height 14 ;
+    :weight 355 .
+
+:druddigon a :Pokemon ;
+    :id 621 ;
+    :name "druddigon" ;
+    :height 16 ;
+    :weight 1390 .
+
+:golett a :Pokemon ;
+    :id 622 ;
+    :name "golett" ;
+    :height 10 ;
+    :weight 920 .
+
+:golurk a :Pokemon ;
+    :id 623 ;
+    :name "golurk" ;
+    :height 28 ;
+    :weight 3300 .
+
+:pawniard a :Pokemon ;
+    :id 624 ;
+    :name "pawniard" ;
+    :height 5 ;
+    :weight 102 .
+
+:bisharp a :Pokemon ;
+    :id 625 ;
+    :name "bisharp" ;
+    :height 16 ;
+    :weight 700 .
+
+:bouffalant a :Pokemon ;
+    :id 626 ;
+    :name "bouffalant" ;
+    :height 16 ;
+    :weight 946 .
+
+:rufflet a :Pokemon ;
+    :id 627 ;
+    :name "rufflet" ;
+    :height 5 ;
+    :weight 105 .
+
+:braviary a :Pokemon ;
+    :id 628 ;
+    :name "braviary" ;
+    :height 15 ;
+    :weight 410 .
+
+:vullaby a :Pokemon ;
+    :id 629 ;
+    :name "vullaby" ;
+    :height 5 ;
+    :weight 90 .
+
+:mandibuzz a :Pokemon ;
+    :id 630 ;
+    :name "mandibuzz" ;
+    :height 12 ;
+    :weight 395 .
+
+:heatmor a :Pokemon ;
+    :id 631 ;
+    :name "heatmor" ;
+    :height 14 ;
+    :weight 580 .
+
+:durant a :Pokemon ;
+    :id 632 ;
+    :name "durant" ;
+    :height 3 ;
+    :weight 330 .
+
+:deino a :Pokemon ;
+    :id 633 ;
+    :name "deino" ;
+    :height 8 ;
+    :weight 173 .
+
+:zweilous a :Pokemon ;
+    :id 634 ;
+    :name "zweilous" ;
+    :height 14 ;
+    :weight 500 .
+
+:hydreigon a :Pokemon ;
+    :id 635 ;
+    :name "hydreigon" ;
+    :height 18 ;
+    :weight 1600 .
+
+:larvesta a :Pokemon ;
+    :id 636 ;
+    :name "larvesta" ;
+    :height 11 ;
+    :weight 288 .
+
+:volcarona a :Pokemon ;
+    :id 637 ;
+    :name "volcarona" ;
+    :height 16 ;
+    :weight 460 .
+
+:cobalion a :Pokemon ;
+    :id 638 ;
+    :name "cobalion" ;
+    :height 21 ;
+    :weight 2500 .
+
+:terrakion a :Pokemon ;
+    :id 639 ;
+    :name "terrakion" ;
+    :height 19 ;
+    :weight 2600 .
+
+:virizion a :Pokemon ;
+    :id 640 ;
+    :name "virizion" ;
+    :height 20 ;
+    :weight 2000 .
+
+:tornadus-incarnate a :Pokemon ;
+    :id 641 ;
+    :name "tornadus-incarnate" ;
+    :height 15 ;
+    :weight 630 .
+
+:thundurus-incarnate a :Pokemon ;
+    :id 642 ;
+    :name "thundurus-incarnate" ;
+    :height 15 ;
+    :weight 610 .
+
+:reshiram a :Pokemon ;
+    :id 643 ;
+    :name "reshiram" ;
+    :height 32 ;
+    :weight 3300 .
+
+:zekrom a :Pokemon ;
+    :id 644 ;
+    :name "zekrom" ;
+    :height 29 ;
+    :weight 3450 .
+
+:landorus-incarnate a :Pokemon ;
+    :id 645 ;
+    :name "landorus-incarnate" ;
+    :height 15 ;
+    :weight 680 .
+
+:kyurem a :Pokemon ;
+    :id 646 ;
+    :name "kyurem" ;
+    :height 30 ;
+    :weight 3250 .
+
+:keldeo-ordinary a :Pokemon ;
+    :id 647 ;
+    :name "keldeo-ordinary" ;
+    :height 14 ;
+    :weight 485 .
+
+:meloetta-aria a :Pokemon ;
+    :id 648 ;
+    :name "meloetta-aria" ;
+    :height 6 ;
+    :weight 65 .
+
+:genesect a :Pokemon ;
+    :id 649 ;
+    :name "genesect" ;
+    :height 15 ;
+    :weight 825 .
+
+:chespin a :Pokemon ;
+    :id 650 ;
+    :name "chespin" ;
+    :height 4 ;
+    :weight 90 .
+
+:quilladin a :Pokemon ;
+    :id 651 ;
+    :name "quilladin" ;
+    :height 7 ;
+    :weight 290 .
+
+:chesnaught a :Pokemon ;
+    :id 652 ;
+    :name "chesnaught" ;
+    :height 16 ;
+    :weight 900 .
+
+:fennekin a :Pokemon ;
+    :id 653 ;
+    :name "fennekin" ;
+    :height 4 ;
+    :weight 94 .
+
+:braixen a :Pokemon ;
+    :id 654 ;
+    :name "braixen" ;
+    :height 10 ;
+    :weight 145 .
+
+:delphox a :Pokemon ;
+    :id 655 ;
+    :name "delphox" ;
+    :height 15 ;
+    :weight 390 .
+
+:froakie a :Pokemon ;
+    :id 656 ;
+    :name "froakie" ;
+    :height 3 ;
+    :weight 70 .
+
+:frogadier a :Pokemon ;
+    :id 657 ;
+    :name "frogadier" ;
+    :height 6 ;
+    :weight 109 .
+
+:greninja a :Pokemon ;
+    :id 658 ;
+    :name "greninja" ;
+    :height 15 ;
+    :weight 400 .
+
+:bunnelby a :Pokemon ;
+    :id 659 ;
+    :name "bunnelby" ;
+    :height 4 ;
+    :weight 50 .
+
+:diggersby a :Pokemon ;
+    :id 660 ;
+    :name "diggersby" ;
+    :height 10 ;
+    :weight 424 .
+
+:fletchling a :Pokemon ;
+    :id 661 ;
+    :name "fletchling" ;
+    :height 3 ;
+    :weight 17 .
+
+:fletchinder a :Pokemon ;
+    :id 662 ;
+    :name "fletchinder" ;
+    :height 7 ;
+    :weight 160 .
+
+:talonflame a :Pokemon ;
+    :id 663 ;
+    :name "talonflame" ;
+    :height 12 ;
+    :weight 245 .
+
+:scatterbug a :Pokemon ;
+    :id 664 ;
+    :name "scatterbug" ;
+    :height 3 ;
+    :weight 25 .
+
+:spewpa a :Pokemon ;
+    :id 665 ;
+    :name "spewpa" ;
+    :height 3 ;
+    :weight 84 .
+
+:vivillon a :Pokemon ;
+    :id 666 ;
+    :name "vivillon" ;
+    :height 12 ;
+    :weight 170 .
+
+:litleo a :Pokemon ;
+    :id 667 ;
+    :name "litleo" ;
+    :height 6 ;
+    :weight 135 .
+
+:pyroar-male a :Pokemon ;
+    :id 668 ;
+    :name "pyroar-male" ;
+    :height 15 ;
+    :weight 815 .
+
+:flabebe a :Pokemon ;
+    :id 669 ;
+    :name "flabebe" ;
+    :height 1 ;
+    :weight 1 .
+
+:floette a :Pokemon ;
+    :id 670 ;
+    :name "floette" ;
+    :height 2 ;
+    :weight 9 .
+
+:florges a :Pokemon ;
+    :id 671 ;
+    :name "florges" ;
+    :height 11 ;
+    :weight 100 .
+
+:skiddo a :Pokemon ;
+    :id 672 ;
+    :name "skiddo" ;
+    :height 9 ;
+    :weight 310 .
+
+:gogoat a :Pokemon ;
+    :id 673 ;
+    :name "gogoat" ;
+    :height 17 ;
+    :weight 910 .
+
+:pancham a :Pokemon ;
+    :id 674 ;
+    :name "pancham" ;
+    :height 6 ;
+    :weight 80 .
+
+:pangoro a :Pokemon ;
+    :id 675 ;
+    :name "pangoro" ;
+    :height 21 ;
+    :weight 1360 .
+
+:furfrou a :Pokemon ;
+    :id 676 ;
+    :name "furfrou" ;
+    :height 12 ;
+    :weight 280 .
+
+:espurr a :Pokemon ;
+    :id 677 ;
+    :name "espurr" ;
+    :height 3 ;
+    :weight 35 .
+
+:meowstic-male a :Pokemon ;
+    :id 678 ;
+    :name "meowstic-male" ;
+    :height 6 ;
+    :weight 85 .
+
+:honedge a :Pokemon ;
+    :id 679 ;
+    :name "honedge" ;
+    :height 8 ;
+    :weight 20 .
+
+:doublade a :Pokemon ;
+    :id 680 ;
+    :name "doublade" ;
+    :height 8 ;
+    :weight 45 .
+
+:aegislash-shield a :Pokemon ;
+    :id 681 ;
+    :name "aegislash-shield" ;
+    :height 17 ;
+    :weight 530 .
+
+:spritzee a :Pokemon ;
+    :id 682 ;
+    :name "spritzee" ;
+    :height 2 ;
+    :weight 5 .
+
+:aromatisse a :Pokemon ;
+    :id 683 ;
+    :name "aromatisse" ;
+    :height 8 ;
+    :weight 155 .
+
+:swirlix a :Pokemon ;
+    :id 684 ;
+    :name "swirlix" ;
+    :height 4 ;
+    :weight 35 .
+
+:slurpuff a :Pokemon ;
+    :id 685 ;
+    :name "slurpuff" ;
+    :height 8 ;
+    :weight 50 .
+
+:inkay a :Pokemon ;
+    :id 686 ;
+    :name "inkay" ;
+    :height 4 ;
+    :weight 35 .
+
+:malamar a :Pokemon ;
+    :id 687 ;
+    :name "malamar" ;
+    :height 15 ;
+    :weight 470 .
+
+:binacle a :Pokemon ;
+    :id 688 ;
+    :name "binacle" ;
+    :height 5 ;
+    :weight 310 .
+
+:barbaracle a :Pokemon ;
+    :id 689 ;
+    :name "barbaracle" ;
+    :height 13 ;
+    :weight 960 .
+
+:skrelp a :Pokemon ;
+    :id 690 ;
+    :name "skrelp" ;
+    :height 5 ;
+    :weight 73 .
+
+:dragalge a :Pokemon ;
+    :id 691 ;
+    :name "dragalge" ;
+    :height 18 ;
+    :weight 815 .
+
+:clauncher a :Pokemon ;
+    :id 692 ;
+    :name "clauncher" ;
+    :height 5 ;
+    :weight 83 .
+
+:clawitzer a :Pokemon ;
+    :id 693 ;
+    :name "clawitzer" ;
+    :height 13 ;
+    :weight 353 .
+
+:helioptile a :Pokemon ;
+    :id 694 ;
+    :name "helioptile" ;
+    :height 5 ;
+    :weight 60 .
+
+:heliolisk a :Pokemon ;
+    :id 695 ;
+    :name "heliolisk" ;
+    :height 10 ;
+    :weight 210 .
+
+:tyrunt a :Pokemon ;
+    :id 696 ;
+    :name "tyrunt" ;
+    :height 8 ;
+    :weight 260 .
+
+:tyrantrum a :Pokemon ;
+    :id 697 ;
+    :name "tyrantrum" ;
+    :height 25 ;
+    :weight 2700 .
+
+:amaura a :Pokemon ;
+    :id 698 ;
+    :name "amaura" ;
+    :height 13 ;
+    :weight 252 .
+
+:aurorus a :Pokemon ;
+    :id 699 ;
+    :name "aurorus" ;
+    :height 27 ;
+    :weight 2250 .
+
+:sylveon a :Pokemon ;
+    :id 700 ;
+    :name "sylveon" ;
+    :height 10 ;
+    :weight 235 .
+
+:hawlucha a :Pokemon ;
+    :id 701 ;
+    :name "hawlucha" ;
+    :height 8 ;
+    :weight 215 .
+
+:dedenne a :Pokemon ;
+    :id 702 ;
+    :name "dedenne" ;
+    :height 2 ;
+    :weight 22 .
+
+:carbink a :Pokemon ;
+    :id 703 ;
+    :name "carbink" ;
+    :height 3 ;
+    :weight 57 .
+
+:goomy a :Pokemon ;
+    :id 704 ;
+    :name "goomy" ;
+    :height 3 ;
+    :weight 28 .
+
+:sliggoo a :Pokemon ;
+    :id 705 ;
+    :name "sliggoo" ;
+    :height 8 ;
+    :weight 175 .
+
+:goodra a :Pokemon ;
+    :id 706 ;
+    :name "goodra" ;
+    :height 20 ;
+    :weight 1505 .
+
+:klefki a :Pokemon ;
+    :id 707 ;
+    :name "klefki" ;
+    :height 2 ;
+    :weight 30 .
+
+:phantump a :Pokemon ;
+    :id 708 ;
+    :name "phantump" ;
+    :height 4 ;
+    :weight 70 .
+
+:trevenant a :Pokemon ;
+    :id 709 ;
+    :name "trevenant" ;
+    :height 15 ;
+    :weight 710 .
+
+:pumpkaboo-average a :Pokemon ;
+    :id 710 ;
+    :name "pumpkaboo-average" ;
+    :height 4 ;
+    :weight 50 .
+
+:gourgeist-average a :Pokemon ;
+    :id 711 ;
+    :name "gourgeist-average" ;
+    :height 9 ;
+    :weight 125 .
+
+:bergmite a :Pokemon ;
+    :id 712 ;
+    :name "bergmite" ;
+    :height 10 ;
+    :weight 995 .
+
+:avalugg a :Pokemon ;
+    :id 713 ;
+    :name "avalugg" ;
+    :height 20 ;
+    :weight 5050 .
+
+:noibat a :Pokemon ;
+    :id 714 ;
+    :name "noibat" ;
+    :height 5 ;
+    :weight 80 .
+
+:noivern a :Pokemon ;
+    :id 715 ;
+    :name "noivern" ;
+    :height 15 ;
+    :weight 850 .
+
+:xerneas a :Pokemon ;
+    :id 716 ;
+    :name "xerneas" ;
+    :height 30 ;
+    :weight 2150 .
+
+:yveltal a :Pokemon ;
+    :id 717 ;
+    :name "yveltal" ;
+    :height 58 ;
+    :weight 2030 .
+
+:zygarde-50 a :Pokemon ;
+    :id 718 ;
+    :name "zygarde-50" ;
+    :height 50 ;
+    :weight 3050 .
+
+:diancie a :Pokemon ;
+    :id 719 ;
+    :name "diancie" ;
+    :height 7 ;
+    :weight 88 .
+
+:hoopa a :Pokemon ;
+    :id 720 ;
+    :name "hoopa" ;
+    :height 5 ;
+    :weight 90 .
+
+:volcanion a :Pokemon ;
+    :id 721 ;
+    :name "volcanion" ;
+    :height 17 ;
+    :weight 1950 .
+
+:rowlet a :Pokemon ;
+    :id 722 ;
+    :name "rowlet" ;
+    :height 3 ;
+    :weight 15 .
+
+:dartrix a :Pokemon ;
+    :id 723 ;
+    :name "dartrix" ;
+    :height 7 ;
+    :weight 160 .
+
+:decidueye a :Pokemon ;
+    :id 724 ;
+    :name "decidueye" ;
+    :height 16 ;
+    :weight 366 .
+
+:litten a :Pokemon ;
+    :id 725 ;
+    :name "litten" ;
+    :height 4 ;
+    :weight 43 .
+
+:torracat a :Pokemon ;
+    :id 726 ;
+    :name "torracat" ;
+    :height 7 ;
+    :weight 250 .
+
+:incineroar a :Pokemon ;
+    :id 727 ;
+    :name "incineroar" ;
+    :height 18 ;
+    :weight 830 .
+
+:popplio a :Pokemon ;
+    :id 728 ;
+    :name "popplio" ;
+    :height 4 ;
+    :weight 75 .
+
+:brionne a :Pokemon ;
+    :id 729 ;
+    :name "brionne" ;
+    :height 6 ;
+    :weight 175 .
+
+:primarina a :Pokemon ;
+    :id 730 ;
+    :name "primarina" ;
+    :height 18 ;
+    :weight 440 .
+
+:pikipek a :Pokemon ;
+    :id 731 ;
+    :name "pikipek" ;
+    :height 3 ;
+    :weight 12 .
+
+:trumbeak a :Pokemon ;
+    :id 732 ;
+    :name "trumbeak" ;
+    :height 6 ;
+    :weight 148 .
+
+:toucannon a :Pokemon ;
+    :id 733 ;
+    :name "toucannon" ;
+    :height 11 ;
+    :weight 260 .
+
+:yungoos a :Pokemon ;
+    :id 734 ;
+    :name "yungoos" ;
+    :height 4 ;
+    :weight 60 .
+
+:gumshoos a :Pokemon ;
+    :id 735 ;
+    :name "gumshoos" ;
+    :height 7 ;
+    :weight 142 .
+
+:grubbin a :Pokemon ;
+    :id 736 ;
+    :name "grubbin" ;
+    :height 4 ;
+    :weight 44 .
+
+:charjabug a :Pokemon ;
+    :id 737 ;
+    :name "charjabug" ;
+    :height 5 ;
+    :weight 105 .
+
+:vikavolt a :Pokemon ;
+    :id 738 ;
+    :name "vikavolt" ;
+    :height 15 ;
+    :weight 450 .
+
+:crabrawler a :Pokemon ;
+    :id 739 ;
+    :name "crabrawler" ;
+    :height 6 ;
+    :weight 70 .
+
+:crabominable a :Pokemon ;
+    :id 740 ;
+    :name "crabominable" ;
+    :height 17 ;
+    :weight 1800 .
+
+:oricorio-baile a :Pokemon ;
+    :id 741 ;
+    :name "oricorio-baile" ;
+    :height 6 ;
+    :weight 34 .
+
+:cutiefly a :Pokemon ;
+    :id 742 ;
+    :name "cutiefly" ;
+    :height 1 ;
+    :weight 2 .
+
+:ribombee a :Pokemon ;
+    :id 743 ;
+    :name "ribombee" ;
+    :height 2 ;
+    :weight 5 .
+
+:rockruff a :Pokemon ;
+    :id 744 ;
+    :name "rockruff" ;
+    :height 5 ;
+    :weight 92 .
+
+:lycanroc-midday a :Pokemon ;
+    :id 745 ;
+    :name "lycanroc-midday" ;
+    :height 8 ;
+    :weight 250 .
+
+:wishiwashi-solo a :Pokemon ;
+    :id 746 ;
+    :name "wishiwashi-solo" ;
+    :height 2 ;
+    :weight 3 .
+
+:mareanie a :Pokemon ;
+    :id 747 ;
+    :name "mareanie" ;
+    :height 4 ;
+    :weight 80 .
+
+:toxapex a :Pokemon ;
+    :id 748 ;
+    :name "toxapex" ;
+    :height 7 ;
+    :weight 145 .
+
+:mudbray a :Pokemon ;
+    :id 749 ;
+    :name "mudbray" ;
+    :height 10 ;
+    :weight 1100 .
+
+:mudsdale a :Pokemon ;
+    :id 750 ;
+    :name "mudsdale" ;
+    :height 25 ;
+    :weight 9200 .
+
+:dewpider a :Pokemon ;
+    :id 751 ;
+    :name "dewpider" ;
+    :height 3 ;
+    :weight 40 .
+
+:araquanid a :Pokemon ;
+    :id 752 ;
+    :name "araquanid" ;
+    :height 18 ;
+    :weight 820 .
+
+:fomantis a :Pokemon ;
+    :id 753 ;
+    :name "fomantis" ;
+    :height 3 ;
+    :weight 15 .
+
+:lurantis a :Pokemon ;
+    :id 754 ;
+    :name "lurantis" ;
+    :height 9 ;
+    :weight 185 .
+
+:morelull a :Pokemon ;
+    :id 755 ;
+    :name "morelull" ;
+    :height 2 ;
+    :weight 15 .
+
+:shiinotic a :Pokemon ;
+    :id 756 ;
+    :name "shiinotic" ;
+    :height 10 ;
+    :weight 115 .
+
+:salandit a :Pokemon ;
+    :id 757 ;
+    :name "salandit" ;
+    :height 6 ;
+    :weight 48 .
+
+:salazzle a :Pokemon ;
+    :id 758 ;
+    :name "salazzle" ;
+    :height 12 ;
+    :weight 222 .
+
+:stufful a :Pokemon ;
+    :id 759 ;
+    :name "stufful" ;
+    :height 5 ;
+    :weight 68 .
+
+:bewear a :Pokemon ;
+    :id 760 ;
+    :name "bewear" ;
+    :height 21 ;
+    :weight 1350 .
+
+:bounsweet a :Pokemon ;
+    :id 761 ;
+    :name "bounsweet" ;
+    :height 3 ;
+    :weight 32 .
+
+:steenee a :Pokemon ;
+    :id 762 ;
+    :name "steenee" ;
+    :height 7 ;
+    :weight 82 .
+
+:tsareena a :Pokemon ;
+    :id 763 ;
+    :name "tsareena" ;
+    :height 12 ;
+    :weight 214 .
+
+:comfey a :Pokemon ;
+    :id 764 ;
+    :name "comfey" ;
+    :height 1 ;
+    :weight 3 .
+
+:oranguru a :Pokemon ;
+    :id 765 ;
+    :name "oranguru" ;
+    :height 15 ;
+    :weight 760 .
+
+:passimian a :Pokemon ;
+    :id 766 ;
+    :name "passimian" ;
+    :height 20 ;
+    :weight 828 .
+
+:wimpod a :Pokemon ;
+    :id 767 ;
+    :name "wimpod" ;
+    :height 5 ;
+    :weight 120 .
+
+:golisopod a :Pokemon ;
+    :id 768 ;
+    :name "golisopod" ;
+    :height 20 ;
+    :weight 1080 .
+
+:sandygast a :Pokemon ;
+    :id 769 ;
+    :name "sandygast" ;
+    :height 5 ;
+    :weight 700 .
+
+:palossand a :Pokemon ;
+    :id 770 ;
+    :name "palossand" ;
+    :height 13 ;
+    :weight 2500 .
+
+:pyukumuku a :Pokemon ;
+    :id 771 ;
+    :name "pyukumuku" ;
+    :height 3 ;
+    :weight 12 .
+
+:type-null a :Pokemon ;
+    :id 772 ;
+    :name "type-null" ;
+    :height 19 ;
+    :weight 1205 .
+
+:silvally a :Pokemon ;
+    :id 773 ;
+    :name "silvally" ;
+    :height 23 ;
+    :weight 1005 .
+
+:minior-red-meteor a :Pokemon ;
+    :id 774 ;
+    :name "minior-red-meteor" ;
+    :height 3 ;
+    :weight 400 .
+
+:komala a :Pokemon ;
+    :id 775 ;
+    :name "komala" ;
+    :height 4 ;
+    :weight 199 .
+
+:turtonator a :Pokemon ;
+    :id 776 ;
+    :name "turtonator" ;
+    :height 20 ;
+    :weight 2120 .
+
+:togedemaru a :Pokemon ;
+    :id 777 ;
+    :name "togedemaru" ;
+    :height 3 ;
+    :weight 33 .
+
+:mimikyu-disguised a :Pokemon ;
+    :id 778 ;
+    :name "mimikyu-disguised" ;
+    :height 2 ;
+    :weight 7 .
+
+:bruxish a :Pokemon ;
+    :id 779 ;
+    :name "bruxish" ;
+    :height 9 ;
+    :weight 190 .
+
+:drampa a :Pokemon ;
+    :id 780 ;
+    :name "drampa" ;
+    :height 30 ;
+    :weight 1850 .
+
+:dhelmise a :Pokemon ;
+    :id 781 ;
+    :name "dhelmise" ;
+    :height 39 ;
+    :weight 2100 .
+
+:jangmo-o a :Pokemon ;
+    :id 782 ;
+    :name "jangmo-o" ;
+    :height 6 ;
+    :weight 297 .
+
+:hakamo-o a :Pokemon ;
+    :id 783 ;
+    :name "hakamo-o" ;
+    :height 12 ;
+    :weight 470 .
+
+:kommo-o a :Pokemon ;
+    :id 784 ;
+    :name "kommo-o" ;
+    :height 16 ;
+    :weight 782 .
+
+:tapu-koko a :Pokemon ;
+    :id 785 ;
+    :name "tapu-koko" ;
+    :height 18 ;
+    :weight 205 .
+
+:tapu-lele a :Pokemon ;
+    :id 786 ;
+    :name "tapu-lele" ;
+    :height 12 ;
+    :weight 186 .
+
+:tapu-bulu a :Pokemon ;
+    :id 787 ;
+    :name "tapu-bulu" ;
+    :height 19 ;
+    :weight 455 .
+
+:tapu-fini a :Pokemon ;
+    :id 788 ;
+    :name "tapu-fini" ;
+    :height 13 ;
+    :weight 212 .
+
+:cosmog a :Pokemon ;
+    :id 789 ;
+    :name "cosmog" ;
+    :height 2 ;
+    :weight 1 .
+
+:cosmoem a :Pokemon ;
+    :id 790 ;
+    :name "cosmoem" ;
+    :height 1 ;
+    :weight 9999 .
+
+:solgaleo a :Pokemon ;
+    :id 791 ;
+    :name "solgaleo" ;
+    :height 34 ;
+    :weight 2300 .
+
+:lunala a :Pokemon ;
+    :id 792 ;
+    :name "lunala" ;
+    :height 40 ;
+    :weight 1200 .
+
+:nihilego a :Pokemon ;
+    :id 793 ;
+    :name "nihilego" ;
+    :height 12 ;
+    :weight 555 .
+
+:buzzwole a :Pokemon ;
+    :id 794 ;
+    :name "buzzwole" ;
+    :height 24 ;
+    :weight 3336 .
+
+:pheromosa a :Pokemon ;
+    :id 795 ;
+    :name "pheromosa" ;
+    :height 18 ;
+    :weight 250 .
+
+:xurkitree a :Pokemon ;
+    :id 796 ;
+    :name "xurkitree" ;
+    :height 38 ;
+    :weight 1000 .
+
+:celesteela a :Pokemon ;
+    :id 797 ;
+    :name "celesteela" ;
+    :height 92 ;
+    :weight 9999 .
+
+:kartana a :Pokemon ;
+    :id 798 ;
+    :name "kartana" ;
+    :height 3 ;
+    :weight 1 .
+
+:guzzlord a :Pokemon ;
+    :id 799 ;
+    :name "guzzlord" ;
+    :height 55 ;
+    :weight 8880 .
+
+:necrozma a :Pokemon ;
+    :id 800 ;
+    :name "necrozma" ;
+    :height 24 ;
+    :weight 2300 .
+
+:magearna a :Pokemon ;
+    :id 801 ;
+    :name "magearna" ;
+    :height 10 ;
+    :weight 805 .
+
+:marshadow a :Pokemon ;
+    :id 802 ;
+    :name "marshadow" ;
+    :height 7 ;
+    :weight 222 .
+
+:poipole a :Pokemon ;
+    :id 803 ;
+    :name "poipole" ;
+    :height 6 ;
+    :weight 18 .
+
+:naganadel a :Pokemon ;
+    :id 804 ;
+    :name "naganadel" ;
+    :height 36 ;
+    :weight 1500 .
+
+:stakataka a :Pokemon ;
+    :id 805 ;
+    :name "stakataka" ;
+    :height 55 ;
+    :weight 8200 .
+
+:blacephalon a :Pokemon ;
+    :id 806 ;
+    :name "blacephalon" ;
+    :height 18 ;
+    :weight 130 .
+
+:zeraora a :Pokemon ;
+    :id 807 ;
+    :name "zeraora" ;
+    :height 15 ;
+    :weight 445 .
+
+:meltan a :Pokemon ;
+    :id 808 ;
+    :name "meltan" ;
+    :height 2 ;
+    :weight 80 .
+
+:melmetal a :Pokemon ;
+    :id 809 ;
+    :name "melmetal" ;
+    :height 25 ;
+    :weight 8000 .
+
+:grookey a :Pokemon ;
+    :id 810 ;
+    :name "grookey" ;
+    :height 3 ;
+    :weight 50 .
+
+:thwackey a :Pokemon ;
+    :id 811 ;
+    :name "thwackey" ;
+    :height 7 ;
+    :weight 140 .
+
+:rillaboom a :Pokemon ;
+    :id 812 ;
+    :name "rillaboom" ;
+    :height 21 ;
+    :weight 900 .
+
+:scorbunny a :Pokemon ;
+    :id 813 ;
+    :name "scorbunny" ;
+    :height 3 ;
+    :weight 45 .
+
+:raboot a :Pokemon ;
+    :id 814 ;
+    :name "raboot" ;
+    :height 6 ;
+    :weight 90 .
+
+:cinderace a :Pokemon ;
+    :id 815 ;
+    :name "cinderace" ;
+    :height 14 ;
+    :weight 330 .
+
+:sobble a :Pokemon ;
+    :id 816 ;
+    :name "sobble" ;
+    :height 3 ;
+    :weight 40 .
+
+:drizzile a :Pokemon ;
+    :id 817 ;
+    :name "drizzile" ;
+    :height 7 ;
+    :weight 115 .
+
+:inteleon a :Pokemon ;
+    :id 818 ;
+    :name "inteleon" ;
+    :height 19 ;
+    :weight 452 .
+
+:skwovet a :Pokemon ;
+    :id 819 ;
+    :name "skwovet" ;
+    :height 3 ;
+    :weight 25 .
+
+:greedent a :Pokemon ;
+    :id 820 ;
+    :name "greedent" ;
+    :height 6 ;
+    :weight 60 .
+
+:rookidee a :Pokemon ;
+    :id 821 ;
+    :name "rookidee" ;
+    :height 2 ;
+    :weight 18 .
+
+:corvisquire a :Pokemon ;
+    :id 822 ;
+    :name "corvisquire" ;
+    :height 8 ;
+    :weight 160 .
+
+:corviknight a :Pokemon ;
+    :id 823 ;
+    :name "corviknight" ;
+    :height 22 ;
+    :weight 750 .
+
+:blipbug a :Pokemon ;
+    :id 824 ;
+    :name "blipbug" ;
+    :height 4 ;
+    :weight 80 .
+
+:dottler a :Pokemon ;
+    :id 825 ;
+    :name "dottler" ;
+    :height 4 ;
+    :weight 195 .
+
+:orbeetle a :Pokemon ;
+    :id 826 ;
+    :name "orbeetle" ;
+    :height 4 ;
+    :weight 408 .
+
+:nickit a :Pokemon ;
+    :id 827 ;
+    :name "nickit" ;
+    :height 6 ;
+    :weight 89 .
+
+:thievul a :Pokemon ;
+    :id 828 ;
+    :name "thievul" ;
+    :height 12 ;
+    :weight 199 .
+
+:gossifleur a :Pokemon ;
+    :id 829 ;
+    :name "gossifleur" ;
+    :height 4 ;
+    :weight 22 .
+
+:eldegoss a :Pokemon ;
+    :id 830 ;
+    :name "eldegoss" ;
+    :height 5 ;
+    :weight 25 .
+
+:wooloo a :Pokemon ;
+    :id 831 ;
+    :name "wooloo" ;
+    :height 6 ;
+    :weight 60 .
+
+:dubwool a :Pokemon ;
+    :id 832 ;
+    :name "dubwool" ;
+    :height 13 ;
+    :weight 430 .
+
+:chewtle a :Pokemon ;
+    :id 833 ;
+    :name "chewtle" ;
+    :height 3 ;
+    :weight 85 .
+
+:drednaw a :Pokemon ;
+    :id 834 ;
+    :name "drednaw" ;
+    :height 10 ;
+    :weight 1155 .
+
+:yamper a :Pokemon ;
+    :id 835 ;
+    :name "yamper" ;
+    :height 3 ;
+    :weight 135 .
+
+:boltund a :Pokemon ;
+    :id 836 ;
+    :name "boltund" ;
+    :height 10 ;
+    :weight 340 .
+
+:rolycoly a :Pokemon ;
+    :id 837 ;
+    :name "rolycoly" ;
+    :height 3 ;
+    :weight 120 .
+
+:carkol a :Pokemon ;
+    :id 838 ;
+    :name "carkol" ;
+    :height 11 ;
+    :weight 780 .
+
+:coalossal a :Pokemon ;
+    :id 839 ;
+    :name "coalossal" ;
+    :height 28 ;
+    :weight 3105 .
+
+:applin a :Pokemon ;
+    :id 840 ;
+    :name "applin" ;
+    :height 2 ;
+    :weight 5 .
+
+:flapple a :Pokemon ;
+    :id 841 ;
+    :name "flapple" ;
+    :height 3 ;
+    :weight 10 .
+
+:appletun a :Pokemon ;
+    :id 842 ;
+    :name "appletun" ;
+    :height 4 ;
+    :weight 130 .
+
+:silicobra a :Pokemon ;
+    :id 843 ;
+    :name "silicobra" ;
+    :height 22 ;
+    :weight 76 .
+
+:sandaconda a :Pokemon ;
+    :id 844 ;
+    :name "sandaconda" ;
+    :height 38 ;
+    :weight 655 .
+
+:cramorant a :Pokemon ;
+    :id 845 ;
+    :name "cramorant" ;
+    :height 8 ;
+    :weight 180 .
+
+:arrokuda a :Pokemon ;
+    :id 846 ;
+    :name "arrokuda" ;
+    :height 5 ;
+    :weight 10 .
+
+:barraskewda a :Pokemon ;
+    :id 847 ;
+    :name "barraskewda" ;
+    :height 13 ;
+    :weight 300 .
+
+:toxel a :Pokemon ;
+    :id 848 ;
+    :name "toxel" ;
+    :height 4 ;
+    :weight 110 .
+
+:toxtricity-amped a :Pokemon ;
+    :id 849 ;
+    :name "toxtricity-amped" ;
+    :height 16 ;
+    :weight 400 .
+
+:sizzlipede a :Pokemon ;
+    :id 850 ;
+    :name "sizzlipede" ;
+    :height 7 ;
+    :weight 10 .
+
+:centiskorch a :Pokemon ;
+    :id 851 ;
+    :name "centiskorch" ;
+    :height 30 ;
+    :weight 1200 .
+
+:clobbopus a :Pokemon ;
+    :id 852 ;
+    :name "clobbopus" ;
+    :height 6 ;
+    :weight 40 .
+
+:grapploct a :Pokemon ;
+    :id 853 ;
+    :name "grapploct" ;
+    :height 16 ;
+    :weight 390 .
+
+:sinistea a :Pokemon ;
+    :id 854 ;
+    :name "sinistea" ;
+    :height 1 ;
+    :weight 2 .
+
+:polteageist a :Pokemon ;
+    :id 855 ;
+    :name "polteageist" ;
+    :height 2 ;
+    :weight 4 .
+
+:hatenna a :Pokemon ;
+    :id 856 ;
+    :name "hatenna" ;
+    :height 4 ;
+    :weight 34 .
+
+:hattrem a :Pokemon ;
+    :id 857 ;
+    :name "hattrem" ;
+    :height 6 ;
+    :weight 48 .
+
+:hatterene a :Pokemon ;
+    :id 858 ;
+    :name "hatterene" ;
+    :height 21 ;
+    :weight 51 .
+
+:impidimp a :Pokemon ;
+    :id 859 ;
+    :name "impidimp" ;
+    :height 4 ;
+    :weight 55 .
+
+:morgrem a :Pokemon ;
+    :id 860 ;
+    :name "morgrem" ;
+    :height 8 ;
+    :weight 125 .
+
+:grimmsnarl a :Pokemon ;
+    :id 861 ;
+    :name "grimmsnarl" ;
+    :height 15 ;
+    :weight 610 .
+
+:obstagoon a :Pokemon ;
+    :id 862 ;
+    :name "obstagoon" ;
+    :height 16 ;
+    :weight 460 .
+
+:perrserker a :Pokemon ;
+    :id 863 ;
+    :name "perrserker" ;
+    :height 8 ;
+    :weight 280 .
+
+:cursola a :Pokemon ;
+    :id 864 ;
+    :name "cursola" ;
+    :height 10 ;
+    :weight 4 .
+
+:sirfetchd a :Pokemon ;
+    :id 865 ;
+    :name "sirfetchd" ;
+    :height 8 ;
+    :weight 1170 .
+
+:mr-rime a :Pokemon ;
+    :id 866 ;
+    :name "mr-rime" ;
+    :height 15 ;
+    :weight 582 .
+
+:runerigus a :Pokemon ;
+    :id 867 ;
+    :name "runerigus" ;
+    :height 16 ;
+    :weight 666 .
+
+:milcery a :Pokemon ;
+    :id 868 ;
+    :name "milcery" ;
+    :height 2 ;
+    :weight 3 .
+
+:alcremie a :Pokemon ;
+    :id 869 ;
+    :name "alcremie" ;
+    :height 3 ;
+    :weight 5 .
+
+:falinks a :Pokemon ;
+    :id 870 ;
+    :name "falinks" ;
+    :height 30 ;
+    :weight 620 .
+
+:pincurchin a :Pokemon ;
+    :id 871 ;
+    :name "pincurchin" ;
+    :height 3 ;
+    :weight 10 .
+
+:snom a :Pokemon ;
+    :id 872 ;
+    :name "snom" ;
+    :height 3 ;
+    :weight 38 .
+
+:frosmoth a :Pokemon ;
+    :id 873 ;
+    :name "frosmoth" ;
+    :height 13 ;
+    :weight 420 .
+
+:stonjourner a :Pokemon ;
+    :id 874 ;
+    :name "stonjourner" ;
+    :height 25 ;
+    :weight 5200 .
+
+:eiscue-ice a :Pokemon ;
+    :id 875 ;
+    :name "eiscue-ice" ;
+    :height 14 ;
+    :weight 890 .
+
+:indeedee-male a :Pokemon ;
+    :id 876 ;
+    :name "indeedee-male" ;
+    :height 9 ;
+    :weight 280 .
+
+:morpeko-full-belly a :Pokemon ;
+    :id 877 ;
+    :name "morpeko-full-belly" ;
+    :height 3 ;
+    :weight 30 .
+
+:cufant a :Pokemon ;
+    :id 878 ;
+    :name "cufant" ;
+    :height 12 ;
+    :weight 1000 .
+
+:copperajah a :Pokemon ;
+    :id 879 ;
+    :name "copperajah" ;
+    :height 30 ;
+    :weight 6500 .
+
+:dracozolt a :Pokemon ;
+    :id 880 ;
+    :name "dracozolt" ;
+    :height 18 ;
+    :weight 1900 .
+
+:arctozolt a :Pokemon ;
+    :id 881 ;
+    :name "arctozolt" ;
+    :height 23 ;
+    :weight 1500 .
+
+:dracovish a :Pokemon ;
+    :id 882 ;
+    :name "dracovish" ;
+    :height 23 ;
+    :weight 2150 .
+
+:arctovish a :Pokemon ;
+    :id 883 ;
+    :name "arctovish" ;
+    :height 20 ;
+    :weight 1750 .
+
+:duraludon a :Pokemon ;
+    :id 884 ;
+    :name "duraludon" ;
+    :height 18 ;
+    :weight 400 .
+
+:dreepy a :Pokemon ;
+    :id 885 ;
+    :name "dreepy" ;
+    :height 5 ;
+    :weight 20 .
+
+:drakloak a :Pokemon ;
+    :id 886 ;
+    :name "drakloak" ;
+    :height 14 ;
+    :weight 110 .
+
+:dragapult a :Pokemon ;
+    :id 887 ;
+    :name "dragapult" ;
+    :height 30 ;
+    :weight 500 .
+
+:zacian a :Pokemon ;
+    :id 888 ;
+    :name "zacian" ;
+    :height 28 ;
+    :weight 1100 .
+
+:zamazenta a :Pokemon ;
+    :id 889 ;
+    :name "zamazenta" ;
+    :height 29 ;
+    :weight 2100 .
+
+:eternatus a :Pokemon ;
+    :id 890 ;
+    :name "eternatus" ;
+    :height 200 ;
+    :weight 9500 .
+
+:kubfu a :Pokemon ;
+    :id 891 ;
+    :name "kubfu" ;
+    :height 6 ;
+    :weight 120 .
+
+:urshifu-single-strike a :Pokemon ;
+    :id 892 ;
+    :name "urshifu-single-strike" ;
+    :height 19 ;
+    :weight 1050 .
+
+:zarude a :Pokemon ;
+    :id 893 ;
+    :name "zarude" ;
+    :height 18 ;
+    :weight 700 .
+
+:regieleki a :Pokemon ;
+    :id 894 ;
+    :name "regieleki" ;
+    :height 12 ;
+    :weight 1450 .
+
+:regidrago a :Pokemon ;
+    :id 895 ;
+    :name "regidrago" ;
+    :height 21 ;
+    :weight 2000 .
+
+:glastrier a :Pokemon ;
+    :id 896 ;
+    :name "glastrier" ;
+    :height 22 ;
+    :weight 8000 .
+
+:spectrier a :Pokemon ;
+    :id 897 ;
+    :name "spectrier" ;
+    :height 20 ;
+    :weight 445 .
+
+:calyrex a :Pokemon ;
+    :id 898 ;
+    :name "calyrex" ;
+    :height 11 ;
+    :weight 77 .
+
+:wyrdeer a :Pokemon ;
+    :id 899 ;
+    :name "wyrdeer" ;
+    :height 18 ;
+    :weight 951 .
+
+:kleavor a :Pokemon ;
+    :id 900 ;
+    :name "kleavor" ;
+    :height 18 ;
+    :weight 890 .
+
+:ursaluna a :Pokemon ;
+    :id 901 ;
+    :name "ursaluna" ;
+    :height 24 ;
+    :weight 2900 .
+
+:basculegion-male a :Pokemon ;
+    :id 902 ;
+    :name "basculegion-male" ;
+    :height 30 ;
+    :weight 1100 .
+
+:sneasler a :Pokemon ;
+    :id 903 ;
+    :name "sneasler" ;
+    :height 13 ;
+    :weight 430 .
+
+:overqwil a :Pokemon ;
+    :id 904 ;
+    :name "overqwil" ;
+    :height 25 ;
+    :weight 605 .
+
+:enamorus-incarnate a :Pokemon ;
+    :id 905 ;
+    :name "enamorus-incarnate" ;
+    :height 16 ;
+    :weight 480 .
+
+:sprigatito a :Pokemon ;
+    :id 906 ;
+    :name "sprigatito" ;
+    :height 4 ;
+    :weight 41 .
+
+:floragato a :Pokemon ;
+    :id 907 ;
+    :name "floragato" ;
+    :height 9 ;
+    :weight 122 .
+
+:meowscarada a :Pokemon ;
+    :id 908 ;
+    :name "meowscarada" ;
+    :height 15 ;
+    :weight 312 .
+
+:fuecoco a :Pokemon ;
+    :id 909 ;
+    :name "fuecoco" ;
+    :height 4 ;
+    :weight 98 .
+
+:crocalor a :Pokemon ;
+    :id 910 ;
+    :name "crocalor" ;
+    :height 10 ;
+    :weight 307 .
+
+:skeledirge a :Pokemon ;
+    :id 911 ;
+    :name "skeledirge" ;
+    :height 16 ;
+    :weight 3265 .
+
+:quaxly a :Pokemon ;
+    :id 912 ;
+    :name "quaxly" ;
+    :height 5 ;
+    :weight 61 .
+
+:quaxwell a :Pokemon ;
+    :id 913 ;
+    :name "quaxwell" ;
+    :height 12 ;
+    :weight 215 .
+
+:quaquaval a :Pokemon ;
+    :id 914 ;
+    :name "quaquaval" ;
+    :height 18 ;
+    :weight 619 .
+
+:lechonk a :Pokemon ;
+    :id 915 ;
+    :name "lechonk" ;
+    :height 5 ;
+    :weight 102 .
+
+:oinkologne-male a :Pokemon ;
+    :id 916 ;
+    :name "oinkologne-male" ;
+    :height 10 ;
+    :weight 1200 .
+
+:tarountula a :Pokemon ;
+    :id 917 ;
+    :name "tarountula" ;
+    :height 3 ;
+    :weight 40 .
+
+:spidops a :Pokemon ;
+    :id 918 ;
+    :name "spidops" ;
+    :height 10 ;
+    :weight 165 .
+
+:nymble a :Pokemon ;
+    :id 919 ;
+    :name "nymble" ;
+    :height 2 ;
+    :weight 10 .
+
+:lokix a :Pokemon ;
+    :id 920 ;
+    :name "lokix" ;
+    :height 10 ;
+    :weight 175 .
+
+:pawmi a :Pokemon ;
+    :id 921 ;
+    :name "pawmi" ;
+    :height 3 ;
+    :weight 25 .
+
+:pawmo a :Pokemon ;
+    :id 922 ;
+    :name "pawmo" ;
+    :height 4 ;
+    :weight 65 .
+
+:pawmot a :Pokemon ;
+    :id 923 ;
+    :name "pawmot" ;
+    :height 9 ;
+    :weight 410 .
+
+:tandemaus a :Pokemon ;
+    :id 924 ;
+    :name "tandemaus" ;
+    :height 3 ;
+    :weight 18 .
+
+:maushold-family-of-four a :Pokemon ;
+    :id 925 ;
+    :name "maushold-family-of-four" ;
+    :height 3 ;
+    :weight 28 .
+
+:fidough a :Pokemon ;
+    :id 926 ;
+    :name "fidough" ;
+    :height 3 ;
+    :weight 109 .
+
+:dachsbun a :Pokemon ;
+    :id 927 ;
+    :name "dachsbun" ;
+    :height 5 ;
+    :weight 149 .
+
+:smoliv a :Pokemon ;
+    :id 928 ;
+    :name "smoliv" ;
+    :height 3 ;
+    :weight 65 .
+
+:dolliv a :Pokemon ;
+    :id 929 ;
+    :name "dolliv" ;
+    :height 6 ;
+    :weight 119 .
+
+:arboliva a :Pokemon ;
+    :id 930 ;
+    :name "arboliva" ;
+    :height 14 ;
+    :weight 482 .
+
+:squawkabilly-green-plumage a :Pokemon ;
+    :id 931 ;
+    :name "squawkabilly-green-plumage" ;
+    :height 6 ;
+    :weight 24 .
+
+:nacli a :Pokemon ;
+    :id 932 ;
+    :name "nacli" ;
+    :height 4 ;
+    :weight 160 .
+
+:naclstack a :Pokemon ;
+    :id 933 ;
+    :name "naclstack" ;
+    :height 6 ;
+    :weight 1050 .
+
+:garganacl a :Pokemon ;
+    :id 934 ;
+    :name "garganacl" ;
+    :height 23 ;
+    :weight 2400 .
+
+:charcadet a :Pokemon ;
+    :id 935 ;
+    :name "charcadet" ;
+    :height 6 ;
+    :weight 105 .
+
+:armarouge a :Pokemon ;
+    :id 936 ;
+    :name "armarouge" ;
+    :height 15 ;
+    :weight 850 .
+
+:ceruledge a :Pokemon ;
+    :id 937 ;
+    :name "ceruledge" ;
+    :height 16 ;
+    :weight 620 .
+
+:tadbulb a :Pokemon ;
+    :id 938 ;
+    :name "tadbulb" ;
+    :height 3 ;
+    :weight 4 .
+
+:bellibolt a :Pokemon ;
+    :id 939 ;
+    :name "bellibolt" ;
+    :height 12 ;
+    :weight 1130 .
+
+:wattrel a :Pokemon ;
+    :id 940 ;
+    :name "wattrel" ;
+    :height 4 ;
+    :weight 36 .
+
+:kilowattrel a :Pokemon ;
+    :id 941 ;
+    :name "kilowattrel" ;
+    :height 14 ;
+    :weight 386 .
+
+:maschiff a :Pokemon ;
+    :id 942 ;
+    :name "maschiff" ;
+    :height 5 ;
+    :weight 160 .
+
+:mabosstiff a :Pokemon ;
+    :id 943 ;
+    :name "mabosstiff" ;
+    :height 11 ;
+    :weight 610 .
+
+:shroodle a :Pokemon ;
+    :id 944 ;
+    :name "shroodle" ;
+    :height 2 ;
+    :weight 7 .
+
+:grafaiai a :Pokemon ;
+    :id 945 ;
+    :name "grafaiai" ;
+    :height 7 ;
+    :weight 272 .
+
+:bramblin a :Pokemon ;
+    :id 946 ;
+    :name "bramblin" ;
+    :height 6 ;
+    :weight 6 .
+
+:brambleghast a :Pokemon ;
+    :id 947 ;
+    :name "brambleghast" ;
+    :height 12 ;
+    :weight 60 .
+
+:toedscool a :Pokemon ;
+    :id 948 ;
+    :name "toedscool" ;
+    :height 9 ;
+    :weight 330 .
+
+:toedscruel a :Pokemon ;
+    :id 949 ;
+    :name "toedscruel" ;
+    :height 19 ;
+    :weight 580 .
+
+:klawf a :Pokemon ;
+    :id 950 ;
+    :name "klawf" ;
+    :height 13 ;
+    :weight 790 .
+
+:capsakid a :Pokemon ;
+    :id 951 ;
+    :name "capsakid" ;
+    :height 3 ;
+    :weight 30 .
+
+:scovillain a :Pokemon ;
+    :id 952 ;
+    :name "scovillain" ;
+    :height 9 ;
+    :weight 150 .
+
+:rellor a :Pokemon ;
+    :id 953 ;
+    :name "rellor" ;
+    :height 2 ;
+    :weight 10 .
+
+:rabsca a :Pokemon ;
+    :id 954 ;
+    :name "rabsca" ;
+    :height 3 ;
+    :weight 35 .
+
+:flittle a :Pokemon ;
+    :id 955 ;
+    :name "flittle" ;
+    :height 2 ;
+    :weight 15 .
+
+:espathra a :Pokemon ;
+    :id 956 ;
+    :name "espathra" ;
+    :height 19 ;
+    :weight 900 .
+
+:tinkatink a :Pokemon ;
+    :id 957 ;
+    :name "tinkatink" ;
+    :height 4 ;
+    :weight 89 .
+
+:tinkatuff a :Pokemon ;
+    :id 958 ;
+    :name "tinkatuff" ;
+    :height 7 ;
+    :weight 591 .
+
+:tinkaton a :Pokemon ;
+    :id 959 ;
+    :name "tinkaton" ;
+    :height 7 ;
+    :weight 1128 .
+
+:wiglett a :Pokemon ;
+    :id 960 ;
+    :name "wiglett" ;
+    :height 12 ;
+    :weight 18 .
+
+:wugtrio a :Pokemon ;
+    :id 961 ;
+    :name "wugtrio" ;
+    :height 12 ;
+    :weight 54 .
+
+:bombirdier a :Pokemon ;
+    :id 962 ;
+    :name "bombirdier" ;
+    :height 15 ;
+    :weight 429 .
+
+:finizen a :Pokemon ;
+    :id 963 ;
+    :name "finizen" ;
+    :height 13 ;
+    :weight 602 .
+
+:palafin-zero a :Pokemon ;
+    :id 964 ;
+    :name "palafin-zero" ;
+    :height 13 ;
+    :weight 602 .
+
+:varoom a :Pokemon ;
+    :id 965 ;
+    :name "varoom" ;
+    :height 10 ;
+    :weight 350 .
+
+:revavroom a :Pokemon ;
+    :id 966 ;
+    :name "revavroom" ;
+    :height 18 ;
+    :weight 1200 .
+
+:cyclizar a :Pokemon ;
+    :id 967 ;
+    :name "cyclizar" ;
+    :height 16 ;
+    :weight 630 .
+
+:orthworm a :Pokemon ;
+    :id 968 ;
+    :name "orthworm" ;
+    :height 25 ;
+    :weight 3100 .
+
+:glimmet a :Pokemon ;
+    :id 969 ;
+    :name "glimmet" ;
+    :height 7 ;
+    :weight 80 .
+
+:glimmora a :Pokemon ;
+    :id 970 ;
+    :name "glimmora" ;
+    :height 15 ;
+    :weight 450 .
+
+:greavard a :Pokemon ;
+    :id 971 ;
+    :name "greavard" ;
+    :height 6 ;
+    :weight 350 .
+
+:houndstone a :Pokemon ;
+    :id 972 ;
+    :name "houndstone" ;
+    :height 20 ;
+    :weight 150 .
+
+:flamigo a :Pokemon ;
+    :id 973 ;
+    :name "flamigo" ;
+    :height 16 ;
+    :weight 370 .
+
+:cetoddle a :Pokemon ;
+    :id 974 ;
+    :name "cetoddle" ;
+    :height 12 ;
+    :weight 450 .
+
+:cetitan a :Pokemon ;
+    :id 975 ;
+    :name "cetitan" ;
+    :height 45 ;
+    :weight 7000 .
+
+:veluza a :Pokemon ;
+    :id 976 ;
+    :name "veluza" ;
+    :height 25 ;
+    :weight 900 .
+
+:dondozo a :Pokemon ;
+    :id 977 ;
+    :name "dondozo" ;
+    :height 120 ;
+    :weight 2200 .
+
+:tatsugiri-curly a :Pokemon ;
+    :id 978 ;
+    :name "tatsugiri-curly" ;
+    :height 3 ;
+    :weight 80 .
+
+:annihilape a :Pokemon ;
+    :id 979 ;
+    :name "annihilape" ;
+    :height 12 ;
+    :weight 560 .
+
+:clodsire a :Pokemon ;
+    :id 980 ;
+    :name "clodsire" ;
+    :height 18 ;
+    :weight 2230 .
+
+:farigiraf a :Pokemon ;
+    :id 981 ;
+    :name "farigiraf" ;
+    :height 32 ;
+    :weight 1600 .
+
+:dudunsparce-two-segment a :Pokemon ;
+    :id 982 ;
+    :name "dudunsparce-two-segment" ;
+    :height 36 ;
+    :weight 392 .
+
+:kingambit a :Pokemon ;
+    :id 983 ;
+    :name "kingambit" ;
+    :height 20 ;
+    :weight 1200 .
+
+:great-tusk a :Pokemon ;
+    :id 984 ;
+    :name "great-tusk" ;
+    :height 22 ;
+    :weight 3200 .
+
+:scream-tail a :Pokemon ;
+    :id 985 ;
+    :name "scream-tail" ;
+    :height 12 ;
+    :weight 80 .
+
+:brute-bonnet a :Pokemon ;
+    :id 986 ;
+    :name "brute-bonnet" ;
+    :height 12 ;
+    :weight 210 .
+
+:flutter-mane a :Pokemon ;
+    :id 987 ;
+    :name "flutter-mane" ;
+    :height 14 ;
+    :weight 40 .
+
+:slither-wing a :Pokemon ;
+    :id 988 ;
+    :name "slither-wing" ;
+    :height 32 ;
+    :weight 920 .
+
+:sandy-shocks a :Pokemon ;
+    :id 989 ;
+    :name "sandy-shocks" ;
+    :height 23 ;
+    :weight 600 .
+
+:iron-treads a :Pokemon ;
+    :id 990 ;
+    :name "iron-treads" ;
+    :height 9 ;
+    :weight 2400 .
+
+:iron-bundle a :Pokemon ;
+    :id 991 ;
+    :name "iron-bundle" ;
+    :height 6 ;
+    :weight 110 .
+
+:iron-hands a :Pokemon ;
+    :id 992 ;
+    :name "iron-hands" ;
+    :height 18 ;
+    :weight 3807 .
+
+:iron-jugulis a :Pokemon ;
+    :id 993 ;
+    :name "iron-jugulis" ;
+    :height 13 ;
+    :weight 1110 .
+
+:iron-moth a :Pokemon ;
+    :id 994 ;
+    :name "iron-moth" ;
+    :height 12 ;
+    :weight 360 .
+
+:iron-thorns a :Pokemon ;
+    :id 995 ;
+    :name "iron-thorns" ;
+    :height 16 ;
+    :weight 3030 .
+
+:frigibax a :Pokemon ;
+    :id 996 ;
+    :name "frigibax" ;
+    :height 5 ;
+    :weight 170 .
+
+:arctibax a :Pokemon ;
+    :id 997 ;
+    :name "arctibax" ;
+    :height 8 ;
+    :weight 300 .
+
+:baxcalibur a :Pokemon ;
+    :id 998 ;
+    :name "baxcalibur" ;
+    :height 21 ;
+    :weight 2100 .
+
+:gimmighoul a :Pokemon ;
+    :id 999 ;
+    :name "gimmighoul" ;
+    :height 3 ;
+    :weight 50 .
+
+:gholdengo a :Pokemon ;
+    :id 1000 ;
+    :name "gholdengo" ;
+    :height 12 ;
+    :weight 300 .
+
+:wo-chien a :Pokemon ;
+    :id 1001 ;
+    :name "wo-chien" ;
+    :height 15 ;
+    :weight 742 .
+
+:chien-pao a :Pokemon ;
+    :id 1002 ;
+    :name "chien-pao" ;
+    :height 19 ;
+    :weight 1522 .
+
+:ting-lu a :Pokemon ;
+    :id 1003 ;
+    :name "ting-lu" ;
+    :height 27 ;
+    :weight 6997 .
+
+:chi-yu a :Pokemon ;
+    :id 1004 ;
+    :name "chi-yu" ;
+    :height 4 ;
+    :weight 49 .
+
+:roaring-moon a :Pokemon ;
+    :id 1005 ;
+    :name "roaring-moon" ;
+    :height 20 ;
+    :weight 3800 .
+
+:iron-valiant a :Pokemon ;
+    :id 1006 ;
+    :name "iron-valiant" ;
+    :height 14 ;
+    :weight 350 .
+
+:koraidon a :Pokemon ;
+    :id 1007 ;
+    :name "koraidon" ;
+    :height 25 ;
+    :weight 3030 .
+
+:miraidon a :Pokemon ;
+    :id 1008 ;
+    :name "miraidon" ;
+    :height 35 ;
+    :weight 2400 .
+
+:walking-wake a :Pokemon ;
+    :id 1009 ;
+    :name "walking-wake" ;
+    :height 35 ;
+    :weight 2800 .
+
+:iron-leaves a :Pokemon ;
+    :id 1010 ;
+    :name "iron-leaves" ;
+    :height 15 ;
+    :weight 1250 .
+
+:dipplin a :Pokemon ;
+    :id 1011 ;
+    :name "dipplin" ;
+    :height 4 ;
+    :weight 97 .
+
+:poltchageist a :Pokemon ;
+    :id 1012 ;
+    :name "poltchageist" ;
+    :height 1 ;
+    :weight 11 .
+
+:sinistcha a :Pokemon ;
+    :id 1013 ;
+    :name "sinistcha" ;
+    :height 2 ;
+    :weight 22 .
+
+:okidogi a :Pokemon ;
+    :id 1014 ;
+    :name "okidogi" ;
+    :height 18 ;
+    :weight 922 .
+
+:munkidori a :Pokemon ;
+    :id 1015 ;
+    :name "munkidori" ;
+    :height 10 ;
+    :weight 122 .
+
+:fezandipiti a :Pokemon ;
+    :id 1016 ;
+    :name "fezandipiti" ;
+    :height 14 ;
+    :weight 301 .
+
+:ogerpon a :Pokemon ;
+    :id 1017 ;
+    :name "ogerpon" ;
+    :height 12 ;
+    :weight 398 .
+
+:archaludon a :Pokemon ;
+    :id 1018 ;
+    :name "archaludon" ;
+    :height 20 ;
+    :weight 600 .
+
+:hydrapple a :Pokemon ;
+    :id 1019 ;
+    :name "hydrapple" ;
+    :height 18 ;
+    :weight 930 .
+
+:gouging-fire a :Pokemon ;
+    :id 1020 ;
+    :name "gouging-fire" ;
+    :height 35 ;
+    :weight 5900 .
+
+:raging-bolt a :Pokemon ;
+    :id 1021 ;
+    :name "raging-bolt" ;
+    :height 52 ;
+    :weight 4800 .
+
+:iron-boulder a :Pokemon ;
+    :id 1022 ;
+    :name "iron-boulder" ;
+    :height 15 ;
+    :weight 1625 .
+
+:iron-crown a :Pokemon ;
+    :id 1023 ;
+    :name "iron-crown" ;
+    :height 16 ;
+    :weight 1560 .
+
+:terapagos a :Pokemon ;
+    :id 1024 ;
+    :name "terapagos" ;
+    :height 2 ;
+    :weight 65 .
+
+:pecharunt a :Pokemon ;
+    :id 1025 ;
+    :name "pecharunt" ;
+    :height 3 ;
+    :weight 3 .
