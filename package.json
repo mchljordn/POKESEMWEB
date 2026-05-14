@@ -1,0 +1,40 @@
+{
+  "name": "dinopedia",
+  "version": "1.0.0",
+  "description": "Pokemon semantic web backend with SPARQL queries",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mchljordn/dinopedia.git"
+  },
+  "keywords": [
+    "pokemon",
+    "semantic-web",
+    "sparql",
+    "fuseki",
+    "rdf"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mchljordn/dinopedia/issues"
+  },
+  "homepage": "https://github.com/mchljordn/dinopedia#readme"
+}
