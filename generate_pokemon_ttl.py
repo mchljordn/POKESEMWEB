@@ -248,6 +248,30 @@ def main():
     ttl_content = []
     ttl_content.append("")
     ttl_content.append("### =======================================")
+    ttl_content.append("### MASTER DATA: REGION")
+    ttl_content.append("### =======================================")
+
+    regions = [
+        ("Kanto", "Kanto region of Japan", 1),
+        ("Johto", "Kansai region of Japan", 2),
+        ("Hoenn", "Kyushu region of Japan", 3),
+        ("Sinnoh", "Hokkaido region of Japan", 4),
+        ("Unova", "New York City / New York State, USA", 5),
+        ("Kalos", "France", 6),
+        ("Alola", "Hawaii, USA", 7),
+        ("Galar", "Great Britain", 8),
+        ("Paldea", "Iberian Peninsula", 9),
+    ]
+
+    for region_name, based_on, gen_num in regions:
+        ttl_content.append(f"poke:{region_name} rdf:type owl:NamedIndividual ,")
+        ttl_content.append(f"                      :Region ;")
+        ttl_content.append(f'    :regionName "{region_name}" ;')
+        ttl_content.append(f'    :regionBasedOn "{based_on}" ;')
+        ttl_content.append(f"    :regionIntroducedIn poke:Gen{gen_num} .")
+        ttl_content.append("")
+
+    ttl_content.append("### =======================================")
     ttl_content.append("### POKÉMON DATA (All 1,025 Species)")
     ttl_content.append("### =======================================")
     

@@ -120,6 +120,63 @@ poke:Gen9 rdf:type owl:NamedIndividual ,
     :genNumber 9 .
 
 ### =======================================
+### MASTER DATA: REGION
+### =======================================
+poke:Kanto rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Kanto" ;
+    :regionBasedOn "Kanto region of Japan" ;
+    :regionIntroducedIn poke:Gen1 .
+
+poke:Johto rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Johto" ;
+    :regionBasedOn "Kansai region of Japan" ;
+    :regionIntroducedIn poke:Gen2 .
+
+poke:Hoenn rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Hoenn" ;
+    :regionBasedOn "Kyushu region of Japan" ;
+    :regionIntroducedIn poke:Gen3 .
+
+poke:Sinnoh rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Sinnoh" ;
+    :regionBasedOn "Hokkaido region of Japan" ;
+    :regionIntroducedIn poke:Gen4 .
+
+poke:Unova rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Unova" ;
+    :regionBasedOn "New York City / New York State, USA" ;
+    :regionIntroducedIn poke:Gen5 .
+
+poke:Kalos rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Kalos" ;
+    :regionBasedOn "France" ;
+    :regionIntroducedIn poke:Gen6 .
+
+poke:Alola rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Alola" ;
+    :regionBasedOn "Hawaii, USA" ;
+    :regionIntroducedIn poke:Gen7 .
+
+poke:Galar rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Galar" ;
+    :regionBasedOn "Great Britain" ;
+    :regionIntroducedIn poke:Gen8 .
+
+poke:Paldea rdf:type owl:NamedIndividual ,
+                      :Region ;
+    :regionName "Paldea" ;
+    :regionBasedOn "Iberian Peninsula" ;
+    :regionIntroducedIn poke:Gen9 .
+
+### =======================================
 ### POKÉMON DATA (All 1,025 Species)
 ### =======================================
 
