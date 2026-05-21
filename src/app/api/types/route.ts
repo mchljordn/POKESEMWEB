@@ -3,8 +3,9 @@
  * List all Pokemon types (for dropdowns and filters)
  */
 
-import { executeSparqlQuery } from '@/lib/fuseki';
-import { getQuery } from '@/lib/queries';
+import { executeSparqlQuery } from "../../../lib/fuseki";
+import { getQuery } from "../../../lib/queries";
+
 
 export async function GET(request) {
   try {

@@ -3,7 +3,8 @@
  * Status check for Fuseki endpoint and dataset statistics
  */
 
-import { checkFusekiHealth, getDatasetStats } from '@/lib/fuseki';
+import { checkFusekiHealth, getDatasetStats } from "../../../lib/fuseki";
+
 
 export async function GET(request) {
   try {

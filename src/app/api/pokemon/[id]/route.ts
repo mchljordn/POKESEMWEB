@@ -3,10 +3,14 @@
  * Get detailed Pokemon data by Pokedex number
  */
 
-import { executeSparqlQuery } from '@/lib/fuseki';
-import { getQuery } from '@/lib/queries';
+import { executeSparqlQuery } from "../../../../lib/fuseki";
+import { getQuery } from "../../../../lib/queries";
 
-export async function GET(request, { params }) {
+interface RouteContext {
+  params: Promise<{ id: string }> | { id: string };
+}
+export async function GET(request: Request, context: RouteContext) {
+  const params = await context.params;
   const { id } = params;
 
   // Validate ID is a number
@@ -22,7 +26,7 @@ export async function GET(request, { params }) {
   try {
     const query = getQuery('getPokemonById', pokemonId);
     const result = await executeSparqlQuery(query);
-    const binding = result.results?.bindings?.[0];
+    const binding = result.results?.bindings?.[0] as any;
 
     if (!binding) {
       return Response.json({
@@ -31,6 +35,16 @@ export async function GET(request, { params }) {
         status: 404
       });
     }
+
+    const hp = parseInt(binding.hp?.value || '0');
+    const attack = parseInt(binding.attack?.value || '0');
+    const defense = parseInt(binding.defense?.value || '0');
+    const spAttack = parseInt(binding.spAtk?.value || '0');
+    const spDefense = parseInt(binding.spDef?.value || '0');
+    const speed = parseInt(binding.speed?.value || '0');
+    
+    // Hitung total stat secara eksplisit (lebih cepat & aman di TypeScript)
+    const total = hp + attack + defense + spAttack + spDefense + speed;
 
     const pokemon = {
       id: parseInt(binding.id?.value),
@@ -43,7 +57,8 @@ export async function GET(request, { params }) {
         defense: parseInt(binding.defense?.value),
         spAttack: parseInt(binding.spAtk?.value),
         spDefense: parseInt(binding.spDef?.value),
-        speed: parseInt(binding.speed?.value)
+        speed: parseInt(binding.speed?.value),
+        total
       }
     };
 
