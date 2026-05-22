@@ -39,11 +39,11 @@ export default function Home() {
                 </button>
             </div>
             <div className="flex gap-11 text-[#516A9A]">
-                <Link href="/">pokédex</Link>
+                <Link href="/pokedex">pokédex</Link>
                 <span>|</span>
-                <Link href="/">about</Link>
+                <Link href="/statistics">statistic</Link>
                 <span>|</span>
-                <Link href="/">contact</Link>
+                <Link href="/pokeddle">pokeddle</Link>
             </div>
         </div>
     )

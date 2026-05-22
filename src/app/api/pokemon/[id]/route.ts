@@ -36,28 +36,35 @@ export async function GET(request: Request, context: RouteContext) {
       });
     }
 
-    const hp = parseInt(binding.hp?.value || '0');
-    const attack = parseInt(binding.attack?.value || '0');
-    const defense = parseInt(binding.defense?.value || '0');
-    const spAttack = parseInt(binding.spAtk?.value || '0');
-    const spDefense = parseInt(binding.spDef?.value || '0');
-    const speed = parseInt(binding.speed?.value || '0');
+    const hp = parseInt(binding.hp?.value || '0', 10);
+    const attack = parseInt(binding.attack?.value || '0', 10);
+    const defense = parseInt(binding.defense?.value || '0', 10);
+    const spAttack = parseInt(binding.spAtk?.value || '0', 10);
+    const spDefense = parseInt(binding.spDef?.value || '0', 10);
+    const speed = parseInt(binding.speed?.value || '0', 10);
     
     // Hitung total stat secara eksplisit (lebih cepat & aman di TypeScript)
     const total = hp + attack + defense + spAttack + spDefense + speed;
 
     const pokemon = {
-      id: parseInt(binding.id?.value),
+      id: parseInt(binding.id?.value, 10),
       name: binding.name?.value,
-      type: binding.type?.value,
+      primaryType: binding.primaryType?.value,
+      secondaryType: binding.secondaryType?.value || null,
       generation: binding.generation?.value,
+      height: parseFloat(binding.height?.value || '0'),
+      weight: parseFloat(binding.weight?.value || '0'),
+      imageUrl: binding.imageUrl?.value || null,
+      ability: binding.ability?.value || null,
+      hiddenAbility: binding.hiddenAbility?.value || null,
+      evolvesFrom: binding.evolvesFrom?.value || null,
       stats: {
-        hp: parseInt(binding.hp?.value),
-        attack: parseInt(binding.attack?.value),
-        defense: parseInt(binding.defense?.value),
-        spAttack: parseInt(binding.spAtk?.value),
-        spDefense: parseInt(binding.spDef?.value),
-        speed: parseInt(binding.speed?.value),
+        hp,
+        attack,
+        defense,
+        spAttack,
+        spDefense,
+        speed,
         total
       }
     };

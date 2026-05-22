@@ -1,0 +1,317 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Search, Funnel, ArrowLeft, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+// 1. DEFINISI TIPE TS UNTUK POKEMON
+interface Pokemon {
+  id: number;
+  name: string;
+  primaryType: string;
+  secondaryType: string | null;
+  generation: string;
+  imageUrl: string | null;
+  region?: string; // region asal (bisa kita simpulkan dari gen)
+}
+
+// Helper untuk menyimpulkan Region asal berdasarkan Generasi
+const getRegionName = (gen: string): string => {
+  const regions: Record<string, string> = {
+    "1": "Kanto",
+    "2": "Johto",
+    "3": "Hoenn",
+    "4": "Sinnoh",
+    "5": "Unova",
+    "6": "Kalos",
+    "7": "Alola",
+    "8": "Galar",
+    "9": "Paldea",
+  };
+  return regions[gen] || "Unknown";
+};
+
+// 2. PEMETAAN WARNA TIPE POKEMON
+const typeColors: Record<string, string> = {
+  grass: "bg-[#4A9641]",
+  poison: "bg-[#9F5BBA]",
+  fire: "bg-[#E6732B]",
+  water: "bg-[#4E90D6]",
+  flying: "bg-[#8EA8DE]",
+  electric: "bg-[#EBB72E]",
+  normal: "bg-[#929BA3]",
+  bug: "bg-[#8CB320]",
+  ground: "bg-[#D97845]",
+  rock: "bg-[#C5B78C]",
+  fairy: "bg-[#EE90E6]",
+  psychic: "bg-[#F55B73]",
+  ghost: "bg-[#5269AD]",
+  ice: "bg-[#74CEC0]",
+  dragon: "bg-[#0C69C8]",
+  dark: "bg-[#5A5465]",
+  steel: "bg-[#5A8F9E]",
+  fighting: "bg-[#D3425F]",
+};
+
+export default function Pokedex() {
+  const [allPokemon, setAllPokemon] = useState<Pokemon[]>([]);
+  const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedType, setSelectedType] = useState("");
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false);
+
+  // Pagination State
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pageInput, setPageInput] = useState("");
+  const limitPerPage = 20; // 5 baris x 4 kolom sesuai mockup
+
+  // Fetch data dari API backend Next.js
+  useEffect(() => {
+    async function fetchPokemon() {
+      try {
+        setLoading(true);
+        // Kita panggil API lokal kita
+        const res = await fetch("/api/pokemon?limit=1025");
+        const data = await res.json();
+        
+        if (data.pokemon) {
+          // Map data sekalian menambahkan region
+          const mapped = data.pokemon.map((p: any) => ({
+            ...p,
+            region: getRegionName(p.generation),
+          }));
+          setAllPokemon(mapped);
+          setFilteredPokemon(mapped);
+        }
+      } catch (err) {
+        console.error("Failed to fetch Pokémon:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchPokemon();
+  }, []);
+
+  // Filter & Search Logic
+  useEffect(() => {
+    let result = allPokemon;
+
+    // Filter by Search (Name or ID)
+    if (searchTerm.trim() !== "") {
+      const term = searchTerm.toLowerCase();
+      result = result.filter(
+        (p) =>
+          p.name.toLowerCase().includes(term) ||
+          p.id.toString() === term ||
+          `#${p.id.toString().padStart(4, "0")}`.includes(term)
+      );
+    }
+
+    // Filter by Type
+    if (selectedType !== "") {
+      result = result.filter(
+        (p) =>
+          p.primaryType.toLowerCase() === selectedType.toLowerCase() ||
+          p.secondaryType?.toLowerCase() === selectedType.toLowerCase()
+      );
+    }
+
+    setFilteredPokemon(result);
+    setCurrentPage(1); // Reset ke halaman 1 setiap filter berubah
+  }, [searchTerm, selectedType, allPokemon]);
+
+  // Perhitungan Pagination
+  const totalPokemon = filteredPokemon.length;
+  const totalPages = Math.ceil(totalPokemon / limitPerPage) || 1;
+  const indexOfLastItem = currentPage * limitPerPage;
+  const indexOfFirstItem = indexOfLastItem - limitPerPage;
+  const currentItems = filteredPokemon.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handleGoToPage = () => {
+    const pageNum = parseInt(pageInput, 10);
+    if (!isNaN(pageNum) && pageNum >= 1 && pageNum <= totalPages) {
+      setCurrentPage(pageNum);
+      setPageInput("");
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center min-h-screen bg-white py-10 font-sans text-gray-800">
+      
+      {/* 1. HEADER LOGO */}
+      <div className="flex flex-col items-center mb-6">
+        <h1
+          data-text="PoKéDex"
+          className="
+            relative font-pokemon text-8xl text-[#FFDE00] tracking-wider select-none
+            before:content-[attr(data-text)] before:absolute before:inset-0
+            before:[-webkit-text-stroke:20px_#3B4CCA] before:text-[#3B4CCA]
+            before:z-[-1] drop-shadow-lg
+          "
+        >
+          PoKéDex
+        </h1>
+        <div className="flex gap-4 text-xs font-bold text-[#516A9A] tracking-wider mt-4">
+          <Link href="/pokedex" className="hover:underline">pokédex</Link>
+          <span>|</span>
+          <Link href="/statistics" className="hover:underline">statistics</Link>
+          <span>|</span>
+          <Link href="/pokeddle" className="hover:underline">pokeddle</Link>
+        </div>
+      </div>
+
+      {/* 2. SEARCH & FILTER BAR */}
+      <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4 mb-16">
+        <div className="relative flex-1 flex items-center">
+          <input
+            type="text"
+            placeholder="Search by Name or ID..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full h-10 pl-5 pr-12 bg-[#516A9A] text-white placeholder-[#F9CF01]/60 rounded-full outline-none text-sm shadow-md"
+          />
+          <div className="absolute right-4 text-[#F9CF01] pointer-events-none flex items-center justify-center">
+            <Search className="w-5 h-5" />
+          </div>
+        </div>
+        
+        {/* Tombol Filter */}
+        <div className="relative">
+          <button 
+            onClick={() => setShowFilterDropdown(!showFilterDropdown)}
+            className={`w-10 h-10 rounded-full cursor-pointer flex items-center justify-center shadow-md transition-colors ${
+              selectedType !== "" ? "bg-[#F9CF01] text-[#516A9A]" : "bg-[#516A9A] text-[#F9CF01] hover:bg-[#425780]"
+            }`}
+          >
+            <Funnel className="w-5 h-5" />
+          </button>
+
+          {/* Dropdown Filter Tipe */}
+          {showFilterDropdown && (
+            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 grid grid-cols-2 gap-1 p-2">
+              <button
+                onClick={() => { setSelectedType(""); setShowFilterDropdown(false); }}
+                className="col-span-2 text-xs py-1.5 rounded bg-gray-100 hover:bg-gray-200 font-bold"
+              >
+                Clear Filter
+              </button>
+              {Object.keys(typeColors).map((type) => (
+                <button
+                  key={type}
+                  onClick={() => { setSelectedType(type); setShowFilterDropdown(false); }}
+                  className={`text-[10px] py-1.5 px-2 text-white font-bold rounded capitalize ${typeColors[type]} hover:brightness-90`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* 3. GRID POKÉMON */}
+      {loading ? (
+        <div className="flex flex-col items-center justify-center h-64 gap-3">
+          <div className="w-10 h-10 border-4 border-[#516A9A] border-t-transparent rounded-full animate-spin"></div>
+          <p className="text-gray-400 font-semibold">Loading PokéDex...</p>
+        </div>
+      ) : currentItems.length === 0 ? (
+        <div className="h-64 flex items-center justify-center text-gray-400 font-semibold">
+          No Pokémon found matching your search.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 max-w-5xl w-full px-6">
+          {currentItems.map((pokemon) => (
+            <div key={pokemon.id} className="flex flex-col items-center w-full max-w-[210px] mx-auto group">
+              <Link href={`/pokemon/${pokemon.id}`} className="w-full flex flex-col items-center">
+                {/* Image */}
+                <div className="h-44 w-44 flex items-center justify-center p-2 relative cursor-pointer">
+                  <img
+                    src={pokemon.imageUrl || "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/0.png"}
+                    alt={pokemon.name}
+                    className="h-36 w-36 object-contain group-hover:scale-110 transition-transform duration-300 ease-out"
+                  />
+                </div>
+              </Link>
+
+              {/* Line Divider */}
+              <div className="w-full border-b border-gray-300 my-3"></div>
+
+              {/* Name & ID */}
+              <div className="flex justify-between w-full text-base font-semibold px-1 text-gray-800">
+                <span className="capitalize font-semibold tracking-wide truncate pr-2">{pokemon.name}</span>
+                <span className="font-mono text-gray-500 font-bold">
+                  #{String(pokemon.id).padStart(4, "0")}
+                </span>
+              </div>
+
+              {/* Region & Types */}
+              <div className="flex justify-between w-full text-sm mt-1 px-1 items-center">
+                <span className="text-gray-400 capitalize font-medium">{pokemon.region}</span>
+                <div className="flex gap-1.5">
+                  <TypeIcon type={pokemon.primaryType} />
+                  {pokemon.secondaryType && <TypeIcon type={pokemon.secondaryType} />}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* 4. FOOTER PAGINATION */}
+      {!loading && filteredPokemon.length > 0 && (
+        <div className="w-full max-w-5xl mt-16 border-t border-gray-300 pt-6 px-6 flex justify-between items-center text-xs font-bold text-[#516A9A] tracking-wide">
+          {/* Previous Button */}
+          <button
+            onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+            disabled={currentPage === 1}
+            className="flex items-center gap-3 hover:opacity-75 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Showing {indexOfFirstItem + 1} - {Math.min(indexOfLastItem, totalPokemon)} of {totalPokemon}</span>
+          </button>
+          
+          {/* Go to Input */}
+          <div className="flex items-center gap-2">
+            <span>Go to</span>
+            <input
+              type="text"
+              value={pageInput}
+              onChange={(e) => setPageInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleGoToPage();
+              }}
+              className="w-10 h-7 border border-[#516A9A] rounded text-center outline-none bg-transparent font-mono text-[#516A9A]"
+            />
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className="flex items-center gap-3 hover:opacity-75 transition-opacity disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <span>Page {currentPage} of {totalPages}</span>
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
+      )}
+
+    </div>
+  );
+}
+
+// Komponen Pembantu Render Tipe Pokémon Bulat
+function TypeIcon({ type }: { type: string }) {
+  const typeLower = type.toLowerCase();
+  const colorClass = typeColors[typeLower] || "bg-gray-400";
+  return (
+    <div 
+      title={type}
+      className={`${colorClass} w-6 h-6 rounded-full flex items-center justify-center text-[10px] text-white font-black shadow-sm select-none`}
+    >
+      {type[0].toUpperCase()}
+    </div>
+  );
+}
