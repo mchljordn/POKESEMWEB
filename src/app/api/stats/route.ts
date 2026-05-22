@@ -3,8 +3,25 @@
  * Aggregated statistics: count per type/generation, top stats, averages
  */
 
-import { executeSparqlQuery } from '@/lib/fuseki';
-import { getQuery } from '@/lib/queries';
+import { executeSparqlQuery } from "../../../lib/fuseki";
+import { getQuery } from "../../../lib/queries";
+
+interface StatsData {
+  perType?: { type: string; count: number }[];
+  perGeneration?: { generation: number; count: number }[];
+  topHP?: { id: number; name: string; type: string; hp: number }[];
+  topAttack?: { id: number; name: string; type: string; attack: number }[];
+  topSpeed?: { id: number; name: string; type: string; speed: number }[];
+  averageStats?: {
+    type: string;
+    avgHP: number;
+    avgAttack: number;
+    avgDefense: number;
+    avgSpAtk: number;
+    avgSpDef: number;
+    avgSpeed: number;
+  }[];
+}
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -12,7 +29,7 @@ export async function GET(request) {
 
   try {
     let query;
-    let data = {};
+    let data: StatsData = {};
 
     switch (stat) {
       case 'overview':

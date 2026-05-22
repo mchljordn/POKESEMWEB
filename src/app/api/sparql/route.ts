@@ -3,7 +3,8 @@
  * Free-form SPARQL query explorer
  */
 
-import { executeSparqlQuery } from '@/lib/fuseki';
+import { executeSparqlQuery } from "../../../lib/fuseki";
+
 
 export async function POST(request) {
   try {

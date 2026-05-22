@@ -3,8 +3,8 @@
  * List all Pokemon with optional search, filter, and sort
  */
 
-import { executeSparqlQuery } from '@/lib/fuseki';
-import { getQuery } from '@/lib/queries';
+import { executeSparqlQuery } from "../../../lib/fuseki";
+import { getQuery } from "../../../lib/queries";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
