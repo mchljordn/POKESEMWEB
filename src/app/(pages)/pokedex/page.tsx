@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Search, Funnel, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -59,12 +59,88 @@ export default function Pokedex() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("");
+  const [selectedType2, setSelectedType2] = useState("");
+  const [selectedGen, setSelectedGen] = useState("");
+  const [sortBy, setSortBy] = useState("id_asc");
   const [showFilterDropdown, setShowFilterDropdown] = useState(false);
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
   const [pageInput, setPageInput] = useState("");
   const limitPerPage = 16; 
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const prevSearchRef = useRef(searchTerm);
+  const prevTypeRef = useRef(selectedType);
+  const prevType2Ref = useRef(selectedType2);
+  const prevGenRef = useRef(selectedGen);
+
+  // Load state from sessionStorage on mount
+  useEffect(() => {
+    const savedSearch = sessionStorage.getItem("pokedex_search") || "";
+    const savedType = sessionStorage.getItem("pokedex_type") || "";
+    const savedType2 = sessionStorage.getItem("pokedex_type2") || "";
+    const savedGen = sessionStorage.getItem("pokedex_gen") || "";
+    const savedSort = sessionStorage.getItem("pokedex_sort") || "id_asc";
+    const savedPage = sessionStorage.getItem("pokedex_page") || "1";
+
+    if (savedSearch) setSearchTerm(savedSearch);
+    if (savedType) setSelectedType(savedType);
+    if (savedType2) setSelectedType2(savedType2);
+    if (savedGen) setSelectedGen(savedGen);
+    if (savedSort) setSortBy(savedSort);
+    if (savedPage) setCurrentPage(parseInt(savedPage, 10));
+
+    prevSearchRef.current = savedSearch;
+    prevTypeRef.current = savedType;
+    prevType2Ref.current = savedType2;
+    prevGenRef.current = savedGen;
+    setIsLoaded(true);
+  }, []);
+
+  // Save search, type, and page to sessionStorage
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_search", searchTerm);
+    }
+  }, [searchTerm, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_type", selectedType);
+    }
+  }, [selectedType, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_type2", selectedType2);
+    }
+  }, [selectedType2, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_gen", selectedGen);
+    }
+  }, [selectedGen, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_sort", sortBy);
+    }
+  }, [sortBy, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      sessionStorage.setItem("pokedex_page", currentPage.toString());
+    }
+  }, [currentPage, isLoaded]);
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    if (isLoaded) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [currentPage, isLoaded]);
 
   // Fetch data dari API backend Next.js
   useEffect(() => {
@@ -108,7 +184,7 @@ export default function Pokedex() {
       );
     }
 
-    // Filter by Type
+    // Filter by Primary Type
     if (selectedType !== "") {
       result = result.filter(
         (p) =>
@@ -117,9 +193,54 @@ export default function Pokedex() {
       );
     }
 
-    setFilteredPokemon(result);
-    setCurrentPage(1); // Reset ke halaman 1 setiap filter berubah
-  }, [searchTerm, selectedType, allPokemon]);
+    // Filter by Secondary Type (if specified)
+    if (selectedType2 !== "") {
+      result = result.filter(
+        (p) =>
+          p.primaryType.toLowerCase() === selectedType2.toLowerCase() ||
+          p.secondaryType?.toLowerCase() === selectedType2.toLowerCase()
+      );
+    }
+
+    // Filter by Generation
+    if (selectedGen !== "") {
+      result = result.filter(
+        (p) => p.generation === selectedGen
+      );
+    }
+
+    // Sort the results
+    const sorted = [...result];
+    if (sortBy === "name_asc") {
+      sorted.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === "name_desc") {
+      sorted.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (sortBy === "id_desc") {
+      sorted.sort((a, b) => b.id - a.id);
+    } else {
+      // Default: id_asc
+      sorted.sort((a, b) => a.id - b.id);
+    }
+
+    setFilteredPokemon(sorted);
+
+    // Only reset to page 1 if the filter actually changed (user changed it, not initial load)
+    if (
+      isLoaded &&
+      (prevSearchRef.current !== searchTerm ||
+        prevTypeRef.current !== selectedType ||
+        prevType2Ref.current !== selectedType2 ||
+        prevGenRef.current !== selectedGen)
+    ) {
+      setCurrentPage(1);
+    }
+
+    // Update refs
+    prevSearchRef.current = searchTerm;
+    prevTypeRef.current = selectedType;
+    prevType2Ref.current = selectedType2;
+    prevGenRef.current = selectedGen;
+  }, [searchTerm, selectedType, selectedType2, selectedGen, sortBy, allPokemon, isLoaded]);
 
   // Perhitungan Pagination
   const totalPokemon = filteredPokemon.length;
@@ -136,21 +257,25 @@ export default function Pokedex() {
     }
   };
 
+  const isFilterActive = selectedType !== "" || selectedType2 !== "" || selectedGen !== "" || sortBy !== "id_asc";
+
   return (
     <div className="flex flex-col items-center min-h-screen bg-white mt-10 font-sans text-gray-800 gap-10">
       
             {/* 1. HEADER LOGO */}
-            <h1
-              data-text="PoKéDex"
-              className="
-                relative font-pokemon text-8xl text-[#F9CF01] tracking-wider
-                before:content-[attr(data-text)] before:absolute before:inset-0
-                before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
-                before:z-[-1] drop-shadow-xl leading-normal 
-              "
-            >
-              PoKéDex
-            </h1>
+            <Link href="/" className="cursor-pointer select-none">
+              <h1
+                data-text="PoKéDex"
+                className="
+                  relative font-pokemon text-8xl text-[#F9CF01] tracking-wider
+                  before:content-[attr(data-text)] before:absolute before:inset-0
+                  before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
+                  before:z-[-1] drop-shadow-xl leading-normal 
+                "
+              >
+                PoKéDex
+              </h1>
+            </Link>
       
       {/* 2. SEARCH & FILTER BAR */}
       <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4">
@@ -172,7 +297,7 @@ export default function Pokedex() {
           <button
             onClick={() => setShowFilterDropdown(!showFilterDropdown)}
             className={`w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-colors ${
-              selectedType !== "" ? "bg-[#F9CF01] text-[#516A9A]" : "bg-[#516A9A] hover:bg-[#425780] text-[#F9CF01]"
+              isFilterActive ? "bg-[#F9CF01] text-[#516A9A]" : "bg-[#516A9A] hover:bg-[#425780] text-[#F9CF01]"
             }`}
           >
             <Funnel />
@@ -180,22 +305,108 @@ export default function Pokedex() {
 
           {/* Dropdown Filter Tipe */}
           {showFilterDropdown && (
-            <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 grid grid-cols-2 gap-1 p-2">
-              <button
-                onClick={() => { setSelectedType(""); setShowFilterDropdown(false); }}
-                className="col-span-2 text-xs py-1.5 rounded bg-gray-100 hover:bg-gray-200 font-bold"
-              >
-                Clear Filter
-              </button>
-              {Object.keys(typeColors).map((type) => (
+            <div className="absolute right-0 mt-3 w-[340px] sm:w-[420px] bg-white border border-gray-200 rounded-xl shadow-2xl p-4 z-50 flex flex-col gap-4 font-sf-pro text-xs text-gray-700">
+              {/* Header */}
+              <div className="flex justify-between items-center border-b border-gray-100 pb-2">
+                <span className="font-bold text-[#516A9A] text-sm">Advanced Filters</span>
                 <button
-                  key={type}
-                  onClick={() => { setSelectedType(type); setShowFilterDropdown(false); }}
-                  className={`text-[10px] py-1.5 px-2 text-white font-bold rounded capitalize ${typeColors[type]} hover:brightness-90`}
+                  type="button"
+                  onClick={() => {
+                    setSelectedType("");
+                    setSelectedType2("");
+                    setSelectedGen("");
+                    setSortBy("id_asc");
+                  }}
+                  className="text-red-500 font-bold hover:underline cursor-pointer"
                 >
-                  {type}
+                  Reset All
                 </button>
-              ))}
+              </div>
+
+              {/* Generation Filter Section */}
+              <div className="flex flex-col gap-1.5">
+                <span className="font-semibold text-gray-500">Generation</span>
+                <div className="grid grid-cols-5 gap-1">
+                  {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen) => (
+                    <button
+                      key={gen}
+                      type="button"
+                      onClick={() => setSelectedGen(selectedGen === gen ? "" : gen)}
+                      className={`py-1 rounded font-bold text-center border cursor-pointer text-[10px] transition-colors ${
+                        selectedGen === gen
+                          ? "bg-[#516A9A] border-[#516A9A] text-white"
+                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+                      }`}
+                    >
+                      Gen {gen}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Primary Type Filter Section */}
+              <div className="flex flex-col gap-1.5">
+                <span className="font-semibold text-gray-500">Primary Type</span>
+                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
+                  {Object.keys(typeColors).map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setSelectedType(selectedType === type ? "" : type)}
+                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
+                        typeColors[type]
+                      } ${selectedType === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Secondary Type Filter Section */}
+              <div className="flex flex-col gap-1.5">
+                <span className="font-semibold text-gray-500">Secondary Type</span>
+                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
+                  {Object.keys(typeColors).map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setSelectedType2(selectedType2 === type ? "" : type)}
+                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
+                        typeColors[type]
+                      } ${selectedType2 === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Sort By Section */}
+              <div className="flex flex-col gap-1.5">
+                <span className="font-semibold text-gray-500">Sort By</span>
+                <div className="grid grid-cols-2 gap-1.5">
+                  {[
+                    { value: "id_asc", label: "ID (Lowest First)" },
+                    { value: "id_desc", label: "ID (Highest First)" },
+                    { value: "name_asc", label: "Name (A-Z)" },
+                    { value: "name_desc", label: "Name (Z-A)" },
+                  ].map((opt) => (
+                    <button
+                      key={opt.value}
+                      type="button"
+                      onClick={() => setSortBy(opt.value)}
+                      className={`py-1 px-2 rounded font-bold border text-[10px] text-center cursor-pointer transition-colors ${
+                        sortBy === opt.value
+                          ? "bg-[#F9CF01] border-[#F9CF01] text-[#516A9A]"
+                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>
@@ -205,9 +416,9 @@ export default function Pokedex() {
       <div className="flex gap-11 text-[#516A9A] font-sf-pro">
         <Link href="/pokedex">pokédex</Link>
         <span>|</span>
-        <Link href="/statistics">statistic</Link>
-        <span>|</span>
         <Link href="/pokeddle">pokeddle</Link>
+        <span>|</span>
+        <Link href="/pokedex-ai">pokédex AI</Link>
       </div>
 
       {/* 3. GRID POKÉMON */}
