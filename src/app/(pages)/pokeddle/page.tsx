@@ -107,12 +107,12 @@ export default function pokeddle() {
                     Guess the PoKéMoN
                 </h1>
             </div>
-            <div className="flex gap-11 text-[#516A9A]">
-                <Link href="/pokeddle">pokédex</Link>
+            <div className="flex gap-11 text-[#516A9A] font-sf-pro font-medium z-30">
+                <Link href="/pokedex" className="hover:underline">pokédex</Link>
                 <span>|</span>
-                <Link href="/">about</Link>
+                <Link href="/pokeddle" className="hover:underline">pokeddle</Link>
                 <span>|</span>
-                <Link href="/">contact</Link>
+                <Link href="/pokedex-ai" className="hover:underline">pokédex AI</Link>
             </div>
             <div className="relative w-64 h-64 flex items-center justify-center  rounded-2xl p-4 border-4 border-[#516A9A]">
                 {pokemon && (
@@ -122,9 +122,8 @@ export default function pokeddle() {
                         width={200}
                         height={200}
                         // Ganti filter brightness secara reaktif berdasarkan state isCorrect
-                        className={`object-contain transition-all duration-700 ${
-                            isCorrect ? "brightness-100" : "brightness-0"
-                        }`}
+                        className={`object-contain transition-all duration-700 ${isCorrect ? "brightness-100" : "brightness-0"
+                            }`}
                         unoptimized
                     />
                 )}

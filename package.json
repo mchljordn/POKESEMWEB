@@ -27,7 +27,7 @@
     "eslint-config-next": "^14.0.0",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3"
+    "typescript": "6.0.3"
   },
   "repository": {
     "type": "git",
