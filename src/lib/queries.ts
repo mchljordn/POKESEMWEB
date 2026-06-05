@@ -12,33 +12,40 @@
  */
 
 export const QUERIES = {
-  // 1. Get all Pokemon with basic info
+  // 1. Get all Pokemon with basic info (Ditambah Tipe Kedua & Image URL)
   getAllPokemon: () => `
     PREFIX poke: <http://example.org/pokemon/>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX : <http://example.org/pokemon/>
     
-    SELECT ?id ?name ?type ?generation WHERE {
+    SELECT ?id ?name ?primaryType ?secondaryType ?generation ?imageUrl WHERE {
       ?pokemon rdf:type :Pokemon ;
                :pokedexNumber ?id ;
                rdfs:label ?name ;
                :hasPrimaryType ?typeObj ;
                :belongsToGen ?genObj .
-      ?typeObj rdfs:label ?type .
+      ?typeObj rdfs:label ?primaryType .
       ?genObj :genNumber ?generation .
+      
+      OPTIONAL {
+        ?pokemon :hasSecondaryType ?secTypeObj .
+        ?secTypeObj rdfs:label ?secondaryType .
+      }
+      OPTIONAL {
+        ?pokemon :imageUrl ?imageUrl .
+      }
     }
     ORDER BY ?id
   `,
-
-  // 2. Get Pokemon by ID (Pokedex number)
+  // 2. Get Pokemon by ID (Pokedex number) (Ditambah Height, Weight, Abilities, EvolvesFrom, Image)
   getPokemonById: (id) => `
     PREFIX poke: <http://example.org/pokemon/>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX : <http://example.org/pokemon/>
     
-    SELECT ?id ?name ?type ?generation ?hp ?attack ?defense ?spAtk ?spDef ?speed WHERE {
+    SELECT ?id ?name ?primaryType ?secondaryType ?generation ?hp ?attack ?defense ?spAtk ?spDef ?speed ?height ?weight ?imageUrl ?ability ?hiddenAbility ?evolvesFrom WHERE {
       ?pokemon rdf:type :Pokemon ;
                :pokedexNumber ?id ;
                rdfs:label ?name ;
@@ -50,8 +57,34 @@ export const QUERIES = {
                :baseSpAttack ?spAtk ;
                :baseSpDefense ?spDef ;
                :baseSpeed ?speed .
-      ?typeObj rdfs:label ?type .
+      ?typeObj rdfs:label ?primaryType .
       ?genObj :genNumber ?generation .
+      
+      OPTIONAL {
+        ?pokemon :hasSecondaryType ?secTypeObj .
+        ?secTypeObj rdfs:label ?secondaryType .
+      }
+      OPTIONAL {
+        ?pokemon :heightM ?height .
+      }
+      OPTIONAL {
+        ?pokemon :weightKg ?weight .
+      }
+      OPTIONAL {
+        ?pokemon :imageUrl ?imageUrl .
+      }
+      OPTIONAL {
+        ?pokemon :hasAbility ?abilityObj .
+        BIND(STRAFTER(STR(?abilityObj), "http://example.org/pokemon/") AS ?ability)
+      }
+      OPTIONAL {
+        ?pokemon :hasHiddenAbility ?hiddenAbilityObj .
+        BIND(STRAFTER(STR(?hiddenAbilityObj), "http://example.org/pokemon/") AS ?hiddenAbility)
+      }
+      OPTIONAL {
+        ?pokemon :evolvesFrom ?prevPokemon .
+        ?prevPokemon rdfs:label ?evolvesFrom .
+      }
       FILTER(?id = ${id})
     }
   `,

@@ -1,12 +1,9 @@
 @import "tailwindcss";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 @theme {
   --font-pokemon: var(--font-pokemon), sans-serif;
+  --font-sf-pro: var(--font-sf-pro), sans-serif;
 }
 
 body {
@@ -15,7 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 
 code {

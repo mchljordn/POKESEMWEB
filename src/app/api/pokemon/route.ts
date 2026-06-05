@@ -47,17 +47,19 @@ export async function GET(request) {
     // Apply limit
     pokemon = pokemon.slice(0, limit);
 
-    return Response.json({
-      pokemon: pokemon.map(p => ({
-        id: parseInt(p.id?.value),
-        name: p.name?.value,
-        type: p.type?.value,
-        generation: p.generation?.value
-      })),
-      count: pokemon.length,
-      filters: { search, type, sort, limit },
-      timestamp: new Date().toISOString()
-    });
+  return Response.json({
+    pokemon: pokemon.map(p => ({
+      id: parseInt(p.id?.value),
+      name: p.name?.value,
+      primaryType: p.primaryType?.value,
+      secondaryType: p.secondaryType?.value || null, // Menghandle null jika tipe tunggal
+      generation: p.generation?.value,
+      imageUrl: p.imageUrl?.value || null           // Menghandle URL gambar
+    })),
+    count: pokemon.length,
+    filters: { search, type, sort, limit },
+    timestamp: new Date().toISOString()
+  });
   } catch (error) {
     return Response.json({
       error: error.message

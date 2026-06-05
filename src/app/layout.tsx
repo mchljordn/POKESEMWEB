@@ -11,10 +11,30 @@ const pokemonFont = localFont({
   variable: "--font-pokemon",
 });
 
+const sfPro = localFont({
+  src: [
+    {
+      path: "./fonts/SFPRODISPLAYREGULAR.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/SFPRODISPLAYLIGHTITALIC.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-sf-pro",
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={pokemonFont.variable}>
-      <body>{children}</body>
+    <html lang="en" className={`${pokemonFont.variable} ${sfPro.variable}`}>
+      <body className="bg-white">
+        <main className="pt-8 pb-8">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

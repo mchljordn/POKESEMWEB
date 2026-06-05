@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         pokemon: ["var(--font-pokemon)", "sans-serif"],
+        sfpro: ["var(--font-sfpro)"],
       },
     },
   },
