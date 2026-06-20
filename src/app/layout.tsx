@@ -14,12 +14,12 @@ const pokemonFont = localFont({
 const sfPro = localFont({
   src: [
     {
-      path: "./fonts/SFPRODISPLAYREGULAR.OTF",
+      path: "./fonts/SFPRODISPLAYREGULAR.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/SFPRODISPLAYLIGHTITALIC.OTF",
+      path: "./fonts/SFPRODISPLAYLIGHTITALIC.otf",
       weight: "400",
       style: "italic",
     },
