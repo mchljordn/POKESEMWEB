@@ -38,14 +38,14 @@ export const QUERIES = {
     }
     ORDER BY ?id
   `,
-  // 2. Get Pokemon by ID (Pokedex number) (Ditambah Height, Weight, Abilities, EvolvesFrom, Image)
+  // 2. Get Pokemon by ID (Pokedex number) (Ditambah Height, Weight, Abilities, EvolvesFrom, Image, BaseExp, CryUrl, IsDefault, Sprites)
   getPokemonById: (id) => `
     PREFIX poke: <http://example.org/pokemon/>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX : <http://example.org/pokemon/>
     
-    SELECT ?id ?name ?primaryType ?secondaryType ?generation ?hp ?attack ?defense ?spAtk ?spDef ?speed ?height ?weight ?imageUrl ?ability ?hiddenAbility ?evolvesFrom WHERE {
+    SELECT ?id ?name ?primaryType ?secondaryType ?generation ?hp ?attack ?defense ?spAtk ?spDef ?speed ?height ?weight ?imageUrl ?ability ?hiddenAbility ?evolvesFrom ?baseExperience ?cryUrl ?isDefault ?frontShiny ?backDefault ?backShiny WHERE {
       ?pokemon rdf:type :Pokemon ;
                :pokedexNumber ?id ;
                rdfs:label ?name ;
@@ -84,6 +84,24 @@ export const QUERIES = {
       OPTIONAL {
         ?pokemon :evolvesFrom ?prevPokemon .
         ?prevPokemon rdfs:label ?evolvesFrom .
+      }
+      OPTIONAL {
+        ?pokemon :baseExperience ?baseExperience .
+      }
+      OPTIONAL {
+        ?pokemon :cryUrl ?cryUrl .
+      }
+      OPTIONAL {
+        ?pokemon :isDefault ?isDefault .
+      }
+      OPTIONAL {
+        ?pokemon :frontShiny ?frontShiny .
+      }
+      OPTIONAL {
+        ?pokemon :backDefault ?backDefault .
+      }
+      OPTIONAL {
+        ?pokemon :backShiny ?backShiny .
       }
       FILTER(?id = ${id})
     }

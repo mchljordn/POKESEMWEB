@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Funnel, Search, Sparkles } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 const typeColors: Record<string, string> = {
   grass: "bg-[#4A9641]",
@@ -38,8 +39,8 @@ export default function Home() {
   const [sortBy, setSortBy] = useState("id_asc");
 
   // Autocomplete Suggestions States
-  const [allNames, setAllNames] = useState<string[]>([]);
-  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [allNames, setAllNames] = useState<{name: string, id: number}[]>([]);
+  const [suggestions, setSuggestions] = useState<{name: string, id: number}[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   // Fetch daftar nama pokemon untuk saran autocomplete
@@ -49,7 +50,7 @@ export default function Home() {
         const res = await fetch("/api/pokemon?limit=1025");
         const data = await res.json();
         if (data.pokemon) {
-          setAllNames(data.pokemon.map((p: any) => p.name));
+          setAllNames(data.pokemon.map((p: any) => ({ name: p.name, id: p.id })));
         }
       } catch (err) {
         console.error("Failed to fetch Pokémon names for suggestions:", err);
@@ -63,7 +64,7 @@ export default function Home() {
     setSearchTerm(val);
     if (val.trim().length > 1) {
       const filtered = allNames
-        .filter((name) => name.toLowerCase().includes(val.toLowerCase()))
+        .filter((p) => p.name.toLowerCase().includes(val.toLowerCase()))
         .slice(0, 5); // Batasi hanya menampilkan 5 saran
       setSuggestions(filtered);
       setShowSuggestions(true);
@@ -106,22 +107,12 @@ export default function Home() {
   const isFilterActive = selectedType !== "" || selectedType2 !== "" || selectedGen !== "" || sortBy !== "id_asc";
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-10 bg-white select-none">
+    <div className="flex flex-col items-center justify-center h-screen gap-10 bg-white select-none font-sf-pro overflow-hidden">
       {/* Logo */}
-      <h1
-        data-text="PoKéDexiA"
-        className="
-          relative font-pokemon text-8xl text-[#F9CF01] tracking-wider select-none
-          before:content-[attr(data-text)] before:absolute before:inset-0
-          before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
-          before:z-[-1] drop-shadow-xl leading-normal
-        "
-      >
-        PoKéDexiA
-      </h1>
+      <Logo text="PoKéDexiA" className="w-[95vw] sm:w-[80vw] md:w-[75vw] lg:w-[65vw] max-w-5xl" />
 
       {/* Search & Filter Bar Container */}
-      <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4 z-40">
+      <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4 z-50">
         <div className="relative flex-1 flex flex-col">
           {/* Form pencarian */}
           <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
@@ -150,16 +141,16 @@ export default function Home() {
 
           {/* Autocomplete Suggestions Dropdown */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-2xl shadow-xl z-50 overflow-hidden py-1">
-              {suggestions.map((name) => (
+            <div className="absolute left-0 right-0 top-full mt-2 bg-[#516A9A]/95 backdrop-blur-md border border-[#4276BD] rounded-2xl shadow-xl z-50 overflow-hidden py-1">
+              {suggestions.map((p) => (
                 <button
-                  key={name}
+                  key={p.name}
                   type="button"
-                  onClick={() => handleSuggestionClick(name)}
-                  className="w-full text-left px-6 py-2.5 hover:bg-slate-50 capitalize transition-colors cursor-pointer text-gray-700 font-sf-pro text-sm font-semibold flex items-center gap-2"
+                  onClick={() => handleSuggestionClick(p.name)}
+                  className="w-full text-left px-6 py-2.5 hover:bg-[#4276BD] capitalize transition-colors cursor-pointer text-white font-sf-pro text-sm font-semibold flex items-center gap-2"
                 >
-                  <Sparkles className="w-4 h-4 text-[#F9CF01] fill-[#F9CF01]" />
-                  <span>{name}</span>
+                  <span>{p.name}</span>
+                  <span className="italic text-[#F9CF01] text-xs">#{String(p.id).padStart(4, '0')}</span>
                 </button>
               ))}
             </div>
@@ -179,10 +170,10 @@ export default function Home() {
 
           {/* Advanced Filter Panel di Homepage */}
           {showFilterDropdown && (
-            <div className="absolute right-0 mt-3 w-[340px] sm:w-[420px] bg-white border border-gray-200 rounded-xl shadow-2xl p-4 z-50 flex flex-col gap-4 font-sf-pro text-xs text-gray-700 select-text text-left">
+            <div className="absolute right-0 mt-3 w-[calc(100vw-2rem)] max-w-[380px] sm:max-w-none sm:w-[540px] bg-[#516A9A]/95 backdrop-blur-md border border-[#4276BD] rounded-2xl shadow-[0_20px_50px_rgba(66,118,189,0.3)] p-4 sm:p-5 z-50 flex flex-col gap-4 font-sf-pro text-xs text-white select-text text-left">
               {/* Header */}
-              <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                <span className="font-bold text-[#516A9A] text-sm">Advanced Filters</span>
+              <div className="flex justify-between items-center border-b border-white/20 pb-2">
+                <span className="font-bold text-[#F9CF01] text-base tracking-wider uppercase">Advanced Filters</span>
                 <button
                   type="button"
                   onClick={() => {
@@ -191,7 +182,7 @@ export default function Home() {
                     setSelectedGen("");
                     setSortBy("id_asc");
                   }}
-                  className="text-red-500 font-bold hover:underline cursor-pointer"
+                  className="text-red-300 font-bold hover:text-red-200 transition-colors uppercase text-[10px] tracking-wider"
                 >
                   Reset All
                 </button>
@@ -199,67 +190,78 @@ export default function Home() {
 
               {/* Generation Filter Section */}
               <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Generation</span>
-                <div className="grid grid-cols-5 gap-1">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen) => (
-                    <button
-                      key={gen}
-                      type="button"
-                      onClick={() => setSelectedGen(selectedGen === gen ? "" : gen)}
-                      className={`py-1 rounded font-bold text-center border cursor-pointer text-[10px] transition-colors ${
-                        selectedGen === gen
-                          ? "bg-[#516A9A] border-[#516A9A] text-white"
-                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
-                      }`}
-                    >
-                      Gen {gen}
-                    </button>
-                  ))}
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Generation</span>
+                  <span className="text-[#F9CF01] font-bold text-xs">{selectedGen === "" ? "All Generations" : `Generation ${selectedGen}`}</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="9" 
+                  step="1" 
+                  value={selectedGen === "" ? 0 : parseInt(selectedGen)}
+                  onChange={(e) => {
+                    const val = parseInt(e.target.value);
+                    setSelectedGen(val === 0 ? "" : val.toString());
+                  }}
+                  className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#F9CF01] outline-none mt-2"
+                />
+                <div className="flex justify-between text-[9px] text-white/40 font-bold mt-0.5 px-0.5">
+                  <span>All</span>
+                  <span>9</span>
                 </div>
               </div>
 
-              {/* Primary Type Filter Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Primary Type</span>
-                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
-                  {Object.keys(typeColors).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedType(selectedType === type ? "" : type)}
-                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
-                        typeColors[type]
-                      } ${selectedType === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
+              {/* Type Filter Section */}
+              <div className="flex flex-col gap-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Types (Max 2)</span>
+                  <span className="text-[#F9CF01] font-bold text-[10px]">
+                    {selectedType && selectedType2 ? "2 Selected" : selectedType || selectedType2 ? "1 Selected" : "None"}
+                  </span>
                 </div>
-              </div>
-
-              {/* Secondary Type Filter Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Secondary Type</span>
-                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
-                  {Object.keys(typeColors).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedType2(selectedType2 === type ? "" : type)}
-                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
-                        typeColors[type]
-                      } ${selectedType2 === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
+                <div className="grid grid-cols-6 gap-2 sm:gap-3 max-h-32 overflow-y-auto pr-2 custom-scrollbar pb-2 pt-1">
+                  {Object.keys(typeColors).map((type) => {
+                    const isSelected = selectedType === type || selectedType2 === type;
+                    return (
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() => {
+                          if (selectedType === type) {
+                            setSelectedType(selectedType2);
+                            setSelectedType2("");
+                          } else if (selectedType2 === type) {
+                            setSelectedType2("");
+                          } else if (!selectedType) {
+                            setSelectedType(type);
+                          } else if (!selectedType2) {
+                            setSelectedType2(type);
+                          } else {
+                            setSelectedType2(type);
+                          }
+                        }}
+                        className={`relative py-1.5 px-1 rounded-lg text-[9px] tracking-wide text-white font-bold capitalize cursor-pointer transition-all shadow-sm text-center ${
+                          typeColors[type]
+                        } ${isSelected ? "opacity-100 scale-[1.05] shadow-lg z-10" : "opacity-60 hover:opacity-100 hover:scale-[1.05] z-0"}`}
+                      >
+                        {type}
+                        {selectedType === type && (
+                          <span className="absolute -top-1.5 -right-1.5 bg-[#F9CF01] text-[#516A9A] rounded-full w-3.5 h-3.5 flex items-center justify-center text-[7px] font-black shadow z-20">1</span>
+                        )}
+                        {selectedType2 === type && (
+                          <span className="absolute -top-1.5 -right-1.5 bg-[#F9CF01] text-[#516A9A] rounded-full w-3.5 h-3.5 flex items-center justify-center text-[7px] font-black shadow z-20">2</span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* Sort By Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Sort By</span>
-                <div className="grid grid-cols-2 gap-1.5">
+              <div className="flex flex-col gap-2">
+                <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Sort By</span>
+                <div className="grid grid-cols-2 gap-2">
                   {[
                     { value: "id_asc", label: "ID (Lowest First)" },
                     { value: "id_desc", label: "ID (Highest First)" },
@@ -270,10 +272,10 @@ export default function Home() {
                       key={opt.value}
                       type="button"
                       onClick={() => setSortBy(opt.value)}
-                      className={`py-1 px-2 rounded font-bold border text-[10px] text-center cursor-pointer transition-colors ${
+                      className={`py-1.5 px-2 rounded-lg font-bold text-[10px] text-center cursor-pointer transition-all ${
                         sortBy === opt.value
-                          ? "bg-[#F9CF01] border-[#F9CF01] text-[#516A9A]"
-                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+                          ? "bg-[#F9CF01] text-[#516A9A] shadow-md scale-[1.02]"
+                          : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
                       }`}
                     >
                       {opt.label}
@@ -286,22 +288,22 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => handleSearchSubmit()}
-                className="w-full bg-[#516A9A] hover:bg-[#425780] text-white font-bold py-2 rounded shadow transition-colors text-center cursor-pointer mt-1"
+                className="w-full bg-[#F9CF01] hover:bg-[#ebd03b] text-[#516A9A] font-bold py-2 rounded-xl shadow-[0_4px_14px_rgba(249,207,1,0.39)] hover:shadow-[0_6px_20px_rgba(249,207,1,0.23)] hover:-translate-y-0.5 transition-all text-center cursor-pointer mt-1 text-sm tracking-wider uppercase"
               >
-                Apply Filters & Search
+                Apply & Search
               </button>
             </div>
           )}
         </div>
       </div>
 
-      {/* Navigasi Bawah */}
-      <div className="flex gap-11 text-[#516A9A] font-sf-pro font-medium z-30">
-        <Link href="/pokedex" className="hover:underline">pokédex</Link>
-        <span>|</span>
-        <Link href="/pokeddle" className="hover:underline">pokeddle</Link>
-        <span>|</span>
-        <Link href="/pokedex-ai" className="hover:underline">pokédex AI</Link>
+      {/* NAV LINKS */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-11 text-[#516A9A] font-sf-pro text-sm sm:text-base font-semibold px-4 z-40">
+        <Link href="/pokedex" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokeddle" className="hover:underline hover:text-[#4276BD] transition-colors">pokeddle</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokedex-ai" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex AI</Link>
       </div>
     </div>
   );

@@ -20,7 +20,8 @@ export async function executeSparqlQuery(query: string): Promise<any> {
         'Content-Type': 'application/sparql-query',
         'Accept': 'application/sparql-results+json'
       },
-      body: query
+      body: query,
+      cache: 'no-store'
     });
 
     if (!response.ok) {

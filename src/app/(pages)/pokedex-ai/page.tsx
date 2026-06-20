@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Search, Sparkles, Code, Table, Grid, AlertCircle, RefreshCw, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 interface Pokemon {
   id: number;
@@ -28,7 +29,6 @@ const getRegionName = (gen: string): string => {
   };
   return regions[gen] || "Unknown";
 };
-
 
 export default function PokedexAI() {
   const [question, setQuestion] = useState("");
@@ -71,10 +71,15 @@ export default function PokedexAI() {
     }
   }, [currentPage, results.length]);
 
-  // Scroll to top when page changes
+  // Scroll to query results when page changes
   useEffect(() => {
     if (results.length > 0) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const resultsElement = document.getElementById("query-results");
+      if (resultsElement) {
+        resultsElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
   }, [currentPage, results.length]);
 
@@ -147,25 +152,10 @@ export default function PokedexAI() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full bg-white font-sans text-gray-800 gap-10">
+    <div className="flex flex-col items-center w-full bg-white font-sf-pro text-gray-800 gap-10 overflow-hidden min-h-screen pt-10">
       
-      {/* 1. HEADER LOGO */}
-      <div className="text-center">
-        <Link href="/" className="cursor-pointer select-none">
-          <h1
-            data-text="PokédexAI"
-            className="
-              relative font-pokemon text-8xl text-[#F9CF01] tracking-wider
-              before:content-[attr(data-text)] before:absolute before:inset-0
-              before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
-              before:z-[-1] drop-shadow-xl leading-normal
-            "
-          >
-            PokédexAI
-          </h1>
-        </Link>
-      </div>
-
+      {/* HEADER LOGO */}
+      <Logo text="PokédexAI" className="w-[85vw] sm:w-[60vw] md:w-[45vw] max-w-3xl mt-8 mb-4" />
 
       {/* 2. AI INPUT BAR */}
       <form onSubmit={handleAsk} className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4">
@@ -196,12 +186,12 @@ export default function PokedexAI() {
       </form>
             
                 {/* NAV LINKS */}
-      <div className="flex gap-11 text-[#516A9A] font-sf-pro">
-        <Link href="/pokedex">pokédex</Link>
-        <span>|</span>
-        <Link href="/pokeddle">pokeddle</Link>
-        <span>|</span>
-        <Link href="/pokedex-ai" className="font-bold border-b border-[#516A9A]">pokédex AI</Link>
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-11 text-[#516A9A] font-sf-pro text-sm sm:text-base font-semibold px-4 z-40">
+        <Link href="/pokedex" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokeddle" className="hover:underline hover:text-[#4276BD] transition-colors">pokeddle</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokedex-ai" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex AI</Link>
       </div>
       <p className="text-sm font-sf-pro italic text-[#516A9A] tracking-wider">
           Ask Gemini in natural language, query Fuseki with Semantic SPARQL
@@ -275,7 +265,7 @@ export default function PokedexAI() {
 
       {/* 5. RESULTS DISPLAY */}
       {!loading && results.length > 0 && (
-        <div className="w-full max-w-5xl px-6 flex flex-col gap-6 items-center">
+        <div id="query-results" className="w-full max-w-5xl px-6 flex flex-col gap-6 items-center">
           <div className="flex justify-between w-full border-b border-gray-200 pb-3 items-center font-sf-pro text-xs text-[#516A9A] font-semibold tracking-wider">
             <div className="flex items-center gap-2">
               {isPokemonCardFormat ? (
@@ -290,7 +280,7 @@ export default function PokedexAI() {
           {/* RENDER FORMAT A: Pokemon Cards Grid */}
           {isPokemonCardFormat ? (
             <div className="flex flex-col items-center w-full gap-16">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 w-full font-sf-pro">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 sm:gap-x-12 gap-y-12 sm:gap-y-16 w-full px-4 sm:px-0 font-sf-pro">
                 {currentItems.map((item, idx) => {
                   // Parsing bindings
                   const id = parseInt(item.id?.value || "0", 10);
@@ -304,7 +294,7 @@ export default function PokedexAI() {
                   return (
                     <div key={idx} className="flex flex-col items-center w-full max-w-[210px] mx-auto group">
                       <Link href={`/pokemon/${id}`} className="w-full flex flex-col items-center">
-                        <div className="h-44 w-44 flex items-center justify-center p-2 relative cursor-pointer">
+                        <div className="h-32 w-32 sm:h-44 sm:w-44 flex items-center justify-center p-2 relative cursor-pointer">
                           <img
                             src={imageUrl || "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/0.png"}
                             alt={name}

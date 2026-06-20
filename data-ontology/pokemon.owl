@@ -82,6 +82,12 @@
     <rdfs:comment>Item atau benda yang dapat digunakan dalam game</rdfs:comment>
   </rdf:Description>
 
+  <rdf:Description rdf:about="http://example.org/pokemon/GameVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>GameVersion</rdfs:label>
+    <rdfs:comment>Versi game tempat Pokemon ini muncul</rdfs:comment>
+  </rdf:Description>
+
   <!-- =============================================== -->
   <!-- POKEMON PROPERTIES (Data Properties) -->
   <!-- =============================================== -->
@@ -100,6 +106,30 @@
     <rdfs:comment>Nomor urut di Pokedex</rdfs:comment>
     <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/baseExperience">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>baseExperience</rdfs:label>
+    <rdfs:comment>Base experience yield</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/cryUrl">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>cryUrl</rdfs:label>
+    <rdfs:comment>URL of the Pokemon's cry sound</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/isDefault">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>isDefault</rdfs:label>
+    <rdfs:comment>Whether this is the default form</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
   </rdf:Description>
 
   <rdf:Description rdf:about="http://example.org/pokemon/heightM">
@@ -272,6 +302,22 @@
     <rdfs:comment>Gerakan/serangan yang dapat dipelajari Pokémon</rdfs:comment>
     <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
     <rdfs:range rdf:resource="http://example.org/pokemon/Move"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/holdsItem">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>holdsItem</rdfs:label>
+    <rdfs:comment>Item yang bisa dipegang oleh Pokémon ini</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://example.org/pokemon/Item"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/appearsInGame">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>appearsInGame</rdfs:label>
+    <rdfs:comment>Versi game tempat Pokémon ini muncul</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://example.org/pokemon/GameVersion"/>
   </rdf:Description>
 
   <!-- =============================================== -->
@@ -466,6 +512,30 @@
   <rdf:Description rdf:about="http://example.org/pokemon/genNumberRestriction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment>Generation number harus 1-9</rdfs:comment>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/frontShiny">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>frontShiny</rdfs:label>
+    <rdfs:comment>Front Shiny Sprite URL</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/backDefault">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>backDefault</rdfs:label>
+    <rdfs:comment>Back Default Sprite URL</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://example.org/pokemon/backShiny">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label>backShiny</rdfs:label>
+    <rdfs:comment>Back Shiny Sprite URL</rdfs:comment>
+    <rdfs:domain rdf:resource="http://example.org/pokemon/Pokemon"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
   </rdf:Description>
 
 </rdf:RDF>

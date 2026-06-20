@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Search, Funnel, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 // 1. DEFINISI TIPE TS UNTUK POKEMON
 interface Pokemon {
@@ -135,10 +136,15 @@ export default function Pokedex() {
     }
   }, [currentPage, isLoaded]);
 
-  // Scroll to top when page changes
+  // Scroll to query results when page changes
   useEffect(() => {
     if (isLoaded) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const resultsElement = document.getElementById("query-results");
+      if (resultsElement) {
+        resultsElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     }
   }, [currentPage, isLoaded]);
 
@@ -260,32 +266,20 @@ export default function Pokedex() {
   const isFilterActive = selectedType !== "" || selectedType2 !== "" || selectedGen !== "" || sortBy !== "id_asc";
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-white mt-10 font-sans text-gray-800 gap-10">
+    <div className="flex flex-col items-center min-h-screen bg-white mt-10 font-sf-pro text-gray-800 gap-10 overflow-hidden">
       
             {/* 1. HEADER LOGO */}
-            <Link href="/" className="cursor-pointer select-none">
-              <h1
-                data-text="PoKéDex"
-                className="
-                  relative font-pokemon text-8xl text-[#F9CF01] tracking-wider
-                  before:content-[attr(data-text)] before:absolute before:inset-0
-                  before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
-                  before:z-[-1] drop-shadow-xl leading-normal 
-                "
-              >
-                PoKéDex
-              </h1>
-            </Link>
+            <Logo text="PoKéDex" className="w-[85vw] sm:w-[60vw] md:w-[45vw] max-w-3xl mt-8 mb-4" />
       
       {/* 2. SEARCH & FILTER BAR */}
-      <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4">
+      <div className="relative flex gap-3 items-center justify-center w-full max-w-3xl px-4 z-50">
         <div className="relative flex-1 flex items-center">
           <input
             type="text"
             placeholder="Search by Name or ID..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full h-12 pl-6! pr-5 bg-[#516A9A] text-[#F9CF01] placeholder-[#F9CF01]/60 rounded-full outline-none font-sf-pro italic"
+            className="w-full h-12 pl-6 pr-12 bg-[#516A9A] text-[#F9CF01] placeholder-[#F9CF01]/60 rounded-full outline-none font-sf-pro italic shadow-md focus:ring-2 focus:ring-[#F9CF01] transition-all"
           />
           <div className="absolute right-4 text-[#F9CF01] pointer-events-none flex items-center justify-center">
             <Search />
@@ -296,19 +290,19 @@ export default function Pokedex() {
         <div className="relative">
           <button
             onClick={() => setShowFilterDropdown(!showFilterDropdown)}
-            className={`w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-colors ${
+            className={`w-12 h-12 rounded-full cursor-pointer flex items-center justify-center transition-colors shadow-md ${
               isFilterActive ? "bg-[#F9CF01] text-[#516A9A]" : "bg-[#516A9A] hover:bg-[#425780] text-[#F9CF01]"
             }`}
           >
             <Funnel />
           </button>
 
-          {/* Dropdown Filter Tipe */}
+          {/* Dropdown Filter */}
           {showFilterDropdown && (
-            <div className="absolute right-0 mt-3 w-[340px] sm:w-[420px] bg-white border border-gray-200 rounded-xl shadow-2xl p-4 z-50 flex flex-col gap-4 font-sf-pro text-xs text-gray-700">
+            <div className="absolute right-0 mt-3 w-[calc(100vw-2rem)] max-w-[380px] sm:max-w-none sm:w-[540px] bg-[#516A9A]/95 backdrop-blur-md border border-[#4276BD] rounded-2xl shadow-[0_20px_50px_rgba(66,118,189,0.3)] p-4 sm:p-5 z-50 flex flex-col gap-4 font-sf-pro text-xs text-white">
               {/* Header */}
-              <div className="flex justify-between items-center border-b border-gray-100 pb-2">
-                <span className="font-bold text-[#516A9A] text-sm">Advanced Filters</span>
+              <div className="flex justify-between items-center border-b border-white/20 pb-2">
+                <span className="font-bold text-[#F9CF01] text-base tracking-wider uppercase">Advanced Filters</span>
                 <button
                   type="button"
                   onClick={() => {
@@ -317,7 +311,7 @@ export default function Pokedex() {
                     setSelectedGen("");
                     setSortBy("id_asc");
                   }}
-                  className="text-red-500 font-bold hover:underline cursor-pointer"
+                  className="text-red-300 font-bold hover:text-red-200 transition-colors uppercase text-[10px] tracking-wider"
                 >
                   Reset All
                 </button>
@@ -325,67 +319,78 @@ export default function Pokedex() {
 
               {/* Generation Filter Section */}
               <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Generation</span>
-                <div className="grid grid-cols-5 gap-1">
-                  {["1", "2", "3", "4", "5", "6", "7", "8", "9"].map((gen) => (
-                    <button
-                      key={gen}
-                      type="button"
-                      onClick={() => setSelectedGen(selectedGen === gen ? "" : gen)}
-                      className={`py-1 rounded font-bold text-center border cursor-pointer text-[10px] transition-colors ${
-                        selectedGen === gen
-                          ? "bg-[#516A9A] border-[#516A9A] text-white"
-                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
-                      }`}
-                    >
-                      Gen {gen}
-                    </button>
-                  ))}
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Generation</span>
+                  <span className="text-[#F9CF01] font-bold text-xs">{selectedGen === "" ? "All Generations" : `Generation ${selectedGen}`}</span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="9" 
+                  step="1" 
+                  value={selectedGen === "" ? 0 : parseInt(selectedGen)}
+                  onChange={(e) => {
+                    const val = parseInt(e.target.value);
+                    setSelectedGen(val === 0 ? "" : val.toString());
+                  }}
+                  className="w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#F9CF01] outline-none mt-2"
+                />
+                <div className="flex justify-between text-[9px] text-white/40 font-bold mt-0.5 px-0.5">
+                  <span>All</span>
+                  <span>9</span>
                 </div>
               </div>
 
-              {/* Primary Type Filter Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Primary Type</span>
-                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
-                  {Object.keys(typeColors).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedType(selectedType === type ? "" : type)}
-                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
-                        typeColors[type]
-                      } ${selectedType === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
+              {/* Type Filter Section */}
+              <div className="flex flex-col gap-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Types (Max 2)</span>
+                  <span className="text-[#F9CF01] font-bold text-[10px]">
+                    {selectedType && selectedType2 ? "2 Selected" : selectedType || selectedType2 ? "1 Selected" : "None"}
+                  </span>
                 </div>
-              </div>
-
-              {/* Secondary Type Filter Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Secondary Type</span>
-                <div className="grid grid-cols-6 gap-1 max-h-24 overflow-y-auto pr-1">
-                  {Object.keys(typeColors).map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedType2(selectedType2 === type ? "" : type)}
-                      className={`py-1 px-1 rounded text-[9px] text-white font-bold capitalize cursor-pointer transition-all ${
-                        typeColors[type]
-                      } ${selectedType2 === type ? "ring-2 ring-offset-1 ring-gray-400 opacity-100" : "opacity-60 hover:opacity-100"}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
+                <div className="grid grid-cols-6 gap-2 sm:gap-3 max-h-32 overflow-y-auto pr-2 custom-scrollbar pb-2 pt-1">
+                  {Object.keys(typeColors).map((type) => {
+                    const isSelected = selectedType === type || selectedType2 === type;
+                    return (
+                      <button
+                        key={type}
+                        type="button"
+                        onClick={() => {
+                          if (selectedType === type) {
+                            setSelectedType(selectedType2);
+                            setSelectedType2("");
+                          } else if (selectedType2 === type) {
+                            setSelectedType2("");
+                          } else if (!selectedType) {
+                            setSelectedType(type);
+                          } else if (!selectedType2) {
+                            setSelectedType2(type);
+                          } else {
+                            setSelectedType2(type);
+                          }
+                        }}
+                        className={`relative py-1.5 px-1 rounded-lg text-[9px] tracking-wide text-white font-bold capitalize cursor-pointer transition-all shadow-sm text-center ${
+                          typeColors[type]
+                        } ${isSelected ? "opacity-100 scale-[1.05] shadow-lg z-10" : "opacity-60 hover:opacity-100 hover:scale-[1.05] z-0"}`}
+                      >
+                        {type}
+                        {selectedType === type && (
+                          <span className="absolute -top-1.5 -right-1.5 bg-[#F9CF01] text-[#516A9A] rounded-full w-3.5 h-3.5 flex items-center justify-center text-[7px] font-black shadow z-20">1</span>
+                        )}
+                        {selectedType2 === type && (
+                          <span className="absolute -top-1.5 -right-1.5 bg-[#F9CF01] text-[#516A9A] rounded-full w-3.5 h-3.5 flex items-center justify-center text-[7px] font-black shadow z-20">2</span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* Sort By Section */}
-              <div className="flex flex-col gap-1.5">
-                <span className="font-semibold text-gray-500">Sort By</span>
-                <div className="grid grid-cols-2 gap-1.5">
+              <div className="flex flex-col gap-2">
+                <span className="font-semibold text-white/70 uppercase tracking-widest text-[10px]">Sort By</span>
+                <div className="grid grid-cols-2 gap-2">
                   {[
                     { value: "id_asc", label: "ID (Lowest First)" },
                     { value: "id_desc", label: "ID (Highest First)" },
@@ -396,10 +401,10 @@ export default function Pokedex() {
                       key={opt.value}
                       type="button"
                       onClick={() => setSortBy(opt.value)}
-                      className={`py-1 px-2 rounded font-bold border text-[10px] text-center cursor-pointer transition-colors ${
+                      className={`py-1.5 px-2 rounded-lg font-bold text-[10px] text-center cursor-pointer transition-all ${
                         sortBy === opt.value
-                          ? "bg-[#F9CF01] border-[#F9CF01] text-[#516A9A]"
-                          : "bg-gray-50 border-gray-200 hover:bg-gray-100"
+                          ? "bg-[#F9CF01] text-[#516A9A] shadow-md scale-[1.02]"
+                          : "bg-white/10 text-white hover:bg-white/20 border border-white/10"
                       }`}
                     >
                       {opt.label}
@@ -412,16 +417,17 @@ export default function Pokedex() {
         </div>
       </div>
 
-            {/* NAV LINKS */}
-      <div className="flex gap-11 text-[#516A9A] font-sf-pro">
-        <Link href="/pokedex">pokédex</Link>
-        <span>|</span>
-        <Link href="/pokeddle">pokeddle</Link>
-        <span>|</span>
-        <Link href="/pokedex-ai">pokédex AI</Link>
+      {/* NAV LINKS */}
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-11 text-[#516A9A] font-sf-pro text-sm sm:text-base font-semibold px-4 z-40">
+        <Link href="/pokedex" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokeddle" className="hover:underline hover:text-[#4276BD] transition-colors">pokeddle</Link>
+        <span className="hidden sm:inline">|</span>
+        <Link href="/pokedex-ai" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex AI</Link>
       </div>
 
       {/* 3. GRID POKÉMON */}
+      <div id="query-results"></div>
       {loading ? (
       
         <div className="flex flex-col items-center justify-center h-64 gap-3 font-sf-pro">
@@ -433,12 +439,12 @@ export default function Pokedex() {
           No Pokémon found matching your search.
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-16 max-w-5xl w-full px-6 font-sf-pro">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-4 sm:gap-x-12 gap-y-12 sm:gap-y-16 max-w-5xl w-full px-4 sm:px-6 font-sf-pro">
           {currentItems.map((pokemon) => (
             <div key={pokemon.id} className="flex flex-col items-center w-full max-w-[210px] mx-auto group">
               <Link href={`/pokemon/${pokemon.id}`} className="w-full flex flex-col items-center">
                 {/* Image */}
-                <div className="h-44 w-44 flex items-center justify-center p-2 relative cursor-pointer">
+                <div className="h-32 w-32 sm:h-44 sm:w-44 flex items-center justify-center p-2 relative cursor-pointer">
                   <img
                     src={pokemon.imageUrl || "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/0.png"}
                     alt={pokemon.name}

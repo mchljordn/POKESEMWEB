@@ -1,6 +1,7 @@
 'use client';
 import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { useEffect, useState } from "react";
 
 interface PokemonData {
@@ -36,8 +37,8 @@ export default function pokeddle() {
     const [revealedCount, setRevealedCount] = useState(0);
     
     // States for autocomplete
-    const [allPokemonNames, setAllPokemonNames] = useState<string[]>([]);
-    const [suggestions, setSuggestions] = useState<string[]>([]);
+    const [allPokemonNames, setAllPokemonNames] = useState<{name: string, id: number}[]>([]);
+    const [suggestions, setSuggestions] = useState<{name: string, id: number}[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
     
@@ -109,7 +110,7 @@ export default function pokeddle() {
                 const res = await fetch("/api/pokemon?limit=1025");
                 const data = await res.json();
                 if (data.pokemon) {
-                    setAllPokemonNames(data.pokemon.map((p: any) => p.name));
+                    setAllPokemonNames(data.pokemon.map((p: any) => ({ name: p.name, id: p.id })));
                 }
             } catch (err) {
                 console.error("Failed to fetch Pokemon names:", err);
@@ -138,7 +139,7 @@ export default function pokeddle() {
     const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             if (activeSuggestionIndex >= 0 && activeSuggestionIndex < suggestions.length) {
-                submitGuess(suggestions[activeSuggestionIndex]);
+                submitGuess(suggestions[activeSuggestionIndex].name);
             } else {
                 submitGuess(guess);
             }
@@ -164,7 +165,7 @@ export default function pokeddle() {
         setGuess(value);
         if (value.trim().length > 0) {
             const filtered = allPokemonNames
-                .filter(name => name.toLowerCase().includes(value.toLowerCase()))
+                .filter(p => p.name.toLowerCase().includes(value.toLowerCase()))
                 .slice(0, 5); // limit to 5 suggestions
             setSuggestions(filtered);
             setShowSuggestions(true);
@@ -188,25 +189,16 @@ export default function pokeddle() {
         );
     }
     return (
-        <div className="flex flex-col items-center justify-center h-screen gap-10">
-            <div>
-                <h1
-                    data-text="Guess the PoKéMoN"
-                    className="
-                    relative font-pokemon text-8xl text-[#F9CF01] tracking-wider
-                    before:content-[attr(data-text)] before:absolute before:inset-0
-                    before:[-webkit-text-stroke:24px_#4276BD] before:text-[#4276BD]
-                    before:z-[-1] drop-shadow-xl"
-                >
-                    Guess the PoKéMoN
-                </h1>
-            </div>
-            <div className="flex gap-11 text-[#516A9A] font-sf-pro font-medium z-30">
-                <Link href="/pokedex" className="hover:underline">pokédex</Link>
-                <span>|</span>
-                <Link href="/pokeddle" className="hover:underline">pokeddle</Link>
-                <span>|</span>
-                <Link href="/pokedex-ai" className="hover:underline">pokédex AI</Link>
+        <div className="flex flex-col items-center justify-start min-h-screen pt-12 pb-20 bg-white text-[#516A9A] font-sf-pro gap-6">
+            
+            {/* 1. HEADER LOGO */}
+            <Logo text="PokéDdle" className="w-[85vw] sm:w-[60vw] md:w-[45vw] max-w-3xl mt-4 mb-4" />
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-11 text-[#516A9A] font-sf-pro text-sm sm:text-base font-semibold px-4 z-40 mb-6">
+              <Link href="/pokedex" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex</Link>
+              <span className="hidden sm:inline">|</span>
+              <Link href="/pokeddle" className="hover:underline hover:text-[#4276BD] transition-colors">pokeddle</Link>
+              <span className="hidden sm:inline">|</span>
+              <Link href="/pokedex-ai" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex AI</Link>
             </div>
             <div className="relative w-64 h-64 flex items-center justify-center  rounded-2xl p-4 border-4 border-[#516A9A]">
                 {pokemon && (
@@ -254,11 +246,11 @@ export default function pokeddle() {
                             </div>
                             <div className="flex-1 relative">
                                 {isRevealed ? (
-                                    <p className="text-lg md:text-xl font-medium">
+                                    <p className="text-sm sm:text-base md:text-xl font-medium">
                                         {clueText}
                                     </p>
                                 ) : isNextToReveal ? (
-                                    <p className="text-lg md:text-xl font-bold text-white text-center w-full select-none animate-pulse">
+                                    <p className="text-sm sm:text-base md:text-xl font-bold text-white text-center w-full select-none animate-pulse">
                                         Click to reveal Hint #{index + 1}
                                     </p>
                                 ) : (
@@ -274,7 +266,7 @@ export default function pokeddle() {
                 {/* Info status menang */}
                 {isCorrect && (
                     <div className="text-center my-2">
-                        <p className="text-green-400 font-bold text-2xl animate-bounce">🎉 Correct! It's {pokemon?.name}!</p>
+                        <p className="text-green-400 font-bold text-2xl animate-bounce">Correct! It's {pokemon?.name}!</p>
                         <button
                             onClick={fetchRandomPokemon}
                             className="mt-3 bg-[#4276BD] hover:bg-[#355e97] text-white px-6 py-2 rounded-full font-bold cursor-pointer transition-all"
@@ -310,22 +302,23 @@ export default function pokeddle() {
                                     onFocus={() => { if (guess.trim().length > 0) setShowSuggestions(true); }}
                                     onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
                                     placeholder="Type your guess here & Press Enter!"
-                                    className="w-full h-12 pl-6! pr-5 bg-[#516A9A] text-white placeholder-slate-300 rounded-full outline-none text-lg border-2 border-transparent focus:border-[#F9CF01] transition-all"
+                                    className="w-full h-12 pl-6 pr-5 bg-[#516A9A] text-[#F9CF01] placeholder-[#F9CF01]/60 rounded-full outline-none text-lg font-sf-pro italic shadow-md focus:ring-2 focus:ring-[#F9CF01] transition-all"
                                 />
 
                                 {/* Autocomplete Dropdown */}
                                 {showSuggestions && suggestions.length > 0 && (
-                                    <div className="absolute top-14 left-0 w-full bg-[#1D1C16] border-2 border-[#516A9A] rounded-xl overflow-hidden z-50 flex flex-col shadow-xl">
+                                    <div className="absolute top-14 left-0 w-full bg-[#516A9A]/95 backdrop-blur-md border border-[#4276BD] rounded-2xl overflow-hidden z-50 flex flex-col shadow-xl py-1">
                                         {suggestions.map((s, idx) => (
                                             <div
                                                 key={idx}
                                                 onMouseEnter={() => setActiveSuggestionIndex(idx)}
-                                                onClick={() => handleSuggestionClick(s)}
-                                                className={`px-6 py-3 cursor-pointer text-white font-sf-pro transition-colors ${
-                                                    idx === activeSuggestionIndex ? 'bg-[#516A9A]' : 'hover:bg-[#516A9A]'
+                                                onClick={() => handleSuggestionClick(s.name)}
+                                                className={`px-6 py-2.5 cursor-pointer text-white font-sf-pro font-semibold capitalize transition-colors flex items-center gap-2 ${
+                                                    idx === activeSuggestionIndex ? 'bg-[#4276BD]' : 'hover:bg-[#4276BD]'
                                                 }`}
                                             >
-                                                {s}
+                                                <span>{s.name}</span>
+                                                <span className="italic text-[#F9CF01] text-xs">#{String(s.id).padStart(4, '0')}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -335,7 +328,7 @@ export default function pokeddle() {
                             {/* Tombol Reveal */}
                             <button
                                 onClick={() => setHasGivenUp(true)}
-                                className="bg-[#E3350D] hover:bg-[#C92F0B] text-white px-6 py-2 rounded-full font-bold cursor-pointer transition-all shrink-0"
+                                className="bg-[#516A9A] hover:bg-[#3e5889] text-white px-6 py-2 rounded-full font-bold cursor-pointer transition-all shrink-0"
                             >
                                 Reveal
                             </button>

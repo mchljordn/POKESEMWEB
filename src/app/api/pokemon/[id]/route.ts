@@ -182,6 +182,14 @@ export async function GET(request: Request, context: RouteContext) {
     evolutionChain.sort((a, b) => a.id - b.id);
 
     // ========================================================================
+    // MAPPING SPRITES
+    // ========================================================================
+    const sprites = {
+      frontDefault: binding.imageUrl?.value || null,
+      frontShiny: binding.frontShiny?.value || null,
+      backDefault: binding.backDefault?.value || null,
+      backShiny: binding.backShiny?.value || null
+    };
 
     const pokemon = {
       id: parseInt(binding.id?.value, 10),
@@ -195,6 +203,10 @@ export async function GET(request: Request, context: RouteContext) {
       ability: binding.ability?.value || null,
       hiddenAbility: binding.hiddenAbility?.value || null,
       evolvesFrom: binding.evolvesFrom?.value || null,
+      baseExperience: binding.baseExperience?.value ? parseInt(binding.baseExperience.value, 10) : null,
+      cryUrl: binding.cryUrl?.value || null,
+      isDefault: binding.isDefault?.value === 'true',
+      sprites,
       stats: { hp, attack, defense, spAttack, spDefense, speed, total },
       evolutionChain
     };

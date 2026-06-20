@@ -1,27 +1,26 @@
 #!/usr/bin/env python3
 """
-Complete Pokémon Semantic Web Solution - FINAL VERSION
+Complete Pokémon Semantic Web Solution - FINAL VERSION (SPRITES UPDATE)
 Includes:
-- @prefix declarations ✓
-- Master data (all 18 types, generations, regions) ✓
-- 1,025 Pokémon with correct stats ✓
-- owl:NamedIndividual declarations ✓
-- Evolution chains ✓
+- @prefix declarations
+- Master data (all 18 types, generations)
+- 1,025 Pokémon with correct stats and new properties
+- owl:NamedIndividual declarations
+- Evolution chains
+- Sprites (front_shiny, back_default, back_shiny)
+- REMOVED: moves, items, games
 """
 
 import requests
 import json
 import urllib3
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 SESSION = requests.Session()
 SESSION.verify = False
 
 BASE_URL = "https://pokeapi.co/api/v2"
-
-# Evolution chain cache
-EVOLUTION_CACHE = {}
 
 def fetch_data(url: str) -> Optional[Dict]:
     try:
@@ -107,12 +106,23 @@ def generate_pokemon_ttl(pokemon_data: Dict) -> str:
     weight_kg = pokemon_data.get('weight', 0) / 10
     gen_num = get_gen(pokemon_data['id'])
     
-    image_url = pokemon_data.get('sprites', {}).get('other', {}).get('official-artwork', {}).get('front_default')
+    sprites_data = pokemon_data.get('sprites', {})
+    
+    image_url = sprites_data.get('other', {}).get('official-artwork', {}).get('front_default')
     if not image_url:
         image_url = f"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{pokemon_data['id']}.png"
+        
+    front_shiny = sprites_data.get('front_shiny')
+    back_default = sprites_data.get('back_default')
+    back_shiny = sprites_data.get('back_shiny')
     
     # Evolution
     evolves_from = get_evolution_chain(pokemon_data['id'])
+
+    # New properties
+    base_exp = pokemon_data.get('base_experience')
+    is_default = str(pokemon_data.get('is_default', True)).lower()
+    cry = pokemon_data.get('cries', {}).get('latest', '')
     
     lines = [
         "",
@@ -139,7 +149,25 @@ def generate_pokemon_ttl(pokemon_data: Dict) -> str:
     
     if evolves_from:
         lines.append(f"    :evolvesFrom poke:{evolves_from} ;")
-    
+        
+    if base_exp is not None:
+        lines.append(f"    :baseExperience {base_exp} ;")
+        
+    if is_default:
+        lines.append(f'    :isDefault "{is_default}"^^xsd:boolean ;')
+        
+    if cry:
+        lines.append(f'    :cryUrl "{cry}"^^xsd:anyURI ;')
+        
+    if front_shiny:
+        lines.append(f'    :frontShiny "{front_shiny}"^^xsd:anyURI ;')
+        
+    if back_default:
+        lines.append(f'    :backDefault "{back_default}"^^xsd:anyURI ;')
+        
+    if back_shiny:
+        lines.append(f'    :backShiny "{back_shiny}"^^xsd:anyURI ;')
+        
     lines.extend([
         f"    :baseHP {hp} ;",
         f"    :baseAttack {attack} ;",
@@ -156,12 +184,27 @@ def generate_pokemon_ttl(pokemon_data: Dict) -> str:
     return '\n'.join(lines)
 
 def main():
-    print("\n🚀 Final Pokémon TTL Generator (COMPLETE)\n")
+    print("\n🚀 Final Pokémon TTL Generator (SPRITES UPDATE)\n")
     
     pokemon_list = get_all_pokemon()
     if not pokemon_list:
         print("✗ Failed to fetch Pokémon")
         return
+    
+    POKEMON_TTLS = []
+    
+    total = len(pokemon_list)
+    for idx, poke_summary in enumerate(pokemon_list, 1):
+        poke_data = fetch_data(poke_summary['url'])
+        if poke_data:
+            ttl = generate_pokemon_ttl(poke_data)
+            POKEMON_TTLS.append(ttl)
+        
+        if idx % 100 == 0 or idx == 1:
+            pct = (idx / total) * 100
+            print(f"⏳ {idx}/{total} ({pct:.0f}%) - {poke_summary['name']}")
+    
+    print("\n💾 Generating Master Data...")
     
     # MASTER DATA SECTION
     output = []
@@ -205,27 +248,16 @@ def main():
     output.append("### POKÉMON DATA (All 1,025 Species)")
     output.append("### =======================================")
     
-    total = len(pokemon_list)
-    for idx, poke_summary in enumerate(pokemon_list, 1):
-        poke_data = fetch_data(poke_summary['url'])
-        if poke_data:
-            ttl = generate_pokemon_ttl(poke_data)
-            output.append(ttl)
-        
-        if idx % 100 == 0 or idx == 1:
-            pct = (idx / total) * 100
-            print(f"⏳ {idx}/{total} ({pct:.0f}%) - {poke_summary['name']}")
+    output.extend(POKEMON_TTLS)
     
     print("\n💾 Writing to file...")
     
-    with open(r"c:\coding\sem 6\semweb\dinopedia\pokemon.ttl", 'w', encoding='utf-8') as f:
+    with open(r"c:\coding\sem 6\semweb\dinopedia\data-ontology\pokemon.ttl", 'w', encoding='utf-8') as f:
         f.write('\n'.join(output) + '\n')
     
     print(f"✅ COMPLETE!")
-    print(f"✓ All 1,025 Pokémon with correct stats")
-    print(f"✓ All 18 types defined")
-    print(f"✓ Evolution chains (evolvesFrom)")
-    print(f"✓ @prefix declarations")
+    print(f"✓ All 1,025 Pokémon generated")
+    print(f"✓ Includes Sprites, Excludes Moves/Items/Games")
     print(f"✓ owl:NamedIndividual for all entries")
 
 if __name__ == "__main__":
