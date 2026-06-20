@@ -151,10 +151,25 @@ export default function PokemonPage({ params }: { params: { id: string } }) {
         );
     };
 
+    const getRegion = (gen: string | number) => {
+        switch (String(gen)) {
+            case '1': return 'Kanto';
+            case '2': return 'Johto';
+            case '3': return 'Hoenn';
+            case '4': return 'Sinnoh';
+            case '5': return 'Unova';
+            case '6': return 'Kalos';
+            case '7': return 'Alola';
+            case '8': return 'Galar';
+            case '9': return 'Paldea';
+            default: return 'Unknown';
+        }
+    };
+
     return (
         <div className="flex flex-col items-center min-h-screen  py-10 px-4 font-sans">
             {/* Header Logo */}
-            <div className="flex flex-col items-center mb-6">
+            <div className="flex flex-col items-center mb-6 gap-6">
                 <h1 data-text="PokéDex" className="relative font-pokemon text-5xl text-[#F9CF01] tracking-wider before:content-[attr(data-text)] before:absolute before:inset-0 before:[-webkit-text-stroke:12px_#4276BD] before:text-[#4276BD] before:z-[-1] drop-shadow-md">
                     PokéDex
                 </h1>
@@ -172,8 +187,8 @@ export default function PokemonPage({ params }: { params: { id: string } }) {
                 <Image src={pokemon.imageUrl!} alt={pokemon.name} fill className="object-contain" unoptimized />
             </div>
 
-            {/* Info Grid (ID, Name, Type, Weight, Height, Generation) */}
-            <div className="grid grid-cols-3 gap-6 text-center w-full max-w-md my-6  p-4 rounded-2xl å">
+            {/* Info Grid (ID, Name, Type, Weight, Height, Region) */}
+            <div className="grid grid-cols-3 gap-6 text-center w-full max-w-md my-6 p-4 rounded-2xl">
                 <div><p className="text-xs  font-medium">ID</p><p className="font-bold ">#{String(pokemon.id).padStart(4, '0')}</p></div>
                 <div><p className="text-xs text-slate-400 font-medium">Name</p><p className="font-bold capitalize">{pokemon.name}</p></div>
                 <div>
@@ -187,7 +202,7 @@ export default function PokemonPage({ params }: { params: { id: string } }) {
                 </div>
                 <div><p className="text-xs  font-medium">Weight</p><p className="font-bold ">{pokemon.weight}kg</p></div>
                 <div><p className="text-xs  font-medium">Height</p><p className="font-bold ">{pokemon.height}m</p></div>
-                <div><p className="text-xs  font-medium">Generation</p><p className="font-bold ">{pokemon.generation}</p></div>
+                <div><p className="text-xs  font-medium">Region</p><p className="font-bold capitalize">{getRegion(pokemon.generation)}</p></div>
             </div>
 
             {/* Abilities Section */}
