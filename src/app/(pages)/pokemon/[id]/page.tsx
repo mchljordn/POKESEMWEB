@@ -157,8 +157,8 @@ export default function PokemonPage({ params }: { params: { id: string } }) {
         getDetail();
     }, [params.id]);
 
-    if (loading) return <div className="flex h-screen items-center justify-center text-[#F9CF01] font-pokemon text-3xl animate-pulse">Loading PokéDex...</div>;
-    if (!pokemon) return <div className="flex h-screen items-center justify-center text-white">Pokémon Not Found.</div>;
+    if (loading) return <div className="flex h-screen items-center justify-center text-[#516A9A] font-pokemon text-3xl animate-pulse">Loading PokéDex...</div>;
+    if (!pokemon) return <div className="flex h-screen items-center justify-center text-[#516A9A] font-bold text-xl">Pokémon Not Found or Server is Offline.</div>;
 
     // 💡 LOGIKA DETEKSI MULTI-EVOLUSI (Kayak Eevee)
     const stage2Count = pokemon.evolutionChain.filter(p => p.stage === 2).length;
