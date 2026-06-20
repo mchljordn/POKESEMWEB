@@ -193,7 +193,7 @@ export default function PokedexAI() {
         <span className="hidden sm:inline">|</span>
         <Link href="/pokedex-ai" className="hover:underline hover:text-[#4276BD] transition-colors">pokédex AI</Link>
       </div>
-      <p className="text-sm font-sf-pro italic text-[#516A9A] tracking-wider">
+      <p className="text-xs sm:text-sm font-sf-pro italic text-[#516A9A] tracking-wider text-center px-4 leading-relaxed">
           Ask Gemini in natural language, query Fuseki with Semantic SPARQL
       </p>
 
