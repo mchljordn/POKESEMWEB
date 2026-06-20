@@ -10,6 +10,8 @@ interface PokemonData {
     baseExperience: number | null;
     cryUrl: string | null;
     isDefault: boolean;
+    ability: string;
+    hiddenAbility: string | null;
     sprites: {
         frontDefault: string | null;
         frontShiny: string | null;
@@ -41,7 +43,7 @@ interface PokemonDetail extends PokemonData {
 
 'use client';
 import Image from "next/image";
-import { getPokemonById } from '@/lib/queries';
+
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { useEffect, useState } from "react";
