@@ -12,8 +12,7 @@
     "incremental": true,
     "module": "esnext",
     "esModuleInterop": true,
-    // 1. Ubah dari "node" menjadi "bundler" (standar modern Next.js/Webpack)
-    "moduleResolution": "bundler", 
+    "moduleResolution": "node", 
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
